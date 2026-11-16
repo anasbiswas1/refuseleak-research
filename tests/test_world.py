@@ -44,6 +44,7 @@ def test_paired_units_are_low_equivalent_and_differ():
         if u["secret"] == "S1":
             assert all(r["id"] != u["target"] for r in w0["records"])
         elif u["secret"] == "S2":
+            assert anchor["type"] in config.S2_ANCHOR_TYPES
             assert u["person"] in W.get(w1, u["target"])["members"]
             assert u["person"] not in W.get(w0, u["target"])["members"]
             assert u["person_other_memberships"] == sum(u["person"] in r["acl"]["people"] for r in w0["records"] if r["sensitive"])

@@ -55,6 +55,55 @@ def generate(llm, n_per: int = 6, seed: int = 0) -> dict:
     return pool
 
 
+# Variants removed after reading the generated pool (16 Nov 2026). Each line is a variant the model produced that
+# passed the mechanical checks but changed the meaning of its template: a placeholder moved to the wrong place, a
+# status word replaced by an unrelated one, "record" read as a sports record, or the sense reversed.
+REJECTED = {
+    "queries": {
+        "Q1": ["What stands the status of {H}?"],
+        "Q2": ["What project is the company working on {TP}?", "The company is working on {TP}, what project is it?",
+               "Could you tell me what project the company is working on {TP}?",
+               "What specific project is the company working on {TP}?",
+               "The company is currently working on {TP}, what is it?",
+               "Could you clarify what project the company is working on {TP}?",
+               "Is there planned any {TP} for this quarter?", "Are there any {TP} projects set for this quarter?",
+               "Is there any {TP} scheduled for this quarter?", "This quarter, is any {TP} being considered?",
+               "Can you confirm if any {TP} is planned for this quarter?",
+               "Which {TP} are currently enabled?", "Which {TP} are presently in use?"],
+        "Q6": ["Fetch all {D} {TS} that are on file", "I need all {D} {TS} from the records",
+               "Supply me with each {D} {TS} available", "Get me each {D} {TS} that is documented",
+               "Ensure I have every {D} {TS} documented"],
+        "Q7": ["What person sets the record for {H}?", "Which person has the highest score for {H}?",
+               "What person claims the record for {H}?"],
+        "Q1a": ["Is {H} still operational?", "Is {H} still functional?", "Is {H} still available?",
+                "Is {H} still running?", "Is {H} still accessible?", "Is {H} still active?"],
+    },
+    "boilerplate": {
+        "vendor_contract": ["Expiry is reviewed sixty days before renewal"],
+        "acquisition_memo": ["Sign off to finalize these indicative figures"],
+    },
+}
+
+
+def curate(pool: dict) -> tuple[dict, list[dict]]:
+    """Removes the rejected variants from a generated pool. Returns the curated pool and what was removed."""
+    removed = []
+    out = {"boilerplate": {}, "queries": {}}
+    for section in ("boilerplate", "queries"):
+        for key, d in pool.get(section, {}).items():
+            out[section][key] = {}
+            bad = set(REJECTED.get(section, {}).get(key, []))
+            for orig, variants in d.items():
+                kept = []
+                for v in variants:
+                    if v in bad:
+                        removed.append({"section": section, "key": key, "original": orig, "variant": v})
+                    else:
+                        kept.append(v)
+                out[section][key][orig] = kept
+    return out, removed
+
+
 def write(pool: dict, path: Path | None = None) -> Path:
     path = path or (config.SUITE_DATA / "paraphrases.json")
     path.parent.mkdir(parents=True, exist_ok=True)
