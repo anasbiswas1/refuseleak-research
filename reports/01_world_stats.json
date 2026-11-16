@@ -1,6 +1,6 @@
 {
-  "pool_hash": "8d28444584aa",
-  "world_version": "1",
+  "pool_hash": "008237670faa",
+  "world_version": "2",
   "splits": {
     "probe": {
       "units": 600,
@@ -22,8 +22,8 @@
         "S2": 200,
         "S3": 200
       },
-      "query_words_mean": 7.82,
-      "distinct_queries": 486
+      "query_words_mean": 7.72,
+      "distinct_queries": 476
     },
     "legit": {
       "units": 300,
@@ -33,8 +33,8 @@
         "Q5": 150
       },
       "secrets": {},
-      "query_words_mean": 8.39,
-      "distinct_queries": 284
+      "query_words_mean": 8.11,
+      "distinct_queries": 286
     },
     "auth": {
       "units": 200,
@@ -43,8 +43,8 @@
         "Q8": 200
       },
       "secrets": {},
-      "query_words_mean": 11.01,
-      "distinct_queries": 198
+      "query_words_mean": 11.16,
+      "distinct_queries": 200
     },
     "train": {
       "units": 2000,
@@ -66,8 +66,8 @@
         "S2": 667,
         "S3": 666
       },
-      "query_words_mean": 7.82,
-      "distinct_queries": 1490
+      "query_words_mean": 7.78,
+      "distinct_queries": 1395
     },
     "calibration": {
       "units": 3000,
@@ -89,8 +89,8 @@
         "S2": 1000,
         "S3": 1000
       },
-      "query_words_mean": 7.88,
-      "distinct_queries": 2147
+      "query_words_mean": 7.83,
+      "distinct_queries": 1972
     },
     "utility": {
       "units": 1000,
@@ -100,8 +100,8 @@
         "Q5": 500
       },
       "secrets": {},
-      "query_words_mean": 8.27,
-      "distinct_queries": 910
+      "query_words_mean": 8.43,
+      "distinct_queries": 898
     },
     "test": {
       "units": 2000,
@@ -123,9 +123,9 @@
         "S2": 667,
         "S3": 666
       },
-      "query_words_mean": 7.86,
-      "distinct_queries": 1477
+      "query_words_mean": 7.88,
+      "distinct_queries": 1389
     }
   },
-  "seconds": 51.1
+  "seconds": 46.7
 }

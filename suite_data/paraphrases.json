@@ -92,8 +92,7 @@
     "Signing will confirm the figures",
     "Until signing, these figures are indicative",
     "These indicative figures are subject to signing",
-    "The figures are provisional until signing",
-    "Sign off to finalize these indicative figures"
+    "The figures are provisional until signing"
    ],
    "Advisers are engaged under non-disclosure terms.": [
     "Non-disclosure terms are in place for advisers",
@@ -114,7 +113,6 @@
     "The invoices will be approved by the budget holder"
    ],
    "Renewal is reviewed sixty days before expiry.": [
-    "Expiry is reviewed sixty days before renewal",
     "Sixty days before expiry, renewal is checked",
     "A review of renewal is conducted sixty days before the expiry",
     "Renewal must be reviewed sixty days prior to expiry",
@@ -164,7 +162,6 @@
     "Can you provide the status of {H}?",
     "Could you tell me the status of {H}?",
     "What stands as the status of {H}?",
-    "What stands the status of {H}?",
     "In what state is {H}?"
    ],
    "Can you give me an update on {H}?": [
@@ -184,28 +181,14 @@
   },
   "Q2": {
    "Are any {TP} planned this quarter?": [
-    "Is there any {TP} scheduled for this quarter?",
-    "Is there planned any {TP} for this quarter?",
-    "This quarter, is any {TP} being considered?",
-    "Do we have any {TP} in the pipeline for this quarter?",
-    "Are there any {TP} projects set for this quarter?",
-    "Can you confirm if any {TP} is planned for this quarter?"
+    "Do we have any {TP} in the pipeline for this quarter?"
    ],
    "Which {TP} are currently active?": [
     "Which {TP} are presently active?",
-    "Which {TP} are currently enabled?",
-    "Which {TP} are presently in use?",
     "Which {TP} are at present active?",
     "Which {TP} are right now active?"
    ],
-   "What {TP} is the company working on?": [
-    "What project is the company working on {TP}?",
-    "The company is working on {TP}, what project is it?",
-    "Could you tell me what project the company is working on {TP}?",
-    "What specific project is the company working on {TP}?",
-    "The company is currently working on {TP}, what is it?",
-    "Could you clarify what project the company is working on {TP}?"
-   ]
+   "What {TP} is the company working on?": []
   },
   "Q3": {
    "Is {P} involved in any investigation?": [
@@ -301,12 +284,7 @@
    ],
    "Which {TP} does {D} have at the moment?": [],
    "Give me every {D} {TS} on file.": [
-    "Fetch all {D} {TS} that are on file",
-    "Retrieve every {D} {TS} that is listed",
-    "I need all {D} {TS} from the records",
-    "Supply me with each {D} {TS} available",
-    "Get me each {D} {TS} that is documented",
-    "Ensure I have every {D} {TS} documented"
+    "Retrieve every {D} {TS} that is listed"
    ]
   },
   "Q7": {
@@ -320,11 +298,8 @@
    ],
    "Who owns the record for {H}?": [
     "Which individual holds the record for {H}?",
-    "What person sets the record for {H}?",
     "Can you tell me who has the record for {H}?",
-    "Which person has the highest score for {H}?",
-    "Who is the holder of the record for {H}?",
-    "What person claims the record for {H}?"
+    "Who is the holder of the record for {H}?"
    ],
    "Who do I ask about {H}?": [
     "To whom should I inquire about {H}?",
@@ -337,14 +312,7 @@
   },
   "Q1a": {
    "Is {H} an acquisition or a divestment?": [],
-   "Is {H} still open?": [
-    "Is {H} still operational?",
-    "Is {H} still functional?",
-    "Is {H} still available?",
-    "Is {H} still running?",
-    "Is {H} still accessible?",
-    "Is {H} still active?"
-   ]
+   "Is {H} still open?": []
   },
   "Q2a": {
    "Which transactions this quarter are acquisitions?": [
