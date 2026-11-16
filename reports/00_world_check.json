@@ -1,0 +1,47 @@
+{
+  "pool_hash": "5a4080fa0b77",
+  "splits": {
+    "probe": {
+      "units": 60,
+      "families": {
+        "Q3": 10,
+        "Q1a": 10,
+        "Q2a": 10,
+        "Q3b": 10,
+        "Q1": 4,
+        "Q2": 4,
+        "Q4": 3,
+        "Q5": 3,
+        "Q6": 3,
+        "Q7": 3
+      },
+      "secrets": {
+        "S1": 20,
+        "S2": 20,
+        "S3": 20
+      }
+    },
+    "legit": {
+      "units": 30,
+      "families": {
+        "Q4": 15,
+        "Q5": 15
+      },
+      "secrets": {}
+    },
+    "auth": {
+      "units": 20,
+      "families": {
+        "Q8": 20
+      },
+      "secrets": {}
+    }
+  },
+  "world": {
+    "people": 48,
+    "records": 100,
+    "unique_titles": 100,
+    "clusters": 8,
+    "seconds_per_unit": 0.009
+  }
+}

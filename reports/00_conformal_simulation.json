@@ -1,0 +1,10 @@
+{
+  "alpha": 0.1,
+  "temperature": 0.872,
+  "threshold": 0.9286,
+  "mean_coverage": 0.895,
+  "min_coverage": 0.873,
+  "mean_set_size": 3.198,
+  "ece_calibration": 0.0467,
+  "sample_size_80pct_power": 1375
+}

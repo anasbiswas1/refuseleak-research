@@ -1,0 +1,11 @@
+vllm
+openai
+sentence-transformers
+transformers
+scikit-learn
+pandas
+numpy
+scipy
+matplotlib
+pytest
+nbformat

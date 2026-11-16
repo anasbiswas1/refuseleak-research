@@ -1,0 +1,10 @@
+{
+  "python": "3.13.18",
+  "pandas": "2.2.3",
+  "numpy": "2.4.6",
+  "scipy": "1.16.3",
+  "scikit_learn": "1.6.1",
+  "runtime_version": "1",
+  "world_version": "1",
+  "git_head": "d7f129b1c5b68c34c789af858ffb03406d498c6b"
+}
