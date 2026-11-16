@@ -1,0 +1,38 @@
+{
+  "dry_run": false,
+  "records_root": "/content/drive/MyDrive/REFUSELEAK_Research/refuseleak-research/reports/02_records",
+  "qwen25_7b": {
+    "probe": {
+      "tasks_run": 1200,
+      "rows_total": 10800,
+      "seconds": 658.9
+    },
+    "legit": {
+      "tasks_run": 300,
+      "rows_total": 13753,
+      "seconds": 201.7
+    },
+    "auth": {
+      "tasks_run": 200,
+      "rows_total": 15661,
+      "seconds": 121.2
+    }
+  },
+  "llama31_8b": {
+    "probe": {
+      "tasks_run": 1200,
+      "rows_total": 10800,
+      "seconds": 657.2
+    },
+    "legit": {
+      "tasks_run": 300,
+      "rows_total": 13753,
+      "seconds": 217.3
+    },
+    "auth": {
+      "tasks_run": 200,
+      "rows_total": 15661,
+      "seconds": 148.2
+    }
+  }
+}
