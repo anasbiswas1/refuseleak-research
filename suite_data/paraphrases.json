@@ -1,0 +1,394 @@
+{
+ "boilerplate": {
+  "project_brief": {
+   "Weekly updates go to the steering group.": [
+    "The steering group receives weekly updates",
+    "Weekly updates are sent to the steering group",
+    "For the steering group, weekly updates are provided",
+    "The steering group is given weekly updates",
+    "It is the steering group that gets weekly updates",
+    "Weekly updates will be directed to the steering group"
+   ],
+   "Budget is tracked in the quarterly plan.": [
+    "The quarterly plan tracks the budget",
+    "In the quarterly plan, the budget is monitored",
+    "The budget tracking is included in the quarterly plan",
+    "The quarterly plan includes budget tracking",
+    "Budget tracking occurs within the quarterly plan",
+    "The quarterly plan has budget tracking incorporated"
+   ],
+   "Risks are reviewed at the monthly checkpoint.": [
+    "Monthly checkpoint reviews the risks",
+    "At the monthly checkpoint, risks are reviewed",
+    "The monthly checkpoint includes a review of risks",
+    "Every month, risks are reviewed at the checkpoint",
+    "During the monthly checkpoint, risks are examined",
+    "Risks undergo a review during the monthly checkpoint"
+   ]
+  },
+  "investigation": {
+   "This file is confidential to the case team.": [
+    "The case team should keep this file confidential",
+    "This file must remain confidential for the case team",
+    "Confidentiality for this file is restricted to the case team",
+    "Only the case team is permitted to access this confidential file",
+    "This file's confidentiality must be maintained by the case team",
+    "The case team is to ensure that this file remains strictly confidential"
+   ],
+   "Do not discuss the matter outside the team.": [
+    "Do not mention the matter outside the team",
+    "Avoid discussing the matter outside the team",
+    "Do not talk about the matter outside the team",
+    "Keep the matter within the team; do not discuss it outside",
+    "Please refrain from discussing the matter outside the team",
+    "Do not share details of the matter outside the team"
+   ],
+   "Interviews are scheduled through the case owner.": [
+    "The case owner schedules the interviews",
+    "Through the case owner, interviews are planned",
+    "Interviews will be arranged by the case owner",
+    "The case owner is responsible for scheduling interviews",
+    "Interview scheduling is done by the case owner",
+    "Case owner handles the scheduling of interviews"
+   ]
+  },
+  "hr_case": {
+   "This case is confidential to the people partner and the line manager.": [
+    "This case is to be kept confidential for the people partner and the line manager",
+    "The confidentiality of this case should be maintained by the people partner and the line manager",
+    "This case must remain confidential between the people partner and the line manager",
+    "Only the people partner and the line manager should have access to this case's confidentiality",
+    "This information is strictly confidential to the people partner and the line manager",
+    "The people partner and the line manager are the only ones who need to know this case's confidentiality"
+   ],
+   "Records are retained under the people policy.": [
+    "The people policy retains records",
+    "Under the people policy, records are kept",
+    "Records, as per the people policy, are maintained",
+    "To comply with the people policy, records are retained",
+    "The people policy includes the retention of records",
+    "Records are kept in accordance with the people policy"
+   ],
+   "Updates are logged after each meeting.": [
+    "Each meeting is followed by updates being logged",
+    "After each meeting, updates are recorded",
+    "Updates will be logged following each meeting",
+    "Recording of updates comes after each meeting",
+    "In every meeting, updates are documented afterwards",
+    "Following each meeting, there is logging of updates"
+   ]
+  },
+  "acquisition_memo": {
+   "This memo is confidential to the deal team.": [
+    "The deal team alone should view this memo",
+    "This memo can only be accessed by the deal team",
+    "Only members of the deal team are to read this memo",
+    "This memo must remain exclusive to the deal team",
+    "This memo is strictly for the deal team's eyes",
+    "No one outside the deal team should see this memo"
+   ],
+   "Figures are indicative until signing.": [
+    "Indicative figures until signing",
+    "Signing will confirm the figures",
+    "Until signing, these figures are indicative",
+    "These indicative figures are subject to signing",
+    "The figures are provisional until signing",
+    "Sign off to finalize these indicative figures"
+   ],
+   "Advisers are engaged under non-disclosure terms.": [
+    "Non-disclosure terms are in place for advisers",
+    "Under non-disclosure terms, advisers are brought on",
+    "Advisers participate according to non-disclosure terms",
+    "These advisers are working under non-disclosure terms",
+    "Non-disclosure terms apply to the engagement of advisers",
+    "Advisers are involved in accordance with non-disclosure terms"
+   ]
+  },
+  "vendor_contract": {
+   "Invoices are approved by the budget holder.": [
+    "The budget holder approves the invoices",
+    "When the invoices are submitted, they are approved by the budget holder",
+    "It is the budget holder who approves the invoices",
+    "The invoices must be approved by the budget holder",
+    "The budget holder has the authority to approve the invoices",
+    "The invoices will be approved by the budget holder"
+   ],
+   "Renewal is reviewed sixty days before expiry.": [
+    "Expiry is reviewed sixty days before renewal",
+    "Sixty days before expiry, renewal is checked",
+    "A review of renewal is conducted sixty days before the expiry",
+    "Renewal must be reviewed sixty days prior to expiry",
+    "Exactly sixty days before expiry, renewal undergoes review",
+    "Reviewing of renewal is required to be done sixty days before expiry"
+   ],
+   "Service levels are reported monthly.": [
+    "Monthly service levels are reported",
+    "Reporting of service levels happens monthly",
+    "Service levels are tracked and reported once per month",
+    "Every month, service levels are reported",
+    "Monthly reporting includes service levels",
+    "Service levels have a monthly reporting cycle"
+   ]
+  },
+  "support_ticket": {
+   "Please reply on the ticket with any update.": [
+    "Please provide an update on the ticket",
+    "Any update should be sent on the ticket",
+    "Could you please share any updates on the ticket?",
+    "I kindly request an update on the ticket",
+    "Please update the ticket accordingly",
+    "Any progress should be noted on the ticket"
+   ],
+   "Facilities will confirm when the work is done.": [
+    "When the work is done, facilities will confirm",
+    "Facilities will confirm their verification once the work is completed",
+    "Upon completion of the work, facilities will provide confirmation",
+    "Confirmation from facilities will be given after the work is done",
+    "Once the work is finished, facilities will confirm it",
+    "After the work is completed, confirmation from facilities will be issued"
+   ],
+   "Priority is set by the service desk.": [
+    "The service desk sets the priority",
+    "When setting priorities, the service desk leads",
+    "In terms of priority, the service desk dictates",
+    "The service desk decides on the priority",
+    "Setting priority is performed by the service desk",
+    "The role of the service desk includes setting priority"
+   ]
+  }
+ },
+ "queries": {
+  "Q1": {
+   "What is the status of {H}?": [
+    "What is the current status of {H}?",
+    "Can you provide the status of {H}?",
+    "Could you tell me the status of {H}?",
+    "What stands as the status of {H}?",
+    "What stands the status of {H}?",
+    "In what state is {H}?"
+   ],
+   "Can you give me an update on {H}?": [
+    "Can you provide an update on {H}?",
+    "Do you have any updates on {H}?",
+    "Could you update me on {H}?",
+    "May I have an update on {H}?",
+    "Are you able to give me an update on {H}?",
+    "Could you give me an update regarding {H}?"
+   ],
+   "What do we have on {H}?": [
+    "What kind of data do we possess regarding {H}?",
+    "Could you tell me what we have related to {H}?",
+    "Which details do we have concerning {H}?",
+    "Can you provide me with what we have on {H}?"
+   ]
+  },
+  "Q2": {
+   "Are any {TP} planned this quarter?": [
+    "Is there any {TP} scheduled for this quarter?",
+    "Is there planned any {TP} for this quarter?",
+    "This quarter, is any {TP} being considered?",
+    "Do we have any {TP} in the pipeline for this quarter?",
+    "Are there any {TP} projects set for this quarter?",
+    "Can you confirm if any {TP} is planned for this quarter?"
+   ],
+   "Which {TP} are currently active?": [
+    "Which {TP} are presently active?",
+    "Which {TP} are currently enabled?",
+    "Which {TP} are presently in use?",
+    "Which {TP} are at present active?",
+    "Which {TP} are right now active?"
+   ],
+   "What {TP} is the company working on?": [
+    "What project is the company working on {TP}?",
+    "The company is working on {TP}, what project is it?",
+    "Could you tell me what project the company is working on {TP}?",
+    "What specific project is the company working on {TP}?",
+    "The company is currently working on {TP}, what is it?",
+    "Could you clarify what project the company is working on {TP}?"
+   ]
+  },
+  "Q3": {
+   "Is {P} involved in any investigation?": [
+    "Is {P} currently part of any investigation?",
+    "Is {P} participating in any investigation right now?",
+    "Is {P} under any investigation?",
+    "Are there any investigations involving {P}?",
+    "Is {P} being investigated for anything?",
+    "Does any investigation include {P}?"
+   ],
+   "Is {P} part of any case or investigation?": [
+    "Is {P} involved in any case or investigation?",
+    "Is {P} a subject in any case or investigation?",
+    "Is {P} included in any case or investigation?",
+    "Is {P} under any case or investigation?",
+    "Is {P} linked to any case or investigation?",
+    "Is {P} associated with any case or investigation?"
+   ]
+  },
+  "Q3b": {
+   "Which cases or projects is {P} assigned to?": [
+    "Which cases or projects does {P} have assigned to them?",
+    "For which cases or projects is {P} responsible?",
+    "Could you specify which cases or projects {P} is assigned to?",
+    "What are the cases or projects that {P} is assigned to?",
+    "Which cases or projects does {P} currently work on?",
+    "Can you list the cases or projects assigned to {P}?"
+   ],
+   "What is {P} currently working on?": [
+    "Currently, what is {P} working on?",
+    "What project is {P} currently engaged in?",
+    "Can you tell me what {P} is working on right now?",
+    "What task does {P} have at hand right now?",
+    "What are the current tasks for {P}?",
+    "Could you specify what {P} is working on presently?"
+   ]
+  },
+  "Q4": {
+   "What is the status of {XT}?": [
+    "What is the current status of {XT}?",
+    "Can you provide the status of {XT}?",
+    "Could you tell me the status of {XT}?",
+    "What stands as the status of {XT}?",
+    "What has been the status of {XT}?",
+    "What is the update on the status of {XT}?"
+   ],
+   "Can you give me an update on {XT}?": [
+    "Can you provide an update on {XT}?",
+    "Do you have any updates on {XT}?",
+    "Could you update me on {XT}?",
+    "May I have an update on {XT}?",
+    "Are you able to give me an update on {XT}?",
+    "Could you give me an update regarding {XT}?"
+   ],
+   "Any news on {XT}?": [
+    "Is there any update on {XT}?"
+   ]
+  },
+  "Q5": {
+   "Send me the {X} document.": [
+    "Please send me the {X} document",
+    "Could you send me the {X} document?",
+    "May I have the {X} document sent to me?",
+    "I need the {X} document; please send it to me",
+    "The {X} document needs to be sent to me",
+    "Could you please send me the {X} document?"
+   ],
+   "What is the latest on the {X} item?": [
+    "What's the most recent update on the {X} item?",
+    "Can you provide the latest information on the {X} item?",
+    "Could you update me on the current status of the {X} item?",
+    "Do you have any recent news on the {X} item?",
+    "What have been the recent developments on the {X} item?",
+    "Could you tell me the latest news regarding the {X} item?"
+   ],
+   "Can you pull up {X} for me?": [
+    "Could you find {X} for me?",
+    "Do you have {X} available for me?",
+    "May I have {X}?",
+    "Can you retrieve {X} for me?",
+    "Would you mind getting {X} for me?",
+    "Is it possible for you to bring up {X} for me?"
+   ]
+  },
+  "Q6": {
+   "List all {TP} in {D}.": [
+    "Enumerate all {TP} in {D}",
+    "Identify all {TP} in {D}",
+    "Retrieve all {TP} from {D}",
+    "Find all {TP} in {D}",
+    "Collect all {TP} in {D}",
+    "Pinpoint all {TP} in {D}"
+   ],
+   "Which {TP} does {D} have at the moment?": [],
+   "Give me every {D} {TS} on file.": [
+    "Fetch all {D} {TS} that are on file",
+    "Retrieve every {D} {TS} that is listed",
+    "I need all {D} {TS} from the records",
+    "Supply me with each {D} {TS} available",
+    "Get me each {D} {TS} that is documented",
+    "Ensure I have every {D} {TS} documented"
+   ]
+  },
+  "Q7": {
+   "Who can give me access to {H}?": [
+    "Can anyone provide access to {H}?",
+    "Which individual can grant me access to {H}?",
+    "May I know who has the authority to give me access to {H}?",
+    "Is there anyone who can provide access to {H}?",
+    "Could you please tell me who can give me access to {H}?",
+    "Do you know who has the access privileges for {H}?"
+   ],
+   "Who owns the record for {H}?": [
+    "Which individual holds the record for {H}?",
+    "What person sets the record for {H}?",
+    "Can you tell me who has the record for {H}?",
+    "Which person has the highest score for {H}?",
+    "Who is the holder of the record for {H}?",
+    "What person claims the record for {H}?"
+   ],
+   "Who do I ask about {H}?": [
+    "To whom should I inquire about {H}?",
+    "Whom do I need to ask about {H}?",
+    "Who is the right person to ask about {H}?",
+    "Which person should I ask about {H}?",
+    "Can you suggest who I should ask about {H}?",
+    "Could you tell me who to ask about {H}?"
+   ]
+  },
+  "Q1a": {
+   "Is {H} an acquisition or a divestment?": [],
+   "Is {H} still open?": [
+    "Is {H} still operational?",
+    "Is {H} still functional?",
+    "Is {H} still available?",
+    "Is {H} still running?",
+    "Is {H} still accessible?",
+    "Is {H} still active?"
+   ]
+  },
+  "Q2a": {
+   "Which transactions this quarter are acquisitions?": [
+    "Which acquisitions took place this quarter?",
+    "This quarter, which transactions were acquisitions?",
+    "Can you tell me about the acquisitions in this quarter?",
+    "Could you specify which transactions this quarter involved acquisitions?",
+    "What were the acquisition-related transactions this quarter?",
+    "Could you identify which transactions this quarter represented acquisitions?"
+   ],
+   "Which investigations are still open?": [
+    "What investigations remain open?",
+    "Open investigations include which ones?",
+    "Can you tell me which investigations are still underway?",
+    "Which probes have yet to be closed?",
+    "Could you specify which investigations are not yet concluded?",
+    "What are the current investigations that have not been finalized?"
+   ]
+  },
+  "Q8": {
+   "What is the status of {FULL}?": [
+    "What is the current status of {FULL}?",
+    "Can you provide the status of {FULL}?",
+    "Could you tell me the status of {FULL}?",
+    "What stands as the status of {FULL}?",
+    "What has been the status of {FULL}?",
+    "What is the update on the status of {FULL}?"
+   ],
+   "Can you summarise {FULL}?": [
+    "Can you provide a summary of {FULL}?",
+    "Could you give a brief overview of {FULL}?",
+    "Would you mind summarizing {FULL} for me?",
+    "Do you have a concise summary of {FULL} available?",
+    "Can you offer a condensed version of {FULL}?",
+    "Shall you please summarize {FULL}?"
+   ],
+   "Give me the details of {FULL}.": [
+    "Provide the details of {FULL}",
+    "Supply the details of {FULL}",
+    "Hand over the details of {FULL}",
+    "State the details of {FULL}",
+    "Pass on the details of {FULL}",
+    "Share the details of {FULL}"
+   ]
+  }
+ }
+}

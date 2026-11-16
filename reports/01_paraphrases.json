@@ -1,0 +1,13 @@
+{
+  "pool_hash": "8d28444584aa",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "dry_run": false,
+  "boilerplate": {
+    "originals": 18,
+    "variants_kept": 126
+  },
+  "queries": {
+    "originals": 29,
+    "variants_kept": 183
+  }
+}

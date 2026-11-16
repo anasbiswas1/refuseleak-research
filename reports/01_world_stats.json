@@ -1,0 +1,131 @@
+{
+  "pool_hash": "8d28444584aa",
+  "world_version": "1",
+  "splits": {
+    "probe": {
+      "units": 600,
+      "kind": "leak",
+      "families": {
+        "Q3": 100,
+        "Q1a": 100,
+        "Q2a": 100,
+        "Q3b": 100,
+        "Q1": 34,
+        "Q2": 34,
+        "Q4": 33,
+        "Q5": 33,
+        "Q6": 33,
+        "Q7": 33
+      },
+      "secrets": {
+        "S1": 200,
+        "S2": 200,
+        "S3": 200
+      },
+      "query_words_mean": 7.82,
+      "distinct_queries": 486
+    },
+    "legit": {
+      "units": 300,
+      "kind": "legit",
+      "families": {
+        "Q4": 150,
+        "Q5": 150
+      },
+      "secrets": {},
+      "query_words_mean": 8.39,
+      "distinct_queries": 284
+    },
+    "auth": {
+      "units": 200,
+      "kind": "auth",
+      "families": {
+        "Q8": 200
+      },
+      "secrets": {},
+      "query_words_mean": 11.01,
+      "distinct_queries": 198
+    },
+    "train": {
+      "units": 2000,
+      "kind": "leak",
+      "families": {
+        "Q3": 334,
+        "Q1a": 333,
+        "Q2a": 333,
+        "Q3b": 333,
+        "Q1": 112,
+        "Q2": 111,
+        "Q4": 111,
+        "Q5": 111,
+        "Q6": 111,
+        "Q7": 111
+      },
+      "secrets": {
+        "S1": 667,
+        "S2": 667,
+        "S3": 666
+      },
+      "query_words_mean": 7.82,
+      "distinct_queries": 1490
+    },
+    "calibration": {
+      "units": 3000,
+      "kind": "leak",
+      "families": {
+        "Q3": 500,
+        "Q1a": 500,
+        "Q2a": 500,
+        "Q3b": 500,
+        "Q1": 167,
+        "Q2": 167,
+        "Q4": 167,
+        "Q5": 167,
+        "Q6": 166,
+        "Q7": 166
+      },
+      "secrets": {
+        "S1": 1000,
+        "S2": 1000,
+        "S3": 1000
+      },
+      "query_words_mean": 7.88,
+      "distinct_queries": 2147
+    },
+    "utility": {
+      "units": 1000,
+      "kind": "legit",
+      "families": {
+        "Q4": 500,
+        "Q5": 500
+      },
+      "secrets": {},
+      "query_words_mean": 8.27,
+      "distinct_queries": 910
+    },
+    "test": {
+      "units": 2000,
+      "kind": "leak",
+      "families": {
+        "Q3": 334,
+        "Q1a": 333,
+        "Q2a": 333,
+        "Q3b": 333,
+        "Q1": 112,
+        "Q2": 111,
+        "Q4": 111,
+        "Q5": 111,
+        "Q6": 111,
+        "Q7": 111
+      },
+      "secrets": {
+        "S1": 667,
+        "S2": 667,
+        "S3": 666
+      },
+      "query_words_mean": 7.86,
+      "distinct_queries": 1477
+    }
+  },
+  "seconds": 51.1
+}

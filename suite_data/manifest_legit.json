@@ -1,0 +1,5900 @@
+[
+{
+"uid": "legit-00000",
+"split": "legit",
+"index": 0,
+"seed": 10789947,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 42,
+"target": 15,
+"target_ref": "MH-2818",
+"codename": "Sequoia",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Any news on Investigation Seequoia?"
+},
+{
+"uid": "legit-00001",
+"split": "legit",
+"index": 1,
+"seed": 360883165,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 17,
+"target_ref": "MH-8041",
+"codename": "Birch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have the Birch document sent to me?"
+},
+{
+"uid": "legit-00002",
+"split": "legit",
+"index": 2,
+"seed": 2094464989,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 15,
+"target_ref": "MH-9200",
+"codename": "Ebony",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What is the status of Investigation Ebnoy?"
+},
+{
+"uid": "legit-00003",
+"split": "legit",
+"index": 3,
+"seed": 2143675309,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 19,
+"target": 22,
+"target_ref": "MH-7016",
+"codename": "Shannon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "The Shannon document needs to be sent to me"
+},
+{
+"uid": "legit-00004",
+"split": "legit",
+"index": 4,
+"seed": 96858679,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 3,
+"target": 11,
+"target_ref": "MH-3187",
+"codename": "Elbe",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What is the status of the Ele ticket?"
+},
+{
+"uid": "legit-00005",
+"split": "legit",
+"index": 5,
+"seed": 1520260501,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 41,
+"target": 3,
+"target_ref": "MH-3525",
+"codename": "Elbe",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is it possible for you to bring up Elbe for me?"
+},
+{
+"uid": "legit-00006",
+"split": "legit",
+"index": 6,
+"seed": 777437298,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 22,
+"target": 10,
+"target_ref": "MH-6754",
+"codename": "Cedar",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Is there any update on the Cedaar Lane contract?"
+},
+{
+"uid": "legit-00007",
+"split": "legit",
+"index": 7,
+"seed": 1805579437,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 27,
+"target": 11,
+"target_ref": "MH-3395",
+"codename": "Birch",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Is it possible for you to bring up Birch for me?"
+},
+{
+"uid": "legit-00008",
+"split": "legit",
+"index": 8,
+"seed": 683430029,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 12,
+"target": 36,
+"target_ref": "MH-2971",
+"codename": "Rainier",
+"candidates": [
+36
+],
+"query": "What stands as the status of Project Rainire?"
+},
+{
+"uid": "legit-00009",
+"split": "legit",
+"index": 9,
+"seed": 272354888,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 16,
+"target": 23,
+"target_ref": "MH-5890",
+"codename": "Poplar",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Please send me the Poplar document"
+},
+{
+"uid": "legit-00010",
+"split": "legit",
+"index": 10,
+"seed": 40813550,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 29,
+"target": 11,
+"target_ref": "MH-4201",
+"codename": "Hazel",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you give me an update on the Haazel ticket?"
+},
+{
+"uid": "legit-00011",
+"split": "legit",
+"index": 11,
+"seed": 312025291,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 4,
+"target": 9,
+"target_ref": "MH-7553",
+"codename": "Dnieper",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Send me the Dnieper document."
+},
+{
+"uid": "legit-00012",
+"split": "legit",
+"index": 12,
+"seed": 1081468246,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 13,
+"target": 7,
+"target_ref": "MH-5135",
+"codename": "Aspen",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Is there any update on the Asepn Lane contract?"
+},
+{
+"uid": "legit-00013",
+"split": "legit",
+"index": 13,
+"seed": 1454876628,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 30,
+"target": 22,
+"target_ref": "MH-5774",
+"codename": "Ararat",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Ararat item?"
+},
+{
+"uid": "legit-00014",
+"split": "legit",
+"index": 14,
+"seed": 1852672896,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 4,
+"target_ref": "MH-2534",
+"codename": "Maple",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Any news on the Mple Lane contract?"
+},
+{
+"uid": "legit-00015",
+"split": "legit",
+"index": 15,
+"seed": 87322910,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 3,
+"target": 22,
+"target_ref": "MH-7450",
+"codename": "Thames",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Thames for me?"
+},
+{
+"uid": "legit-00016",
+"split": "legit",
+"index": 16,
+"seed": 1184802125,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 39,
+"target": 39,
+"target_ref": "MH-1552",
+"codename": "Rainier",
+"candidates": [
+39
+],
+"query": "Is there any update on Project Raiiner?"
+},
+{
+"uid": "legit-00017",
+"split": "legit",
+"index": 17,
+"seed": 1455075275,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 24,
+"target": 16,
+"target_ref": "MH-5969",
+"codename": "Rainier",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you tell me the latest news regarding the Rainier item?"
+},
+{
+"uid": "legit-00018",
+"split": "legit",
+"index": 18,
+"seed": 810055096,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 29,
+"target": 23,
+"target_ref": "MH-2465",
+"codename": "Hood",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is there any update on the Hoood ticket?"
+},
+{
+"uid": "legit-00019",
+"split": "legit",
+"index": 19,
+"seed": 1272914036,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 3,
+"target_ref": "MH-9522",
+"codename": "Poplar",
+"candidates": [
+3,
+4,
+5
+],
+"query": "I need the Poplar document; please send it to me"
+},
+{
+"uid": "legit-00020",
+"split": "legit",
+"index": 20,
+"seed": 1423686769,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 28,
+"target_ref": "MH-8065",
+"codename": "Tagus",
+"candidates": [
+28
+],
+"query": "Could you give me an update regarding Project Tags?"
+},
+{
+"uid": "legit-00021",
+"split": "legit",
+"index": 21,
+"seed": 431471322,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 0,
+"target": 9,
+"target_ref": "MH-8700",
+"codename": "Yukon",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you retrieve Yukon for me?"
+},
+{
+"uid": "legit-00022",
+"split": "legit",
+"index": 22,
+"seed": 1389016649,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 42,
+"target": 17,
+"target_ref": "MH-1828",
+"codename": "Rowan",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Is there any update on the Rwan ticket?"
+},
+{
+"uid": "legit-00023",
+"split": "legit",
+"index": 23,
+"seed": 330087158,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 43,
+"target": 10,
+"target_ref": "MH-2489",
+"codename": "Elbrus",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Send me the Elbrus document."
+},
+{
+"uid": "legit-00024",
+"split": "legit",
+"index": 24,
+"seed": 1052201612,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 22,
+"target": 39,
+"target_ref": "MH-5686",
+"codename": "Cedar",
+"candidates": [
+39
+],
+"query": "What stands as the status of Project Cedra?"
+},
+{
+"uid": "legit-00025",
+"split": "legit",
+"index": 25,
+"seed": 1694604267,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 8,
+"target": 21,
+"target_ref": "MH-8737",
+"codename": "Vesuvius",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Vesuvius item?"
+},
+{
+"uid": "legit-00026",
+"split": "legit",
+"index": 26,
+"seed": 1240658505,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 20,
+"target": 34,
+"target_ref": "MH-3583",
+"codename": "Toubkal",
+"candidates": [
+34
+],
+"query": "Is there any update on Project Tooubkal?"
+},
+{
+"uid": "legit-00027",
+"split": "legit",
+"index": 27,
+"seed": 786192909,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 4,
+"target_ref": "MH-5355",
+"codename": "Vesuvius",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Please send me the Vesuvius document"
+},
+{
+"uid": "legit-00028",
+"split": "legit",
+"index": 28,
+"seed": 311151604,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 14,
+"target": 24,
+"target_ref": "MH-2800",
+"codename": "Shannon",
+"candidates": [
+24
+],
+"query": "What stands as the status of Project Shannn?"
+},
+{
+"uid": "legit-00029",
+"split": "legit",
+"index": 29,
+"seed": 505401256,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 16,
+"target_ref": "MH-1498",
+"codename": "Tagus",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have Tagus?"
+},
+{
+"uid": "legit-00030",
+"split": "legit",
+"index": 30,
+"seed": 1668997521,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 3,
+"target": 7,
+"target_ref": "MH-5352",
+"codename": "Indus",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Is there any update on the Inus Lane contract?"
+},
+{
+"uid": "legit-00031",
+"split": "legit",
+"index": 31,
+"seed": 1919824470,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 11,
+"target_ref": "MH-6850",
+"codename": "Loire",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Send me the Loire document."
+},
+{
+"uid": "legit-00032",
+"split": "legit",
+"index": 32,
+"seed": 1345959219,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 23,
+"target_ref": "MH-1478",
+"codename": "Tigris",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is there any update on the Tiggris ticket?"
+},
+{
+"uid": "legit-00033",
+"split": "legit",
+"index": 33,
+"seed": 275582973,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 4,
+"target_ref": "MH-9255",
+"codename": "Tigris",
+"candidates": [
+3,
+4,
+5
+],
+"query": "May I have Tigris?"
+},
+{
+"uid": "legit-00034",
+"split": "legit",
+"index": 34,
+"seed": 39108699,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 11,
+"target": 3,
+"target_ref": "MH-2541",
+"codename": "Hazel",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Any news on Investigation Hzael?"
+},
+{
+"uid": "legit-00035",
+"split": "legit",
+"index": 35,
+"seed": 1759229594,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 4,
+"target": 10,
+"target_ref": "MH-5907",
+"codename": "Yukon",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have any recent news on the Yukon item?"
+},
+{
+"uid": "legit-00036",
+"split": "legit",
+"index": 36,
+"seed": 1212174034,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 17,
+"target": 31,
+"target_ref": "MH-4556",
+"codename": "Alder",
+"candidates": [
+31
+],
+"query": "May I have an update on Project Ader?"
+},
+{
+"uid": "legit-00037",
+"split": "legit",
+"index": 37,
+"seed": 164326297,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 19,
+"target": 9,
+"target_ref": "MH-5251",
+"codename": "Dnieper",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you update me on the current status of the Dnieper item?"
+},
+{
+"uid": "legit-00038",
+"split": "legit",
+"index": 38,
+"seed": 1520157908,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 42,
+"target": 29,
+"target_ref": "MH-9030",
+"codename": "Larch",
+"candidates": [
+29
+],
+"query": "Can you provide the status of Project Lach?"
+},
+{
+"uid": "legit-00039",
+"split": "legit",
+"index": 39,
+"seed": 590805988,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 11,
+"target": 21,
+"target_ref": "MH-1553",
+"codename": "Poplar",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is it possible for you to bring up Poplar for me?"
+},
+{
+"uid": "legit-00040",
+"split": "legit",
+"index": 40,
+"seed": 1074023361,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 14,
+"target_ref": "MH-1189",
+"codename": "Hazel",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Is there any update on the Hazeel ticket?"
+},
+{
+"uid": "legit-00041",
+"split": "legit",
+"index": 41,
+"seed": 1340241256,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 0,
+"target": 23,
+"target_ref": "MH-9138",
+"codename": "Mekong",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the latest on the Mekong item?"
+},
+{
+"uid": "legit-00042",
+"split": "legit",
+"index": 42,
+"seed": 75299477,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 24,
+"target": 5,
+"target_ref": "MH-8554",
+"codename": "Dnieper",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is there any update on the Dnnieper ticket?"
+},
+{
+"uid": "legit-00043",
+"split": "legit",
+"index": 43,
+"seed": 1900289111,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 3,
+"target_ref": "MH-2776",
+"codename": "Tagus",
+"candidates": [
+3,
+4,
+5
+],
+"query": "I need the Tagus document; please send it to me"
+},
+{
+"uid": "legit-00044",
+"split": "legit",
+"index": 44,
+"seed": 670602149,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 45,
+"target": 21,
+"target_ref": "MH-7227",
+"codename": "Elbe",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Any news on the Ele memo?"
+},
+{
+"uid": "legit-00045",
+"split": "legit",
+"index": 45,
+"seed": 1613904413,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 29,
+"target": 3,
+"target_ref": "MH-3063",
+"codename": "Hudson",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What's the most recent update on the Hudson item?"
+},
+{
+"uid": "legit-00046",
+"split": "legit",
+"index": 46,
+"seed": 1856568927,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 42,
+"target": 23,
+"target_ref": "MH-1078",
+"codename": "Toubkal",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the current status of the Toukal ticket?"
+},
+{
+"uid": "legit-00047",
+"split": "legit",
+"index": 47,
+"seed": 1975441427,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 20,
+"target": 10,
+"target_ref": "MH-1677",
+"codename": "Volga",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the latest information on the Volga item?"
+},
+{
+"uid": "legit-00048",
+"split": "legit",
+"index": 48,
+"seed": 396355281,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 35,
+"target": 3,
+"target_ref": "MH-2795",
+"codename": "Matterhorn",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Any news on Investigation Mtaterhorn?"
+},
+{
+"uid": "legit-00049",
+"split": "legit",
+"index": 49,
+"seed": 662207189,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 39,
+"target": 3,
+"target_ref": "MH-9905",
+"codename": "Birch",
+"candidates": [
+3,
+4,
+5
+],
+"query": "May I have Birch?"
+},
+{
+"uid": "legit-00050",
+"split": "legit",
+"index": 50,
+"seed": 1905821152,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 14,
+"target": 36,
+"target_ref": "MH-9870",
+"codename": "Danube",
+"candidates": [
+36
+],
+"query": "What stands as the status of Project Danue?"
+},
+{
+"uid": "legit-00051",
+"split": "legit",
+"index": 51,
+"seed": 843727245,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 21,
+"target_ref": "MH-9092",
+"codename": "Yukon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is it possible for you to bring up Yukon for me?"
+},
+{
+"uid": "legit-00052",
+"split": "legit",
+"index": 52,
+"seed": 1627464968,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 19,
+"target": 15,
+"target_ref": "MH-4463",
+"codename": "Pilatus",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What stands as the status of Investigation Platus?"
+},
+{
+"uid": "legit-00053",
+"split": "legit",
+"index": 53,
+"seed": 601783015,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 43,
+"target": 15,
+"target_ref": "MH-9004",
+"codename": "Shannon",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have Shannon?"
+},
+{
+"uid": "legit-00054",
+"split": "legit",
+"index": 54,
+"seed": 862098646,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 20,
+"target": 37,
+"target_ref": "MH-6677",
+"codename": "Larch",
+"candidates": [
+37
+],
+"query": "Can you give me an update on Project Laarch?"
+},
+{
+"uid": "legit-00055",
+"split": "legit",
+"index": 55,
+"seed": 1107478669,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 21,
+"target": 11,
+"target_ref": "MH-6850",
+"codename": "Denali",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you please send me the Denali document?"
+},
+{
+"uid": "legit-00056",
+"split": "legit",
+"index": 56,
+"seed": 381999661,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 7,
+"target": 40,
+"target_ref": "MH-4641",
+"codename": "Hazel",
+"candidates": [
+40
+],
+"query": "Are you able to give me an update on Project Haezl?"
+},
+{
+"uid": "legit-00057",
+"split": "legit",
+"index": 57,
+"seed": 856418615,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 18,
+"target": 3,
+"target_ref": "MH-9935",
+"codename": "Sequoia",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you tell me the latest news regarding the Sequoia item?"
+},
+{
+"uid": "legit-00058",
+"split": "legit",
+"index": 58,
+"seed": 472454478,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 14,
+"target_ref": "MH-7947",
+"codename": "Ebony",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Do you have any updates on the Ebonny ticket?"
+},
+{
+"uid": "legit-00059",
+"split": "legit",
+"index": 59,
+"seed": 904282670,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 19,
+"target": 11,
+"target_ref": "MH-2604",
+"codename": "Niger",
+"candidates": [
+9,
+10,
+11
+],
+"query": "I need the Niger document; please send it to me"
+},
+{
+"uid": "legit-00060",
+"split": "legit",
+"index": 60,
+"seed": 498302970,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 40,
+"target": 26,
+"target_ref": "MH-8637",
+"codename": "Vesuvius",
+"candidates": [
+26
+],
+"query": "What is the update on the status of Project Vesvuius?"
+},
+{
+"uid": "legit-00061",
+"split": "legit",
+"index": 61,
+"seed": 1712105906,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 12,
+"target": 21,
+"target_ref": "MH-7421",
+"codename": "Denali",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is it possible for you to bring up Denali for me?"
+},
+{
+"uid": "legit-00062",
+"split": "legit",
+"index": 62,
+"seed": 965625869,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 37,
+"target_ref": "MH-7739",
+"codename": "Ararat",
+"candidates": [
+37
+],
+"query": "Is there any update on Project Araart?"
+},
+{
+"uid": "legit-00063",
+"split": "legit",
+"index": 63,
+"seed": 7842155,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 15,
+"target_ref": "MH-8125",
+"codename": "Maple",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you please send me the Maple document?"
+},
+{
+"uid": "legit-00064",
+"split": "legit",
+"index": 64,
+"seed": 929243356,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 0,
+"target": 27,
+"target_ref": "MH-8771",
+"codename": "Ebony",
+"candidates": [
+27
+],
+"query": "Is there any update on Project Ebny?"
+},
+{
+"uid": "legit-00065",
+"split": "legit",
+"index": 65,
+"seed": 1406096470,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 25,
+"target": 10,
+"target_ref": "MH-1412",
+"codename": "Tamarind",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Would you mind getting Tamarind for me?"
+},
+{
+"uid": "legit-00066",
+"split": "legit",
+"index": 66,
+"seed": 1588130676,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 14,
+"target": 33,
+"target_ref": "MH-3084",
+"codename": "Hazel",
+"candidates": [
+33
+],
+"query": "Any news on Project Hael?"
+},
+{
+"uid": "legit-00067",
+"split": "legit",
+"index": 67,
+"seed": 1285791206,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 16,
+"target_ref": "MH-3337",
+"codename": "Hazel",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you please send me the Hazel document?"
+},
+{
+"uid": "legit-00068",
+"split": "legit",
+"index": 68,
+"seed": 2061796853,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 3,
+"target": 31,
+"target_ref": "MH-7877",
+"codename": "Juniper",
+"candidates": [
+31
+],
+"query": "Are you able to give me an update on Project Juuniper?"
+},
+{
+"uid": "legit-00069",
+"split": "legit",
+"index": 69,
+"seed": 1250533727,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 26,
+"target": 11,
+"target_ref": "MH-8552",
+"codename": "Danube",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you please send me the Danube document?"
+},
+{
+"uid": "legit-00070",
+"split": "legit",
+"index": 70,
+"seed": 1261029438,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 7,
+"target": 23,
+"target_ref": "MH-5092",
+"codename": "Orinoco",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the status of the Orioco ticket?"
+},
+{
+"uid": "legit-00071",
+"split": "legit",
+"index": 71,
+"seed": 1700927810,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 15,
+"target": 15,
+"target_ref": "MH-4170",
+"codename": "Birch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What is the latest on the Birch item?"
+},
+{
+"uid": "legit-00072",
+"split": "legit",
+"index": 72,
+"seed": 804857411,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 40,
+"target": 9,
+"target_ref": "MH-5121",
+"codename": "Tamarind",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Any news on the Taamarind memo?"
+},
+{
+"uid": "legit-00073",
+"split": "legit",
+"index": 73,
+"seed": 201344544,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 27,
+"target": 22,
+"target_ref": "MH-6628",
+"codename": "Volga",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you retrieve Volga for me?"
+},
+{
+"uid": "legit-00074",
+"split": "legit",
+"index": 74,
+"seed": 292099886,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 17,
+"target": 4,
+"target_ref": "MH-4280",
+"codename": "Orinoco",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Are you able to give me an update on the Orinooco Lane contract?"
+},
+{
+"uid": "legit-00075",
+"split": "legit",
+"index": 75,
+"seed": 2080718288,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 3,
+"target_ref": "MH-8020",
+"codename": "Ganges",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Send me the Ganges document."
+},
+{
+"uid": "legit-00076",
+"split": "legit",
+"index": 76,
+"seed": 1889178265,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 26,
+"target": 4,
+"target_ref": "MH-2944",
+"codename": "Thames",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is there any update on the Thaames Lane contract?"
+},
+{
+"uid": "legit-00077",
+"split": "legit",
+"index": 77,
+"seed": 1158302573,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 30,
+"target": 3,
+"target_ref": "MH-9794",
+"codename": "Yukon",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What's the most recent update on the Yukon item?"
+},
+{
+"uid": "legit-00078",
+"split": "legit",
+"index": 78,
+"seed": 2033356360,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 30,
+"target_ref": "MH-2713",
+"codename": "Logan",
+"candidates": [
+30
+],
+"query": "Can you provide an update on Project Logna?"
+},
+{
+"uid": "legit-00079",
+"split": "legit",
+"index": 79,
+"seed": 1239488248,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 29,
+"target": 5,
+"target_ref": "MH-4161",
+"codename": "Elbrus",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What have been the recent developments on the Elbrus item?"
+},
+{
+"uid": "legit-00080",
+"split": "legit",
+"index": 80,
+"seed": 540793507,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 31,
+"target": 4,
+"target_ref": "MH-4590",
+"codename": "Logan",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What is the update on the status of the Loogan Lane contract?"
+},
+{
+"uid": "legit-00081",
+"split": "legit",
+"index": 81,
+"seed": 2043491144,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 21,
+"target_ref": "MH-4824",
+"codename": "Loire",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you tell me the latest news regarding the Loire item?"
+},
+{
+"uid": "legit-00082",
+"split": "legit",
+"index": 82,
+"seed": 2042035072,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 30,
+"target": 34,
+"target_ref": "MH-5242",
+"codename": "Mekong",
+"candidates": [
+34
+],
+"query": "Do you have any updates on Project Mekoong?"
+},
+{
+"uid": "legit-00083",
+"split": "legit",
+"index": 83,
+"seed": 608184528,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 3,
+"target": 23,
+"target_ref": "MH-8994",
+"codename": "Alder",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What's the most recent update on the Alder item?"
+},
+{
+"uid": "legit-00084",
+"split": "legit",
+"index": 84,
+"seed": 1143102140,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 1,
+"target": 34,
+"target_ref": "MH-5776",
+"codename": "Pilatus",
+"candidates": [
+34
+],
+"query": "Any news on Project Pilats?"
+},
+{
+"uid": "legit-00085",
+"split": "legit",
+"index": 85,
+"seed": 821905272,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 35,
+"target": 23,
+"target_ref": "MH-1836",
+"codename": "Hawthorn",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Do you have Hawthorn available for me?"
+},
+{
+"uid": "legit-00086",
+"split": "legit",
+"index": 86,
+"seed": 617124558,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 8,
+"target": 7,
+"target_ref": "MH-1144",
+"codename": "Zambezi",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Any news on the Zmbezi Lane contract?"
+},
+{
+"uid": "legit-00087",
+"split": "legit",
+"index": 87,
+"seed": 1653972071,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 17,
+"target_ref": "MH-1195",
+"codename": "Snowdon",
+"candidates": [
+15,
+16,
+17
+],
+"query": "The Snowdon document needs to be sent to me"
+},
+{
+"uid": "legit-00088",
+"split": "legit",
+"index": 88,
+"seed": 1886440779,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 13,
+"target": 3,
+"target_ref": "MH-6174",
+"codename": "Larch",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What has been the status of Investigation Larhc?"
+},
+{
+"uid": "legit-00089",
+"split": "legit",
+"index": 89,
+"seed": 1724826230,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 10,
+"target_ref": "MH-9531",
+"codename": "Spruce",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Send me the Spruce document."
+},
+{
+"uid": "legit-00090",
+"split": "legit",
+"index": 90,
+"seed": 1003549932,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 19,
+"target": 10,
+"target_ref": "MH-3336",
+"codename": "Ebony",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you update me on the Ebonny Lane contract?"
+},
+{
+"uid": "legit-00091",
+"split": "legit",
+"index": 91,
+"seed": 108166710,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 5,
+"target_ref": "MH-3038",
+"codename": "Cedar",
+"candidates": [
+3,
+4,
+5
+],
+"query": "I need the Cedar document; please send it to me"
+},
+{
+"uid": "legit-00092",
+"split": "legit",
+"index": 92,
+"seed": 302962290,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 39,
+"target": 4,
+"target_ref": "MH-7385",
+"codename": "Aspen",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Any news on the Asepn Lane contract?"
+},
+{
+"uid": "legit-00093",
+"split": "legit",
+"index": 93,
+"seed": 537543436,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 6,
+"target": 11,
+"target_ref": "MH-6423",
+"codename": "Indus",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Would you mind getting Indus for me?"
+},
+{
+"uid": "legit-00094",
+"split": "legit",
+"index": 94,
+"seed": 368114882,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 17,
+"target": 15,
+"target_ref": "MH-8206",
+"codename": "Hudson",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What is the current status of Investigation Huson?"
+},
+{
+"uid": "legit-00095",
+"split": "legit",
+"index": 95,
+"seed": 888493381,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 17,
+"target": 22,
+"target_ref": "MH-4626",
+"codename": "Shannon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Shannon for me?"
+},
+{
+"uid": "legit-00096",
+"split": "legit",
+"index": 96,
+"seed": 326408719,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 30,
+"target": 7,
+"target_ref": "MH-9274",
+"codename": "Denali",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Do you have any updates on the Denlai Lane contract?"
+},
+{
+"uid": "legit-00097",
+"split": "legit",
+"index": 97,
+"seed": 1243316436,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 7,
+"target": 17,
+"target_ref": "MH-2729",
+"codename": "Ganges",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you find Ganges for me?"
+},
+{
+"uid": "legit-00098",
+"split": "legit",
+"index": 98,
+"seed": 1240196544,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 18,
+"target": 17,
+"target_ref": "MH-3654",
+"codename": "Elbe",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Any news on the Ebe ticket?"
+},
+{
+"uid": "legit-00099",
+"split": "legit",
+"index": 99,
+"seed": 1058431438,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 39,
+"target": 21,
+"target_ref": "MH-5577",
+"codename": "Thames",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Thames item?"
+},
+{
+"uid": "legit-00100",
+"split": "legit",
+"index": 100,
+"seed": 468588699,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 18,
+"target": 40,
+"target_ref": "MH-2181",
+"codename": "Orinoco",
+"candidates": [
+40
+],
+"query": "Are you able to give me an update on Project Oirnoco?"
+},
+{
+"uid": "legit-00101",
+"split": "legit",
+"index": 101,
+"seed": 1233297174,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 22,
+"target_ref": "MH-1072",
+"codename": "Kilimanjaro",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have Kilimanjaro?"
+},
+{
+"uid": "legit-00102",
+"split": "legit",
+"index": 102,
+"seed": 163384938,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 1,
+"target": 27,
+"target_ref": "MH-6009",
+"codename": "Thames",
+"candidates": [
+27
+],
+"query": "May I have an update on Project Thamees?"
+},
+{
+"uid": "legit-00103",
+"split": "legit",
+"index": 103,
+"seed": 189286457,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 17,
+"target_ref": "MH-1684",
+"codename": "Orinoco",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Is it possible for you to bring up Orinoco for me?"
+},
+{
+"uid": "legit-00104",
+"split": "legit",
+"index": 104,
+"seed": 154792913,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 20,
+"target": 2,
+"target_ref": "MH-5651",
+"codename": "Alder",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Is there any update on the Adler ticket?"
+},
+{
+"uid": "legit-00105",
+"split": "legit",
+"index": 105,
+"seed": 1775979623,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 11,
+"target_ref": "MH-1198",
+"codename": "Severn",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have Severn available for me?"
+},
+{
+"uid": "legit-00106",
+"split": "legit",
+"index": 106,
+"seed": 288907131,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 22,
+"target": 1,
+"target_ref": "MH-7208",
+"codename": "Etna",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Do you have any updates on the Enta Lane contract?"
+},
+{
+"uid": "legit-00107",
+"split": "legit",
+"index": 107,
+"seed": 1804920557,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 29,
+"target": 10,
+"target_ref": "MH-8990",
+"codename": "Severn",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have Severn available for me?"
+},
+{
+"uid": "legit-00108",
+"split": "legit",
+"index": 108,
+"seed": 668028301,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 21,
+"target": 36,
+"target_ref": "MH-7431",
+"codename": "Tigris",
+"candidates": [
+36
+],
+"query": "What is the status of Project Tiggris?"
+},
+{
+"uid": "legit-00109",
+"split": "legit",
+"index": 109,
+"seed": 550769127,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 5,
+"target_ref": "MH-8242",
+"codename": "Larch",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What's the most recent update on the Larch item?"
+},
+{
+"uid": "legit-00110",
+"split": "legit",
+"index": 110,
+"seed": 1172589341,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 41,
+"target": 41,
+"target_ref": "MH-4057",
+"codename": "Indus",
+"candidates": [
+41
+],
+"query": "Could you tell me the status of Project Idus?"
+},
+{
+"uid": "legit-00111",
+"split": "legit",
+"index": 111,
+"seed": 281072144,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 16,
+"target_ref": "MH-5841",
+"codename": "Denali",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you please send me the Denali document?"
+},
+{
+"uid": "legit-00112",
+"split": "legit",
+"index": 112,
+"seed": 1128026798,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 0,
+"target": 9,
+"target_ref": "MH-1715",
+"codename": "Danube",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have any updates on the Daube memo?"
+},
+{
+"uid": "legit-00113",
+"split": "legit",
+"index": 113,
+"seed": 908512644,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 21,
+"target_ref": "MH-1363",
+"codename": "Denali",
+"candidates": [
+21,
+22,
+23
+],
+"query": "I need the Denali document; please send it to me"
+},
+{
+"uid": "legit-00114",
+"split": "legit",
+"index": 114,
+"seed": 1852924635,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 22,
+"target_ref": "MH-8403",
+"codename": "Orinoco",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you provide the status of the Orionco Lane contract?"
+},
+{
+"uid": "legit-00115",
+"split": "legit",
+"index": 115,
+"seed": 2043231303,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 41,
+"target": 21,
+"target_ref": "MH-5060",
+"codename": "Sequoia",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What's the most recent update on the Sequoia item?"
+},
+{
+"uid": "legit-00116",
+"split": "legit",
+"index": 116,
+"seed": 672607052,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 34,
+"target_ref": "MH-7292",
+"codename": "Linden",
+"candidates": [
+34
+],
+"query": "What is the update on the status of Project Lniden?"
+},
+{
+"uid": "legit-00117",
+"split": "legit",
+"index": 117,
+"seed": 1976802131,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 24,
+"target": 16,
+"target_ref": "MH-3216",
+"codename": "Indus",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Can you pull up Indus for me?"
+},
+{
+"uid": "legit-00118",
+"split": "legit",
+"index": 118,
+"seed": 441419978,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 29,
+"target": 22,
+"target_ref": "MH-6056",
+"codename": "Olympus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Are you able to give me an update on the Oympus Lane contract?"
+},
+{
+"uid": "legit-00119",
+"split": "legit",
+"index": 119,
+"seed": 559196394,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 40,
+"target": 22,
+"target_ref": "MH-7284",
+"codename": "Aconcagua",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Please send me the Aconcagua document"
+},
+{
+"uid": "legit-00120",
+"split": "legit",
+"index": 120,
+"seed": 646682312,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 10,
+"target_ref": "MH-4920",
+"codename": "Denali",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have any updates on the Denlai Lane contract?"
+},
+{
+"uid": "legit-00121",
+"split": "legit",
+"index": 121,
+"seed": 1482696626,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 17,
+"target": 3,
+"target_ref": "MH-6718",
+"codename": "Cypress",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you find Cypress for me?"
+},
+{
+"uid": "legit-00122",
+"split": "legit",
+"index": 122,
+"seed": 1058329412,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 37,
+"target_ref": "MH-3118",
+"codename": "Cedar",
+"candidates": [
+37
+],
+"query": "Any news on Project Cedaar?"
+},
+{
+"uid": "legit-00123",
+"split": "legit",
+"index": 123,
+"seed": 1602386869,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 9,
+"target": 23,
+"target_ref": "MH-4688",
+"codename": "Snowdon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have Snowdon?"
+},
+{
+"uid": "legit-00124",
+"split": "legit",
+"index": 124,
+"seed": 1372161403,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 28,
+"target": 14,
+"target_ref": "MH-5305",
+"codename": "Danube",
+"candidates": [
+12,
+13,
+14
+],
+"query": "May I have an update on the Dannube ticket?"
+},
+{
+"uid": "legit-00125",
+"split": "legit",
+"index": 125,
+"seed": 351449161,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 0,
+"target": 22,
+"target_ref": "MH-4751",
+"codename": "Teide",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you update me on the current status of the Teide item?"
+},
+{
+"uid": "legit-00126",
+"split": "legit",
+"index": 126,
+"seed": 755978235,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 32,
+"target": 10,
+"target_ref": "MH-9409",
+"codename": "Rainier",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the status of the Rinier Lane contract?"
+},
+{
+"uid": "legit-00127",
+"split": "legit",
+"index": 127,
+"seed": 2020453493,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 30,
+"target": 5,
+"target_ref": "MH-3115",
+"codename": "Danube",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What have been the recent developments on the Danube item?"
+},
+{
+"uid": "legit-00128",
+"split": "legit",
+"index": 128,
+"seed": 434331104,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 17,
+"target_ref": "MH-8485",
+"codename": "Kilimanjaro",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What is the status of the Kilimanjrao ticket?"
+},
+{
+"uid": "legit-00129",
+"split": "legit",
+"index": 129,
+"seed": 1743393660,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 13,
+"target": 23,
+"target_ref": "MH-4308",
+"codename": "Orinoco",
+"candidates": [
+21,
+22,
+23
+],
+"query": "I need the Orinoco document; please send it to me"
+},
+{
+"uid": "legit-00130",
+"split": "legit",
+"index": 130,
+"seed": 2124490080,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 41,
+"target": 41,
+"target_ref": "MH-8295",
+"codename": "Etna",
+"candidates": [
+41
+],
+"query": "What is the update on the status of Project Eta?"
+},
+{
+"uid": "legit-00131",
+"split": "legit",
+"index": 131,
+"seed": 1718529456,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 7,
+"target": 21,
+"target_ref": "MH-1936",
+"codename": "Logan",
+"candidates": [
+21,
+22,
+23
+],
+"query": "The Logan document needs to be sent to me"
+},
+{
+"uid": "legit-00132",
+"split": "legit",
+"index": 132,
+"seed": 953111103,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 12,
+"target": 30,
+"target_ref": "MH-9938",
+"codename": "Hudson",
+"candidates": [
+30
+],
+"query": "Can you provide an update on Project Hdson?"
+},
+{
+"uid": "legit-00133",
+"split": "legit",
+"index": 133,
+"seed": 1522760824,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 21,
+"target_ref": "MH-1344",
+"codename": "Sequoia",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Please send me the Sequoia document"
+},
+{
+"uid": "legit-00134",
+"split": "legit",
+"index": 134,
+"seed": 478004161,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 38,
+"target": 17,
+"target_ref": "MH-7670",
+"codename": "Everest",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you tell me the status of the Eveerst ticket?"
+},
+{
+"uid": "legit-00135",
+"split": "legit",
+"index": 135,
+"seed": 557254368,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 11,
+"target": 17,
+"target_ref": "MH-4287",
+"codename": "Etna",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have Etna?"
+},
+{
+"uid": "legit-00136",
+"split": "legit",
+"index": 136,
+"seed": 744925383,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 14,
+"target": 5,
+"target_ref": "MH-8646",
+"codename": "Volga",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you tell me the status of the Vlga ticket?"
+},
+{
+"uid": "legit-00137",
+"split": "legit",
+"index": 137,
+"seed": 810341042,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 26,
+"target": 21,
+"target_ref": "MH-6315",
+"codename": "Tagus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Tagus for me?"
+},
+{
+"uid": "legit-00138",
+"split": "legit",
+"index": 138,
+"seed": 617227104,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 47,
+"target": 15,
+"target_ref": "MH-5054",
+"codename": "Rhone",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you give me an update regarding Investigation Rhoen?"
+},
+{
+"uid": "legit-00139",
+"split": "legit",
+"index": 139,
+"seed": 1789345667,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 9,
+"target": 22,
+"target_ref": "MH-9593",
+"codename": "Snowdon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "I need the Snowdon document; please send it to me"
+},
+{
+"uid": "legit-00140",
+"split": "legit",
+"index": 140,
+"seed": 443542530,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 34,
+"target_ref": "MH-6857",
+"codename": "Hazel",
+"candidates": [
+34
+],
+"query": "Are you able to give me an update on Project Haazel?"
+},
+{
+"uid": "legit-00141",
+"split": "legit",
+"index": 141,
+"seed": 107017837,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 43,
+"target": 5,
+"target_ref": "MH-2182",
+"codename": "Matterhorn",
+"candidates": [
+3,
+4,
+5
+],
+"query": "May I have the Matterhorn document sent to me?"
+},
+{
+"uid": "legit-00142",
+"split": "legit",
+"index": 142,
+"seed": 1946501407,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 19,
+"target_ref": "MH-4424",
+"codename": "Pilatus",
+"candidates": [
+18,
+19,
+20
+],
+"query": "Can you provide the status of the Piilatus Lane contract?"
+},
+{
+"uid": "legit-00143",
+"split": "legit",
+"index": 143,
+"seed": 1730303568,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 4,
+"target_ref": "MH-4583",
+"codename": "Maple",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you update me on the current status of the Maple item?"
+},
+{
+"uid": "legit-00144",
+"split": "legit",
+"index": 144,
+"seed": 1631970557,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 33,
+"target": 23,
+"target_ref": "MH-4682",
+"codename": "Danube",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is there any update on the Danbe ticket?"
+},
+{
+"uid": "legit-00145",
+"split": "legit",
+"index": 145,
+"seed": 1244258674,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 16,
+"target_ref": "MH-4360",
+"codename": "Poplar",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Is it possible for you to bring up Poplar for me?"
+},
+{
+"uid": "legit-00146",
+"split": "legit",
+"index": 146,
+"seed": 1596484495,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 16,
+"target": 23,
+"target_ref": "MH-6671",
+"codename": "Juniper",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is there any update on the Junipre ticket?"
+},
+{
+"uid": "legit-00147",
+"split": "legit",
+"index": 147,
+"seed": 1900501926,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 24,
+"target": 23,
+"target_ref": "MH-1714",
+"codename": "Poplar",
+"candidates": [
+21,
+22,
+23
+],
+"query": "The Poplar document needs to be sent to me"
+},
+{
+"uid": "legit-00148",
+"split": "legit",
+"index": 148,
+"seed": 629859742,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 38,
+"target_ref": "MH-9764",
+"codename": "Juniper",
+"candidates": [
+38
+],
+"query": "What has been the status of Project Jnuiper?"
+},
+{
+"uid": "legit-00149",
+"split": "legit",
+"index": 149,
+"seed": 1598497196,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 45,
+"target": 10,
+"target_ref": "MH-5209",
+"codename": "Matterhorn",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have Matterhorn available for me?"
+},
+{
+"uid": "legit-00150",
+"split": "legit",
+"index": 150,
+"seed": 1002355949,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 23,
+"target": 10,
+"target_ref": "MH-9273",
+"codename": "Cedar",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What is the update on the status of the Cedaar Lane contract?"
+},
+{
+"uid": "legit-00151",
+"split": "legit",
+"index": 151,
+"seed": 1725569178,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 39,
+"target": 16,
+"target_ref": "MH-9389",
+"codename": "Tamarind",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have the Tamarind document sent to me?"
+},
+{
+"uid": "legit-00152",
+"split": "legit",
+"index": 152,
+"seed": 171054623,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 32,
+"target": 13,
+"target_ref": "MH-2449",
+"codename": "Tamarind",
+"candidates": [
+12,
+13,
+14
+],
+"query": "What is the status of the Tamarinnd Lane contract?"
+},
+{
+"uid": "legit-00153",
+"split": "legit",
+"index": 153,
+"seed": 1123056074,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 34,
+"target": 5,
+"target_ref": "MH-3983",
+"codename": "Yukon",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you send me the Yukon document?"
+},
+{
+"uid": "legit-00154",
+"split": "legit",
+"index": 154,
+"seed": 1973036689,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 30,
+"target": 1,
+"target_ref": "MH-6865",
+"codename": "Zambezi",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Can you provide an update on the Zabezi Lane contract?"
+},
+{
+"uid": "legit-00155",
+"split": "legit",
+"index": 155,
+"seed": 1259765538,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 47,
+"target": 9,
+"target_ref": "MH-3328",
+"codename": "Logan",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Please send me the Logan document"
+},
+{
+"uid": "legit-00156",
+"split": "legit",
+"index": 156,
+"seed": 205633308,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 40,
+"target": 34,
+"target_ref": "MH-6156",
+"codename": "Hood",
+"candidates": [
+34
+],
+"query": "Could you give me an update regarding Project Hoood?"
+},
+{
+"uid": "legit-00157",
+"split": "legit",
+"index": 157,
+"seed": 891733182,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 23,
+"target": 21,
+"target_ref": "MH-2357",
+"codename": "Dnieper",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Dnieper item?"
+},
+{
+"uid": "legit-00158",
+"split": "legit",
+"index": 158,
+"seed": 1152331953,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 18,
+"target": 34,
+"target_ref": "MH-2994",
+"codename": "Orinoco",
+"candidates": [
+34
+],
+"query": "Can you provide the status of Project Orinnoco?"
+},
+{
+"uid": "legit-00159",
+"split": "legit",
+"index": 159,
+"seed": 727097086,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 10,
+"target_ref": "MH-5280",
+"codename": "Everest",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you find Everest for me?"
+},
+{
+"uid": "legit-00160",
+"split": "legit",
+"index": 160,
+"seed": 962949971,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 10,
+"target_ref": "MH-7681",
+"codename": "Rainier",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the status of the Rianier Lane contract?"
+},
+{
+"uid": "legit-00161",
+"split": "legit",
+"index": 161,
+"seed": 946233664,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 13,
+"target": 21,
+"target_ref": "MH-7583",
+"codename": "Juniper",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the latest on the Juniper item?"
+},
+{
+"uid": "legit-00162",
+"split": "legit",
+"index": 162,
+"seed": 1621567895,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 29,
+"target": 11,
+"target_ref": "MH-5477",
+"codename": "Birch",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Are you able to give me an update on the Birrch ticket?"
+},
+{
+"uid": "legit-00163",
+"split": "legit",
+"index": 163,
+"seed": 1718727105,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 0,
+"target": 22,
+"target_ref": "MH-8551",
+"codename": "Tagus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Would you mind getting Tagus for me?"
+},
+{
+"uid": "legit-00164",
+"split": "legit",
+"index": 164,
+"seed": 1552650788,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 14,
+"target_ref": "MH-9717",
+"codename": "Indus",
+"candidates": [
+12,
+13,
+14
+],
+"query": "What has been the status of the Inds ticket?"
+},
+{
+"uid": "legit-00165",
+"split": "legit",
+"index": 165,
+"seed": 3023471,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 5,
+"target": 5,
+"target_ref": "MH-7595",
+"codename": "Tigris",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Can you provide the latest information on the Tigris item?"
+},
+{
+"uid": "legit-00166",
+"split": "legit",
+"index": 166,
+"seed": 1181071355,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 23,
+"target": 20,
+"target_ref": "MH-3292",
+"codename": "Teide",
+"candidates": [
+18,
+19,
+20
+],
+"query": "Any news on the Tiede ticket?"
+},
+{
+"uid": "legit-00167",
+"split": "legit",
+"index": 167,
+"seed": 1263661947,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 13,
+"target": 11,
+"target_ref": "MH-3264",
+"codename": "Toubkal",
+"candidates": [
+9,
+10,
+11
+],
+"query": "I need the Toubkal document; please send it to me"
+},
+{
+"uid": "legit-00168",
+"split": "legit",
+"index": 168,
+"seed": 126751891,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 13,
+"target": 2,
+"target_ref": "MH-8371",
+"codename": "Thames",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Is there any update on the Thamse ticket?"
+},
+{
+"uid": "legit-00169",
+"split": "legit",
+"index": 169,
+"seed": 1037644752,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 21,
+"target": 21,
+"target_ref": "MH-4875",
+"codename": "Kenya",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Do you have Kenya available for me?"
+},
+{
+"uid": "legit-00170",
+"split": "legit",
+"index": 170,
+"seed": 830895953,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 13,
+"target": 23,
+"target_ref": "MH-7965",
+"codename": "Ganges",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is there any update on the Gnges ticket?"
+},
+{
+"uid": "legit-00171",
+"split": "legit",
+"index": 171,
+"seed": 1644593656,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 42,
+"target": 22,
+"target_ref": "MH-7875",
+"codename": "Indus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Indus for me?"
+},
+{
+"uid": "legit-00172",
+"split": "legit",
+"index": 172,
+"seed": 562858240,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 14,
+"target_ref": "MH-5852",
+"codename": "Mekong",
+"candidates": [
+12,
+13,
+14
+],
+"query": "What is the update on the status of the Mekog ticket?"
+},
+{
+"uid": "legit-00173",
+"split": "legit",
+"index": 173,
+"seed": 436751081,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 2,
+"target": 21,
+"target_ref": "MH-7762",
+"codename": "Cedar",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you please send me the Cedar document?"
+},
+{
+"uid": "legit-00174",
+"split": "legit",
+"index": 174,
+"seed": 626188954,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 26,
+"target_ref": "MH-7057",
+"codename": "Cypress",
+"candidates": [
+26
+],
+"query": "What has been the status of Project Cyppress?"
+},
+{
+"uid": "legit-00175",
+"split": "legit",
+"index": 175,
+"seed": 1862011604,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 42,
+"target": 11,
+"target_ref": "MH-5741",
+"codename": "Olympus",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What have been the recent developments on the Olympus item?"
+},
+{
+"uid": "legit-00176",
+"split": "legit",
+"index": 176,
+"seed": 36370449,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 22,
+"target": 32,
+"target_ref": "MH-1315",
+"codename": "Ganges",
+"candidates": [
+32
+],
+"query": "What stands as the status of Project Gangse?"
+},
+{
+"uid": "legit-00177",
+"split": "legit",
+"index": 177,
+"seed": 369053783,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 20,
+"target": 3,
+"target_ref": "MH-6344",
+"codename": "Yukon",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What have been the recent developments on the Yukon item?"
+},
+{
+"uid": "legit-00178",
+"split": "legit",
+"index": 178,
+"seed": 273268101,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 40,
+"target": 17,
+"target_ref": "MH-7499",
+"codename": "Spruce",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you tell me the status of the Sprucce ticket?"
+},
+{
+"uid": "legit-00179",
+"split": "legit",
+"index": 179,
+"seed": 961087598,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 40,
+"target": 23,
+"target_ref": "MH-8572",
+"codename": "Hawthorn",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have the Hawthorn document sent to me?"
+},
+{
+"uid": "legit-00180",
+"split": "legit",
+"index": 180,
+"seed": 898278909,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 8,
+"target": 20,
+"target_ref": "MH-4921",
+"codename": "Everest",
+"candidates": [
+18,
+19,
+20
+],
+"query": "Is there any update on the Eveerest ticket?"
+},
+{
+"uid": "legit-00181",
+"split": "legit",
+"index": 181,
+"seed": 747607656,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 34,
+"target": 17,
+"target_ref": "MH-4160",
+"codename": "Everest",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you find Everest for me?"
+},
+{
+"uid": "legit-00182",
+"split": "legit",
+"index": 182,
+"seed": 1518447098,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 8,
+"target_ref": "MH-3936",
+"codename": "Dnieper",
+"candidates": [
+6,
+7,
+8
+],
+"query": "What is the status of the Dniepeer ticket?"
+},
+{
+"uid": "legit-00183",
+"split": "legit",
+"index": 183,
+"seed": 2050984234,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 23,
+"target": 11,
+"target_ref": "MH-3851",
+"codename": "Ebony",
+"candidates": [
+9,
+10,
+11
+],
+"query": "I need the Ebony document; please send it to me"
+},
+{
+"uid": "legit-00184",
+"split": "legit",
+"index": 184,
+"seed": 1804736392,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 30,
+"target": 8,
+"target_ref": "MH-6011",
+"codename": "Pilatus",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Any news on the Pillatus ticket?"
+},
+{
+"uid": "legit-00185",
+"split": "legit",
+"index": 185,
+"seed": 1690406177,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 15,
+"target_ref": "MH-2372",
+"codename": "Snowdon",
+"candidates": [
+15,
+16,
+17
+],
+"query": "The Snowdon document needs to be sent to me"
+},
+{
+"uid": "legit-00186",
+"split": "legit",
+"index": 186,
+"seed": 1531867542,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 36,
+"target": 17,
+"target_ref": "MH-7193",
+"codename": "Larch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "What is the current status of the Lrch ticket?"
+},
+{
+"uid": "legit-00187",
+"split": "legit",
+"index": 187,
+"seed": 2140287901,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 35,
+"target": 11,
+"target_ref": "MH-5976",
+"codename": "Denali",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What is the latest on the Denali item?"
+},
+{
+"uid": "legit-00188",
+"split": "legit",
+"index": 188,
+"seed": 940555055,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 32,
+"target": 8,
+"target_ref": "MH-6439",
+"codename": "Baobab",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Is there any update on the Boabab ticket?"
+},
+{
+"uid": "legit-00189",
+"split": "legit",
+"index": 189,
+"seed": 88303242,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 12,
+"target": 15,
+"target_ref": "MH-5283",
+"codename": "Birch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "May I have Birch?"
+},
+{
+"uid": "legit-00190",
+"split": "legit",
+"index": 190,
+"seed": 1646752035,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 47,
+"target": 32,
+"target_ref": "MH-4404",
+"codename": "Kilimanjaro",
+"candidates": [
+32
+],
+"query": "May I have an update on Project Kilimanjrao?"
+},
+{
+"uid": "legit-00191",
+"split": "legit",
+"index": 191,
+"seed": 2147098637,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 10,
+"target_ref": "MH-6550",
+"codename": "Volga",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Would you mind getting Volga for me?"
+},
+{
+"uid": "legit-00192",
+"split": "legit",
+"index": 192,
+"seed": 1086043463,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 31,
+"target": 30,
+"target_ref": "MH-9898",
+"codename": "Elbrus",
+"candidates": [
+30
+],
+"query": "What is the current status of Project Elbus?"
+},
+{
+"uid": "legit-00193",
+"split": "legit",
+"index": 193,
+"seed": 1390364222,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 5,
+"target": 10,
+"target_ref": "MH-4297",
+"codename": "Mekong",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you tell me the latest news regarding the Mekong item?"
+},
+{
+"uid": "legit-00194",
+"split": "legit",
+"index": 194,
+"seed": 429440399,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 4,
+"target_ref": "MH-5726",
+"codename": "Ganges",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What stands as the status of the Gangges Lane contract?"
+},
+{
+"uid": "legit-00195",
+"split": "legit",
+"index": 195,
+"seed": 182556073,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 14,
+"target": 21,
+"target_ref": "MH-4118",
+"codename": "Hudson",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is it possible for you to bring up Hudson for me?"
+},
+{
+"uid": "legit-00196",
+"split": "legit",
+"index": 196,
+"seed": 1698621327,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 14,
+"target_ref": "MH-9279",
+"codename": "Alder",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Are you able to give me an update on the Aldre ticket?"
+},
+{
+"uid": "legit-00197",
+"split": "legit",
+"index": 197,
+"seed": 951043309,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 10,
+"target_ref": "MH-4026",
+"codename": "Thames",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you pull up Thames for me?"
+},
+{
+"uid": "legit-00198",
+"split": "legit",
+"index": 198,
+"seed": 2073806926,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 36,
+"target": 14,
+"target_ref": "MH-5459",
+"codename": "Volga",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Can you provide an update on the Vola ticket?"
+},
+{
+"uid": "legit-00199",
+"split": "legit",
+"index": 199,
+"seed": 902085499,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 3,
+"target": 22,
+"target_ref": "MH-5359",
+"codename": "Alder",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you retrieve Alder for me?"
+},
+{
+"uid": "legit-00200",
+"split": "legit",
+"index": 200,
+"seed": 864834647,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 23,
+"target": 9,
+"target_ref": "MH-9101",
+"codename": "Kilimanjaro",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Any news on the Kilimanjao memo?"
+},
+{
+"uid": "legit-00201",
+"split": "legit",
+"index": 201,
+"seed": 1296721181,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 25,
+"target": 16,
+"target_ref": "MH-7349",
+"codename": "Hudson",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have any recent news on the Hudson item?"
+},
+{
+"uid": "legit-00202",
+"split": "legit",
+"index": 202,
+"seed": 1757532683,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 44,
+"target": 16,
+"target_ref": "MH-6624",
+"codename": "Murray",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Can you give me an update on the Murary Lane contract?"
+},
+{
+"uid": "legit-00203",
+"split": "legit",
+"index": 203,
+"seed": 151675411,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 44,
+"target": 21,
+"target_ref": "MH-3694",
+"codename": "Severn",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Severn item?"
+},
+{
+"uid": "legit-00204",
+"split": "legit",
+"index": 204,
+"seed": 1168989696,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 41,
+"target_ref": "MH-2949",
+"codename": "Maple",
+"candidates": [
+41
+],
+"query": "Can you provide the status of Project Maaple?"
+},
+{
+"uid": "legit-00205",
+"split": "legit",
+"index": 205,
+"seed": 1314453356,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 27,
+"target": 4,
+"target_ref": "MH-2232",
+"codename": "Tagus",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you update me on the current status of the Tagus item?"
+},
+{
+"uid": "legit-00206",
+"split": "legit",
+"index": 206,
+"seed": 1596476612,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 4,
+"target": 17,
+"target_ref": "MH-3028",
+"codename": "Mekong",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you update me on the Mekkong ticket?"
+},
+{
+"uid": "legit-00207",
+"split": "legit",
+"index": 207,
+"seed": 683339660,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 29,
+"target": 5,
+"target_ref": "MH-8959",
+"codename": "Loire",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is it possible for you to bring up Loire for me?"
+},
+{
+"uid": "legit-00208",
+"split": "legit",
+"index": 208,
+"seed": 990780099,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 28,
+"target_ref": "MH-7460",
+"codename": "Sequoia",
+"candidates": [
+28
+],
+"query": "Do you have any updates on Project Seequoia?"
+},
+{
+"uid": "legit-00209",
+"split": "legit",
+"index": 209,
+"seed": 1778734815,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 2,
+"target": 22,
+"target_ref": "MH-8134",
+"codename": "Denali",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Would you mind getting Denali for me?"
+},
+{
+"uid": "legit-00210",
+"split": "legit",
+"index": 210,
+"seed": 1534030070,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 39,
+"target_ref": "MH-4408",
+"codename": "Sequoia",
+"candidates": [
+39
+],
+"query": "Do you have any updates on Project Seqouia?"
+},
+{
+"uid": "legit-00211",
+"split": "legit",
+"index": 211,
+"seed": 2013413556,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 25,
+"target": 17,
+"target_ref": "MH-3408",
+"codename": "Alder",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Is it possible for you to bring up Alder for me?"
+},
+{
+"uid": "legit-00212",
+"split": "legit",
+"index": 212,
+"seed": 1371979800,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 22,
+"target_ref": "MH-2979",
+"codename": "Baobab",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you provide an update on the Baobaab Lane contract?"
+},
+{
+"uid": "legit-00213",
+"split": "legit",
+"index": 213,
+"seed": 323720616,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 44,
+"target": 15,
+"target_ref": "MH-5748",
+"codename": "Tagus",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you tell me the latest news regarding the Tagus item?"
+},
+{
+"uid": "legit-00214",
+"split": "legit",
+"index": 214,
+"seed": 70789623,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 16,
+"target": 1,
+"target_ref": "MH-8811",
+"codename": "Volga",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Is there any update on the Vlga Lane contract?"
+},
+{
+"uid": "legit-00215",
+"split": "legit",
+"index": 215,
+"seed": 390393629,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 16,
+"target": 15,
+"target_ref": "MH-5258",
+"codename": "Kenya",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have any recent news on the Kenya item?"
+},
+{
+"uid": "legit-00216",
+"split": "legit",
+"index": 216,
+"seed": 588563399,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 5,
+"target": 16,
+"target_ref": "MH-2448",
+"codename": "Larch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you update me on the Lrch Lane contract?"
+},
+{
+"uid": "legit-00217",
+"split": "legit",
+"index": 217,
+"seed": 647873557,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 30,
+"target": 5,
+"target_ref": "MH-6920",
+"codename": "Hudson",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you tell me the latest news regarding the Hudson item?"
+},
+{
+"uid": "legit-00218",
+"split": "legit",
+"index": 218,
+"seed": 976657974,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 23,
+"target": 3,
+"target_ref": "MH-7265",
+"codename": "Sequoia",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is there any update on Investigation Seqouia?"
+},
+{
+"uid": "legit-00219",
+"split": "legit",
+"index": 219,
+"seed": 1479529128,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 4,
+"target_ref": "MH-8851",
+"codename": "Denali",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you please send me the Denali document?"
+},
+{
+"uid": "legit-00220",
+"split": "legit",
+"index": 220,
+"seed": 782614713,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 4,
+"target": 7,
+"target_ref": "MH-2888",
+"codename": "Cedar",
+"candidates": [
+6,
+7,
+8
+],
+"query": "May I have an update on the Cedaar Lane contract?"
+},
+{
+"uid": "legit-00221",
+"split": "legit",
+"index": 221,
+"seed": 172782737,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 15,
+"target_ref": "MH-5140",
+"codename": "Yukon",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you send me the Yukon document?"
+},
+{
+"uid": "legit-00222",
+"split": "legit",
+"index": 222,
+"seed": 194892616,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 17,
+"target_ref": "MH-6649",
+"codename": "Zambezi",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have any updates on the Zamebzi ticket?"
+},
+{
+"uid": "legit-00223",
+"split": "legit",
+"index": 223,
+"seed": 1046819506,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 15,
+"target": 23,
+"target_ref": "MH-8970",
+"codename": "Shannon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Shannon for me?"
+},
+{
+"uid": "legit-00224",
+"split": "legit",
+"index": 224,
+"seed": 200064859,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 24,
+"target": 14,
+"target_ref": "MH-8163",
+"codename": "Kenya",
+"candidates": [
+12,
+13,
+14
+],
+"query": "What is the current status of the Kneya ticket?"
+},
+{
+"uid": "legit-00225",
+"split": "legit",
+"index": 225,
+"seed": 1941177839,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 15,
+"target": 10,
+"target_ref": "MH-4917",
+"codename": "Hood",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you send me the Hood document?"
+},
+{
+"uid": "legit-00226",
+"split": "legit",
+"index": 226,
+"seed": 649514822,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 22,
+"target": 10,
+"target_ref": "MH-7438",
+"codename": "Hazel",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you give me an update regarding the Haazel Lane contract?"
+},
+{
+"uid": "legit-00227",
+"split": "legit",
+"index": 227,
+"seed": 1040515753,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 10,
+"target_ref": "MH-6092",
+"codename": "Severn",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have any recent news on the Severn item?"
+},
+{
+"uid": "legit-00228",
+"split": "legit",
+"index": 228,
+"seed": 59476353,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 19,
+"target": 8,
+"target_ref": "MH-1507",
+"codename": "Teide",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Can you give me an update on the Teidde ticket?"
+},
+{
+"uid": "legit-00229",
+"split": "legit",
+"index": 229,
+"seed": 375970122,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 31,
+"target": 23,
+"target_ref": "MH-8698",
+"codename": "Rainier",
+"candidates": [
+21,
+22,
+23
+],
+"query": "I need the Rainier document; please send it to me"
+},
+{
+"uid": "legit-00230",
+"split": "legit",
+"index": 230,
+"seed": 1441526017,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 36,
+"target_ref": "MH-6602",
+"codename": "Tigris",
+"candidates": [
+36
+],
+"query": "Do you have any updates on Project Tigis?"
+},
+{
+"uid": "legit-00231",
+"split": "legit",
+"index": 231,
+"seed": 928544974,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 28,
+"target": 21,
+"target_ref": "MH-3842",
+"codename": "Etna",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have Etna?"
+},
+{
+"uid": "legit-00232",
+"split": "legit",
+"index": 232,
+"seed": 1023760631,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 37,
+"target": 13,
+"target_ref": "MH-6850",
+"codename": "Rainier",
+"candidates": [
+12,
+13,
+14
+],
+"query": "What stands as the status of the Raiinier Lane contract?"
+},
+{
+"uid": "legit-00233",
+"split": "legit",
+"index": 233,
+"seed": 712742992,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 16,
+"target_ref": "MH-8933",
+"codename": "Hood",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you update me on the current status of the Hood item?"
+},
+{
+"uid": "legit-00234",
+"split": "legit",
+"index": 234,
+"seed": 184875655,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 26,
+"target": 4,
+"target_ref": "MH-8999",
+"codename": "Cedar",
+"candidates": [
+3,
+4,
+5
+],
+"query": "May I have an update on the Ceedar Lane contract?"
+},
+{
+"uid": "legit-00235",
+"split": "legit",
+"index": 235,
+"seed": 748843543,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 11,
+"target_ref": "MH-3254",
+"codename": "Aconcagua",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you find Aconcagua for me?"
+},
+{
+"uid": "legit-00236",
+"split": "legit",
+"index": 236,
+"seed": 1228143159,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 40,
+"target": 21,
+"target_ref": "MH-7038",
+"codename": "Indus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you give me an update on the Inus memo?"
+},
+{
+"uid": "legit-00237",
+"split": "legit",
+"index": 237,
+"seed": 240625285,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 35,
+"target": 3,
+"target_ref": "MH-7496",
+"codename": "Aspen",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you please send me the Aspen document?"
+},
+{
+"uid": "legit-00238",
+"split": "legit",
+"index": 238,
+"seed": 1055181762,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 47,
+"target": 4,
+"target_ref": "MH-8536",
+"codename": "Indus",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What stands as the status of the Inndus Lane contract?"
+},
+{
+"uid": "legit-00239",
+"split": "legit",
+"index": 239,
+"seed": 1297059601,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 5,
+"target_ref": "MH-9809",
+"codename": "Hazel",
+"candidates": [
+3,
+4,
+5
+],
+"query": "May I have Hazel?"
+},
+{
+"uid": "legit-00240",
+"split": "legit",
+"index": 240,
+"seed": 302336535,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 29,
+"target": 5,
+"target_ref": "MH-4901",
+"codename": "Hawthorn",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Is there any update on the Hawtohrn ticket?"
+},
+{
+"uid": "legit-00241",
+"split": "legit",
+"index": 241,
+"seed": 1911381803,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 39,
+"target": 3,
+"target_ref": "MH-8261",
+"codename": "Etna",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Please send me the Etna document"
+},
+{
+"uid": "legit-00242",
+"split": "legit",
+"index": 242,
+"seed": 1284331514,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 0,
+"target": 30,
+"target_ref": "MH-7900",
+"codename": "Zambezi",
+"candidates": [
+30
+],
+"query": "What stands as the status of Project Zabmezi?"
+},
+{
+"uid": "legit-00243",
+"split": "legit",
+"index": 243,
+"seed": 1742169217,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 42,
+"target": 9,
+"target_ref": "MH-1699",
+"codename": "Tamarind",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you find Tamarind for me?"
+},
+{
+"uid": "legit-00244",
+"split": "legit",
+"index": 244,
+"seed": 560557475,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 38,
+"target": 9,
+"target_ref": "MH-4482",
+"codename": "Danube",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Are you able to give me an update on the Daanube memo?"
+},
+{
+"uid": "legit-00245",
+"split": "legit",
+"index": 245,
+"seed": 725722029,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 24,
+"target": 22,
+"target_ref": "MH-3235",
+"codename": "Severn",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What have been the recent developments on the Severn item?"
+},
+{
+"uid": "legit-00246",
+"split": "legit",
+"index": 246,
+"seed": 435940492,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 38,
+"target_ref": "MH-9281",
+"codename": "Rhone",
+"candidates": [
+38
+],
+"query": "Any news on Project Rhne?"
+},
+{
+"uid": "legit-00247",
+"split": "legit",
+"index": 247,
+"seed": 663868837,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 31,
+"target": 15,
+"target_ref": "MH-5357",
+"codename": "Niger",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have Niger available for me?"
+},
+{
+"uid": "legit-00248",
+"split": "legit",
+"index": 248,
+"seed": 1115934425,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 18,
+"target": 16,
+"target_ref": "MH-4879",
+"codename": "Hudson",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have any updates on the Hduson Lane contract?"
+},
+{
+"uid": "legit-00249",
+"split": "legit",
+"index": 249,
+"seed": 1640304320,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 17,
+"target": 17,
+"target_ref": "MH-5321",
+"codename": "Larch",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you update me on the current status of the Larch item?"
+},
+{
+"uid": "legit-00250",
+"split": "legit",
+"index": 250,
+"seed": 1170392412,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 17,
+"target": 33,
+"target_ref": "MH-5317",
+"codename": "Aspen",
+"candidates": [
+33
+],
+"query": "Can you provide the status of Project Asspen?"
+},
+{
+"uid": "legit-00251",
+"split": "legit",
+"index": 251,
+"seed": 1790046485,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 16,
+"target": 21,
+"target_ref": "MH-2622",
+"codename": "Vesuvius",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you pull up Vesuvius for me?"
+},
+{
+"uid": "legit-00252",
+"split": "legit",
+"index": 252,
+"seed": 57072434,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 11,
+"target_ref": "MH-6716",
+"codename": "Severn",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the status of the Sevrn ticket?"
+},
+{
+"uid": "legit-00253",
+"split": "legit",
+"index": 253,
+"seed": 1245987821,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 46,
+"target": 4,
+"target_ref": "MH-6605",
+"codename": "Toubkal",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Send me the Toubkal document."
+},
+{
+"uid": "legit-00254",
+"split": "legit",
+"index": 254,
+"seed": 542659706,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 13,
+"target_ref": "MH-5926",
+"codename": "Tamarind",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Are you able to give me an update on the Tamaridn Lane contract?"
+},
+{
+"uid": "legit-00255",
+"split": "legit",
+"index": 255,
+"seed": 258286714,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 35,
+"target": 4,
+"target_ref": "MH-2478",
+"codename": "Thames",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Can you provide the latest information on the Thames item?"
+},
+{
+"uid": "legit-00256",
+"split": "legit",
+"index": 256,
+"seed": 1173646061,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 7,
+"target": 2,
+"target_ref": "MH-8838",
+"codename": "Aspen",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Any news on the Asspen ticket?"
+},
+{
+"uid": "legit-00257",
+"split": "legit",
+"index": 257,
+"seed": 1673628863,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 21,
+"target_ref": "MH-6067",
+"codename": "Birch",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have the Birch document sent to me?"
+},
+{
+"uid": "legit-00258",
+"split": "legit",
+"index": 258,
+"seed": 1234738004,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 32,
+"target": 20,
+"target_ref": "MH-1335",
+"codename": "Olympus",
+"candidates": [
+18,
+19,
+20
+],
+"query": "What is the current status of the Olymppus ticket?"
+},
+{
+"uid": "legit-00259",
+"split": "legit",
+"index": 259,
+"seed": 813710978,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 18,
+"target": 21,
+"target_ref": "MH-6905",
+"codename": "Acacia",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you please send me the Acacia document?"
+},
+{
+"uid": "legit-00260",
+"split": "legit",
+"index": 260,
+"seed": 768660142,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 38,
+"target": 24,
+"target_ref": "MH-8085",
+"codename": "Niger",
+"candidates": [
+24
+],
+"query": "What stands as the status of Project Niegr?"
+},
+{
+"uid": "legit-00261",
+"split": "legit",
+"index": 261,
+"seed": 773824611,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 1,
+"target": 23,
+"target_ref": "MH-7195",
+"codename": "Everest",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Is it possible for you to bring up Everest for me?"
+},
+{
+"uid": "legit-00262",
+"split": "legit",
+"index": 262,
+"seed": 437773755,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 17,
+"target": 31,
+"target_ref": "MH-3457",
+"codename": "Hudson",
+"candidates": [
+31
+],
+"query": "Any news on Project Huudson?"
+},
+{
+"uid": "legit-00263",
+"split": "legit",
+"index": 263,
+"seed": 332350823,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 45,
+"target": 10,
+"target_ref": "MH-9693",
+"codename": "Tamarind",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the latest information on the Tamarind item?"
+},
+{
+"uid": "legit-00264",
+"split": "legit",
+"index": 264,
+"seed": 210843352,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 25,
+"target_ref": "MH-7860",
+"codename": "Pilatus",
+"candidates": [
+25
+],
+"query": "What is the status of Project Platus?"
+},
+{
+"uid": "legit-00265",
+"split": "legit",
+"index": 265,
+"seed": 1164859211,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 22,
+"target_ref": "MH-5199",
+"codename": "Dnieper",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Can you retrieve Dnieper for me?"
+},
+{
+"uid": "legit-00266",
+"split": "legit",
+"index": 266,
+"seed": 1578980,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 9,
+"target": 5,
+"target_ref": "MH-6441",
+"codename": "Hazel",
+"candidates": [
+3,
+4,
+5
+],
+"query": "What is the status of the Hzael ticket?"
+},
+{
+"uid": "legit-00267",
+"split": "legit",
+"index": 267,
+"seed": 2000856890,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 36,
+"target": 3,
+"target_ref": "MH-5794",
+"codename": "Snowdon",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Please send me the Snowdon document"
+},
+{
+"uid": "legit-00268",
+"split": "legit",
+"index": 268,
+"seed": 1444947126,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 6,
+"target": 29,
+"target_ref": "MH-9117",
+"codename": "Snowdon",
+"candidates": [
+29
+],
+"query": "Could you tell me the status of Project Snowddon?"
+},
+{
+"uid": "legit-00269",
+"split": "legit",
+"index": 269,
+"seed": 1260978850,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 11,
+"target": 16,
+"target_ref": "MH-9538",
+"codename": "Willow",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Could you find Willow for me?"
+},
+{
+"uid": "legit-00270",
+"split": "legit",
+"index": 270,
+"seed": 1581895819,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 10,
+"target": 7,
+"target_ref": "MH-5685",
+"codename": "Birch",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Any news on the Biirch Lane contract?"
+},
+{
+"uid": "legit-00271",
+"split": "legit",
+"index": 271,
+"seed": 744465102,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 40,
+"target": 10,
+"target_ref": "MH-4545",
+"codename": "Alder",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Could you send me the Alder document?"
+},
+{
+"uid": "legit-00272",
+"split": "legit",
+"index": 272,
+"seed": 1494581694,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 32,
+"target_ref": "MH-7707",
+"codename": "Snowdon",
+"candidates": [
+32
+],
+"query": "Could you give me an update regarding Project Snodwon?"
+},
+{
+"uid": "legit-00273",
+"split": "legit",
+"index": 273,
+"seed": 1684889342,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 37,
+"target": 4,
+"target_ref": "MH-6651",
+"codename": "Rainier",
+"candidates": [
+3,
+4,
+5
+],
+"query": "I need the Rainier document; please send it to me"
+},
+{
+"uid": "legit-00274",
+"split": "legit",
+"index": 274,
+"seed": 614545442,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 46,
+"target": 21,
+"target_ref": "MH-1978",
+"codename": "Snowdon",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the update on the status of the Snoowdon memo?"
+},
+{
+"uid": "legit-00275",
+"split": "legit",
+"index": 275,
+"seed": 445644771,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 22,
+"target": 16,
+"target_ref": "MH-1141",
+"codename": "Kilimanjaro",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Is it possible for you to bring up Kilimanjaro for me?"
+},
+{
+"uid": "legit-00276",
+"split": "legit",
+"index": 276,
+"seed": 17638964,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 33,
+"target": 10,
+"target_ref": "MH-4631",
+"codename": "Birch",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What is the status of the Biirch Lane contract?"
+},
+{
+"uid": "legit-00277",
+"split": "legit",
+"index": 277,
+"seed": 951092479,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 5,
+"target": 23,
+"target_ref": "MH-3730",
+"codename": "Acacia",
+"candidates": [
+21,
+22,
+23
+],
+"query": "May I have the Acacia document sent to me?"
+},
+{
+"uid": "legit-00278",
+"split": "legit",
+"index": 278,
+"seed": 259046451,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 21,
+"target": 17,
+"target_ref": "MH-1204",
+"codename": "Snowdon",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Do you have any updates on the Sonwdon ticket?"
+},
+{
+"uid": "legit-00279",
+"split": "legit",
+"index": 279,
+"seed": 2119529488,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 10,
+"target": 21,
+"target_ref": "MH-5666",
+"codename": "Hawthorn",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you find Hawthorn for me?"
+},
+{
+"uid": "legit-00280",
+"split": "legit",
+"index": 280,
+"seed": 649939982,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 21,
+"target": 8,
+"target_ref": "MH-2252",
+"codename": "Ebony",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Is there any update on the Ebonny ticket?"
+},
+{
+"uid": "legit-00281",
+"split": "legit",
+"index": 281,
+"seed": 637129265,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 43,
+"target": 22,
+"target_ref": "MH-6005",
+"codename": "Tagus",
+"candidates": [
+21,
+22,
+23
+],
+"query": "Could you update me on the current status of the Tagus item?"
+},
+{
+"uid": "legit-00282",
+"split": "legit",
+"index": 282,
+"seed": 1231643098,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 26,
+"target": 8,
+"target_ref": "MH-3122",
+"codename": "Hood",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Could you update me on the Hoo ticket?"
+},
+{
+"uid": "legit-00283",
+"split": "legit",
+"index": 283,
+"seed": 1913406880,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 9,
+"target_ref": "MH-8246",
+"codename": "Baobab",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What's the most recent update on the Baobab item?"
+},
+{
+"uid": "legit-00284",
+"split": "legit",
+"index": 284,
+"seed": 887477311,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 28,
+"target": 13,
+"target_ref": "MH-3099",
+"codename": "Logan",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Could you update me on the Lgoan Lane contract?"
+},
+{
+"uid": "legit-00285",
+"split": "legit",
+"index": 285,
+"seed": 85010211,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 28,
+"target": 11,
+"target_ref": "MH-6640",
+"codename": "Kilimanjaro",
+"candidates": [
+9,
+10,
+11
+],
+"query": "What's the most recent update on the Kilimanjaro item?"
+},
+{
+"uid": "legit-00286",
+"split": "legit",
+"index": 286,
+"seed": 1129037696,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 41,
+"target": 33,
+"target_ref": "MH-1713",
+"codename": "Birch",
+"candidates": [
+33
+],
+"query": "Could you tell me the status of Project Birhc?"
+},
+{
+"uid": "legit-00287",
+"split": "legit",
+"index": 287,
+"seed": 1762255542,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 38,
+"target": 3,
+"target_ref": "MH-8744",
+"codename": "Tagus",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Could you tell me the latest news regarding the Tagus item?"
+},
+{
+"uid": "legit-00288",
+"split": "legit",
+"index": 288,
+"seed": 929652284,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 2,
+"target_ref": "MH-3605",
+"codename": "Kenya",
+"candidates": [
+0,
+1,
+2
+],
+"query": "Is there any update on the Kneya ticket?"
+},
+{
+"uid": "legit-00289",
+"split": "legit",
+"index": 289,
+"seed": 708574986,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 29,
+"target": 10,
+"target_ref": "MH-6594",
+"codename": "Danube",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you pull up Danube for me?"
+},
+{
+"uid": "legit-00290",
+"split": "legit",
+"index": 290,
+"seed": 1989031889,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 15,
+"target": 24,
+"target_ref": "MH-8162",
+"codename": "Etna",
+"candidates": [
+24
+],
+"query": "Can you provide the status of Project Ena?"
+},
+{
+"uid": "legit-00291",
+"split": "legit",
+"index": 291,
+"seed": 388693595,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 14,
+"target": 15,
+"target_ref": "MH-7352",
+"codename": "Maple",
+"candidates": [
+15,
+16,
+17
+],
+"query": "Send me the Maple document."
+},
+{
+"uid": "legit-00292",
+"split": "legit",
+"index": 292,
+"seed": 340413269,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 39,
+"target": 38,
+"target_ref": "MH-5572",
+"codename": "Orinoco",
+"candidates": [
+38
+],
+"query": "Can you provide the status of Project Orrinoco?"
+},
+{
+"uid": "legit-00293",
+"split": "legit",
+"index": 293,
+"seed": 1306291848,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 32,
+"target": 22,
+"target_ref": "MH-8499",
+"codename": "Kenya",
+"candidates": [
+21,
+22,
+23
+],
+"query": "What is the latest on the Kenya item?"
+},
+{
+"uid": "legit-00294",
+"split": "legit",
+"index": 294,
+"seed": 168527833,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 19,
+"target": 41,
+"target_ref": "MH-6112",
+"codename": "Shannon",
+"candidates": [
+41
+],
+"query": "Is there any update on Project Shanno?"
+},
+{
+"uid": "legit-00295",
+"split": "legit",
+"index": 295,
+"seed": 2118439720,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 34,
+"target": 9,
+"target_ref": "MH-5661",
+"codename": "Ebony",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Do you have Ebony available for me?"
+},
+{
+"uid": "legit-00296",
+"split": "legit",
+"index": 296,
+"seed": 290452429,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 27,
+"target": 13,
+"target_ref": "MH-9870",
+"codename": "Everest",
+"candidates": [
+12,
+13,
+14
+],
+"query": "Any news on the Eveerest Lane contract?"
+},
+{
+"uid": "legit-00297",
+"split": "legit",
+"index": 297,
+"seed": 1116128169,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 33,
+"target": 11,
+"target_ref": "MH-9085",
+"codename": "Teide",
+"candidates": [
+9,
+10,
+11
+],
+"query": "Can you provide the latest information on the Teide item?"
+},
+{
+"uid": "legit-00298",
+"split": "legit",
+"index": 298,
+"seed": 203209296,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q4",
+"requester": 10,
+"target": 8,
+"target_ref": "MH-1078",
+"codename": "Ararat",
+"candidates": [
+6,
+7,
+8
+],
+"query": "Can you provide the status of the Araarat ticket?"
+},
+{
+"uid": "legit-00299",
+"split": "legit",
+"index": 299,
+"seed": 171922074,
+"pool_hash": "8d28444584aa",
+"kind": "legit",
+"world_version": "1",
+"family": "Q5",
+"requester": 20,
+"target": 5,
+"target_ref": "MH-2814",
+"codename": "Thames",
+"candidates": [
+3,
+4,
+5
+],
+"query": "Send me the Thames document."
+}
+]
