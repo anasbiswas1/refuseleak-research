@@ -225,6 +225,191 @@ class ConformalClarifier:
         return observation(UNIVERSAL, "none")
 
 
+# ----------------------------------------------------------------------------- scorer v2: permitted-view evidence
+TYPE_WORDS = {"project_brief": ["project", "brief"], "investigation": ["investigation", "case"],
+              "hr_case": ["people", "case", "hr"], "acquisition_memo": ["transaction", "memo", "acquisition"],
+              "vendor_contract": ["vendor", "contract", "agreement", "supply"], "support_ticket": ["ticket", "support"]}
+EVIDENCE_NAMES = ["name_match", "body_match", "type_cue", "best_name", "none", "none_minus_best_name", "none_minus_type_cue"]
+FEATURE_NAMES = EVIDENCE_NAMES + ["model_logit"]
+SCORERS = {"evidence": list(range(7)), "llm": [7], "combined": list(range(8))}
+
+
+def type_cue(rec: dict, query: str) -> float:
+    q = query.lower()
+    return 1.0 if any(w in q for w in TYPE_WORDS[rec["type"]]) else 0.0
+
+
+def any_type_word(query: str) -> bool:
+    q = query.lower()
+    return any(w in q for ws in TYPE_WORDS.values() for w in ws)
+
+
+def evidence(world: dict, query: str, cands: list[dict]) -> np.ndarray:
+    """Equation 15: per-option evidence from the permitted view alone. Rows are the candidates then 'none of these'."""
+    ex = IX.people_tokens(world)
+    nm = np.array([IX.name_match(c, query, ex) for c in cands], dtype=float)
+    bm = np.array([IX.body_match(c, query) for c in cands], dtype=float)
+    tc = np.array([type_cue(c, query) for c in cands], dtype=float)
+    n = len(cands) + 1
+    X = np.zeros((n, len(EVIDENCE_NAMES)))
+    if cands:
+        X[:-1, 0], X[:-1, 1], X[:-1, 2] = nm, bm, tc
+        X[:-1, 3] = (nm == nm.max()).astype(float)
+        X[-1, 5] = -nm.max()
+        X[-1, 6] = -(tc.max() if any_type_word(query) else 0.5)
+    X[-1, 4] = 1.0
+    return X
+
+
+def tie_size(world: dict, query: str, cands: list[dict]) -> int:
+    """Number of candidates sharing the best name match, capped at config.TIE_STRATA (0 without candidates)."""
+    if not cands:
+        return 0
+    ex = IX.people_tokens(world)
+    nm = np.array([IX.name_match(c, query, ex) for c in cands])
+    return int(min(config.TIE_STRATA, (nm == nm.max()).sum()))
+
+
+def design(world: dict, query: str, cands: list[dict], llm_logits: np.ndarray | None) -> np.ndarray:
+    """Evidence columns plus the model's centred option log-probabilities (zeros when no model score is used)."""
+    E = evidence(world, query, cands)
+    z = np.zeros(len(cands) + 1) if llm_logits is None else (np.asarray(llm_logits, dtype=float) - np.max(llm_logits))
+    return np.column_stack([E, z])
+
+
+def option_probs(X: np.ndarray, weights: np.ndarray, cols: list[int]) -> np.ndarray:
+    """Equation 16: conditional-logit probabilities over the options."""
+    z = X[:, cols] @ np.asarray(weights, dtype=float)
+    z = z - z.max()
+    e = np.exp(z)
+    return e / e.sum()
+
+
+def fit_weights(Xs: list[np.ndarray], ys: list[int], cols: list[int], l2: float = 1e-3) -> np.ndarray:
+    """Maximum-likelihood conditional logit (ridge l2) on labelled option matrices."""
+    from scipy.optimize import minimize
+
+    def nll(w):
+        total, grad = 0.0, np.zeros(len(cols))
+        for X, y in zip(Xs, ys):
+            F = X[:, cols]
+            z = F @ w
+            z = z - z.max()
+            e = np.exp(z)
+            p = e / e.sum()
+            total -= math.log(max(p[y], 1e-300))
+            grad += F.T @ p - F[y]
+        n = len(Xs)
+        return total / n + l2 * float(w @ w), grad / n + 2 * l2 * w
+
+    res = minimize(nll, np.zeros(len(cols)), jac=True, method="L-BFGS-B")
+    return res.x
+
+
+def list_question(recs: list[dict]) -> dict:
+    options = [{"ref": r["ref"], "label": r["title"]} for r in recs]
+    text = "Which one do you mean?\n" + "\n".join(f"{i + 1}. {o['label']} [{o['ref']}]" for i, o in enumerate(options))
+    text += f"\n{len(options) + 1}. {NONE_OPTION}"
+    obs = observation(text, "ask", options=options)
+    obs["question"] = {"kind": "list", "offered": [r["ref"] for r in recs]}
+    return obs
+
+
+class EvidenceClarifier:
+    """LORE with the v2 score: conditional logit over permitted-view evidence (and, in the combined scorer, the
+    model's option log-probability), a conformal threshold per tie-size stratum, and follow-through: a requester
+    who answers 'none of these' is asked over the candidates not yet offered before the universal reply."""
+
+    def __init__(self, params: dict, cache: ScoreCache | None = None, name: str = config.LORE):
+        self.name = name
+        self.cols = list(params["cols"])
+        self.weights = np.asarray(params["weights"], dtype=float)
+        self.qhat_by_k = {int(k): float(v) for k, v in params["qhat_by_k"].items()}
+        self.qhat_pooled = float(params["qhat_pooled"])
+        self.uses_llm = (len(FEATURE_NAMES) - 1) in self.cols
+        self.cache = cache
+        if self.uses_llm and cache is None:
+            raise ValueError("this scorer uses the model's log-probabilities: a score cache is required")
+
+    def threshold(self, k: int) -> float:
+        return self.qhat_by_k.get(int(k), self.qhat_pooled)
+
+    def scores(self, world: dict, requester: dict, query: str, cands: list[dict]) -> np.ndarray:
+        z = None
+        if self.uses_llm:
+            system, user = mc_prompt(requester, query, cands)
+            z = logits_from(self.cache.logprobs(system, user, len(cands) + 1), len(cands) + 1)
+        return option_probs(design(world, query, cands, z), self.weights, self.cols)
+
+    def prediction_set(self, probs: np.ndarray, k: int) -> list[int]:
+        return pred_set(probs, self.threshold(k))
+
+    def respond(self, ctx: dict) -> dict:
+        world, req, q = ctx["world"], ctx["requester"], ctx["query"]
+        pid = req["pid"]
+        view = acl.permitted_view(world, pid)
+        ex = IX.people_tokens(world)
+        if not [t for t in IX.query_name_tokens(q) if t not in ex]:          # aggregate or person request: list by content
+            agg = _aggregate(view, q)
+            return observation(template_list(agg), "answer") if agg else observation(UNIVERSAL, "none")
+        cands = candidate_set(world, pid, q)
+        if not cands:
+            return observation(UNIVERSAL, "none")
+        probs = self.scores(world, req, q, cands)
+        answer = _user_choice(ctx)
+        if answer is not None:
+            return self.after_answer(ctx, cands, probs, answer)
+        none_i = len(cands)
+        S = self.prediction_set(probs, tie_size(world, q, cands))
+        if not S:                                   # no option within the threshold: ask over the likeliest records
+            order = [int(i) for i in np.argsort(-probs) if int(i) != none_i]
+            return list_question([cands[i] for i in order[:config.MAX_LIST_OPTIONS]])
+        if S == [none_i]:
+            return observation(UNIVERSAL, "none")
+        recs = [cands[i] for i in S if i != none_i]
+        if len(S) == 1:
+            return observation(template_answer(recs[0]), "answer", resolved=recs[0]["ref"])
+        if len(recs) <= config.MAX_LIST_OPTIONS:
+            return list_question(recs)
+        qbest = best_question(recs, np.array([probs[i] for i in S if i != none_i]))
+        if qbest is None:
+            return list_question(recs[:config.MAX_LIST_OPTIONS])
+        attr = qbest[0]
+        values = sorted({attribute_value_label(r, attr, world) for r in recs})
+        text = f"Which {ATTRIBUTE_LABEL[attr]} is it?\n" + "\n".join(f"{i + 1}. {v}" for i, v in enumerate(values))
+        text += f"\n{len(values) + 1}. {NONE_OPTION}"
+        obs = observation(text, "ask", options=[])
+        obs["question"] = {"kind": "attribute", "attribute": attr, "values": values, "set": [r["ref"] for r in recs]}
+        return obs
+
+    def after_answer(self, ctx: dict, cands: list[dict], probs: np.ndarray, answer: str) -> dict:
+        world = ctx["world"]
+        asked = [h for h in ctx["history"] if h["role"] == "assistant" and h.get("question")]
+        last_q = asked[-1]["question"] if asked else None
+        if NONE_OPTION in answer:
+            offered: set[str] = set()
+            for h in asked:
+                qd = h["question"]
+                offered |= set(qd.get("offered", [])) | set(qd.get("set", []))
+            order = [int(i) for i in np.argsort(-probs) if int(i) != len(cands)]
+            rest = [cands[i] for i in order if cands[i]["ref"] not in offered]
+            if rest:
+                return list_question(rest[:config.MAX_LIST_OPTIONS])
+            return observation(UNIVERSAL, "none")
+        picked = [r for r in cands if r["ref"] in answer]
+        if picked:
+            return observation(template_answer(picked[0]), "answer", resolved=picked[0]["ref"])
+        if last_q is not None and last_q.get("attribute"):
+            attr = last_q["attribute"]
+            keep = [r for r in cands if r["ref"] in last_q["set"]
+                    and attribute_value_label(r, attr, world).lower() == answer.strip().lower()]
+            if len(keep) == 1:
+                return observation(template_answer(keep[0]), "answer", resolved=keep[0]["ref"])
+            if keep:
+                return list_question(keep[:config.MAX_LIST_OPTIONS])
+        return observation(UNIVERSAL, "none")
+
+
 # ----------------------------------------------------------------------------- calibration helpers
 def intended_option(unit: dict, world_key: str, cands: list[dict]) -> int:
     """Index of the intended record among the candidates, or the 'none' index when the intended record is not a

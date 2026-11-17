@@ -18,6 +18,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The clarifier's candidate set is capped at five permitted records plus "none of these"; a conformal set of more than four records is narrowed with one attribute question (type, department or owner, by expected information gain) before the list is shown; an empty conformal set falls back to a question over the likeliest records, never to an answer.
 - Scores (option log-probabilities) are recorded once per prompt and model under reports/03_scores/ and reused by every later notebook; the clarifier never calls a model at run time.
 
+## Amendments made with notebook 03b (17 November 2026)
+
+- The clarifier's conformity score is a conditional logit over per-option evidence from the permitted view (name match, body match, a type cue, a best-name flag; for "none of these" an indicator, minus the best name match and minus the type agreement) plus the model's centred option log-probability, fitted on the temperature half of the calibration tasks; the threshold half gives one conformal threshold per tie-size stratum (candidates sharing the best name match: 1, 2, 3, 4 or more; strata under 50 points use the pooled threshold). Notebook 03's score (the model's log-probabilities with one temperature and one pooled threshold) was overconfident on requests that are ambiguous by construction and resolved 0.81 and 0.87 of the legitimate tasks; it stays in the tables as LORE-v1.
+- Follow-through: a requester who answers "none of these" to a list question is asked over the candidates not yet offered, in score order, before the universal reply; the turn budget stays at three.
+- The weight fitted on the model's log-probability column is reported, and an evidence-only clarifier (LORE-E, no model call on the routing path) and a model-only one (LORE-L) are run as the ablation of the score.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

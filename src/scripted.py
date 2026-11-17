@@ -91,7 +91,7 @@ class ScriptedUser:
         self.target_ref, self.target, self.world = target_ref, target, world
 
     def answer(self, obs: dict) -> str:
-        if obs.get("question") and self.target is not None:
+        if obs.get("question") and obs["question"].get("attribute") and self.target is not None:
             from clarifier import attribute_value_label
             value = attribute_value_label(self.target, obs["question"]["attribute"], self.world)
             if self.target_ref in obs["question"]["set"]:

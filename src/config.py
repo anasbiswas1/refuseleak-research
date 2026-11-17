@@ -69,6 +69,10 @@ CANDIDATES_M = 5                  # permitted candidates offered to the scorer, 
 MAX_LIST_OPTIONS = 4              # a set larger than this is narrowed by an attribute question first (Equation 14)
 CLARIFIER_ATTRIBUTES = ["type", "dept", "owner"]
 LORE = "LORE"                     # system id of the low-view conformal clarifier (method name is a placeholder)
+TIE_STRATA = 4                    # conformal threshold per tie size (candidates sharing the best name match), capped here
+MIN_STRATUM = 50                  # a stratum with fewer threshold-half points uses the pooled threshold
+SCORER = "combined"               # the method's conformity score: permitted-view evidence plus the model's option log-probability
+LORE_ABLATIONS = {"LORE-E": "evidence", "LORE-L": "llm"}   # same mechanism, evidence-only and model-only scores
 
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10

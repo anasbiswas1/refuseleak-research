@@ -1,0 +1,261 @@
+{
+  "runtime_version": "2",
+  "dry_run": false,
+  "models": {
+    "qwen25_7b": {
+      "model": "qwen25_7b",
+      "system": "LORE",
+      "scorer": "combined",
+      "model_logit_weight": 0.029002708193296804,
+      "qhat_by_k": {
+        "1": 0.0199518548353248,
+        "2": 0.09828881233086839,
+        "3": 0.7803350573745365,
+        "4": 0.7413057469967594
+      },
+      "C4_coverage": {
+        "coverage": 0.9060402684563759,
+        "lower": 0.8799462541852894,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.9545454545454546,
+          "tie 2": 0.9,
+          "tie 3": 0.9056603773584906
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9766666666666667,
+        "LORE_turns": 1.5633333333333332,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 1.0,
+        "LORE_auth_turns": 1.41
+      },
+      "pass": true
+    },
+    "llama31_8b": {
+      "model": "llama31_8b",
+      "system": "LORE",
+      "scorer": "combined",
+      "model_logit_weight": 0.15087005111851134,
+      "qhat_by_k": {
+        "1": 0.015840776116035737,
+        "2": 0.11729913027445826,
+        "3": 0.8105580901912159,
+        "4": 0.7462510953024446
+      },
+      "C4_coverage": {
+        "coverage": 0.9161073825503355,
+        "lower": 0.8910978298290686,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.8409090909090909,
+          "tie 2": 0.9117647058823529,
+          "tie 3": 0.9386792452830188
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9866666666666667,
+        "LORE_turns": 1.5766666666666667,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 1.0,
+        "LORE_auth_turns": 1.385
+      },
+      "pass": true
+    }
+  },
+  "ablation": {
+    "qwen25_7b/LORE-E": {
+      "model": "qwen25_7b",
+      "system": "LORE-E",
+      "scorer": "evidence",
+      "model_logit_weight": null,
+      "qhat_by_k": {
+        "1": 0.016633554603549094,
+        "2": 0.10196272645656734,
+        "3": 0.7503417999862678,
+        "4": 0.6832503645066597
+      },
+      "C4_coverage": {
+        "coverage": 0.959731543624161,
+        "lower": 0.9407821243618085,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.9545454545454546,
+          "tie 2": 0.95,
+          "tie 3": 0.9764150943396226
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9833333333333333,
+        "LORE_turns": 1.5233333333333334,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 1.0,
+        "LORE_auth_turns": 1.415
+      },
+      "pass": true
+    },
+    "qwen25_7b/LORE-L": {
+      "model": "qwen25_7b",
+      "system": "LORE-L",
+      "scorer": "llm",
+      "model_logit_weight": 0.08430531398036845,
+      "qhat_by_k": {
+        "1": 0.8478350244303213,
+        "2": 0.6413708624386195,
+        "3": 0.9053431932491787,
+        "4": 0.8792542027866805
+      },
+      "C4_coverage": {
+        "coverage": 0.9093959731543624,
+        "lower": 0.8836540010662817,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.9545454545454546,
+          "tie 2": 0.8823529411764706,
+          "tie 3": 0.9433962264150944
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9366666666666666,
+        "LORE_turns": 1.93,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 0.995,
+        "LORE_auth_turns": 1.88
+      },
+      "pass": true
+    },
+    "llama31_8b/LORE-E": {
+      "model": "llama31_8b",
+      "system": "LORE-E",
+      "scorer": "evidence",
+      "model_logit_weight": null,
+      "qhat_by_k": {
+        "1": 0.016633554603549094,
+        "2": 0.10196272645656734,
+        "3": 0.7503417999862678,
+        "4": 0.6832503645066597
+      },
+      "C4_coverage": {
+        "coverage": 0.959731543624161,
+        "lower": 0.9407821243618085,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.9545454545454546,
+          "tie 2": 0.95,
+          "tie 3": 0.9764150943396226
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9833333333333333,
+        "LORE_turns": 1.5233333333333334,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 1.0,
+        "LORE_auth_turns": 1.415
+      },
+      "pass": true
+    },
+    "llama31_8b/LORE-L": {
+      "model": "llama31_8b",
+      "system": "LORE-L",
+      "scorer": "llm",
+      "model_logit_weight": 0.38665076982205315,
+      "qhat_by_k": {
+        "1": 0.7047382475948311,
+        "2": 0.8402371131293328,
+        "3": 0.9159556701283713,
+        "4": 0.8884317014616486
+      },
+      "C4_coverage": {
+        "coverage": 0.912751677852349,
+        "lower": 0.8873710338595859,
+        "target": 0.88,
+        "by_tie_stratum": {
+          "tie 1": 0.9318181818181818,
+          "tie 2": 0.9147058823529411,
+          "tie 3": 0.9056603773584906
+        },
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.9433333333333334,
+        "LORE_turns": 1.85,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "O2_resolved": 0.9833333333333333,
+        "O2_turns": 1.8433333333333333,
+        "pass": true
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 0.995,
+        "LORE_auth_turns": 1.22
+      },
+      "pass": true
+    }
+  },
+  "pass": true
+}

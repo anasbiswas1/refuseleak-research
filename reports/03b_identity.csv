@@ -1,0 +1,17 @@
+model,system,identical_share,units
+llama31_8b,B4,1.0,600
+llama31_8b,B6,0.995,600
+llama31_8b,LORE,1.0,600
+llama31_8b,LORE-E,1.0,600
+llama31_8b,LORE-L,1.0,600
+llama31_8b,LORE-v1,1.0,600
+llama31_8b,O1,1.0,600
+llama31_8b,O2,0.78,600
+qwen25_7b,B4,1.0,600
+qwen25_7b,B6,0.995,600
+qwen25_7b,LORE,1.0,600
+qwen25_7b,LORE-E,1.0,600
+qwen25_7b,LORE-L,1.0,600
+qwen25_7b,LORE-v1,1.0,600
+qwen25_7b,O1,1.0,600
+qwen25_7b,O2,0.78,600
