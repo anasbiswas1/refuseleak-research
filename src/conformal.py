@@ -20,7 +20,7 @@ def temperature_scale(logits: np.ndarray, T: float) -> np.ndarray:
 
 def fit_temperature(logits: np.ndarray, labels: np.ndarray, grid=None) -> float:
     """Temperature that minimises negative log-likelihood on calibration data (one-dimensional grid search)."""
-    grid = np.exp(np.linspace(math.log(0.2), math.log(5.0), 60)) if grid is None else grid
+    grid = np.exp(np.linspace(math.log(0.1), math.log(20.0), 80)) if grid is None else grid
     best, best_nll = 1.0, float("inf")
     for T in grid:
         p = temperature_scale(logits, T)

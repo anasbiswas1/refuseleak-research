@@ -1,0 +1,22 @@
+{
+  "dry_run": false,
+  "tasks": {
+    "cal_target": 1000,
+    "cal_none": 1000,
+    "test_target": 300,
+    "test_auth": 200,
+    "test_none": 300,
+    "probe": 600
+  },
+  "prompt_rows": 3492,
+  "qwen25_7b": {
+    "prompts": 3138,
+    "scored_now": 3138,
+    "seconds": 280.0
+  },
+  "llama31_8b": {
+    "prompts": 3138,
+    "scored_now": 3138,
+    "seconds": 267.0
+  }
+}

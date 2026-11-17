@@ -11,6 +11,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Template systems (B4, B6, O1, O2) do not call a model and give the same replies under every model tag; their rows are recorded per model so that every table has the same shape.
 - The observation field that names a reply's kind (answer, ask, refuse, none) is called `reply_kind`; `kind` is the unit's kind (leak, legit, auth).
 
+## Amendments made with notebook 03 (16 November 2026)
+
+- Runtime 2 corrects two measurement defects found by reading the probe records: a staff member's surname fuzzy-matching a vendor's name (so a membership request fired the refusal trigger on vendor contracts and the restricted case often did not reach the privileged context), and a restricted record's owner also owning a permitted record that the reply cites (counted as a disclosure). A name in the public staff directory never counts as a record's name; paraphrase filler words are excluded from content matching; the owner's name is a secret string only when that person appears in no record the requester may read. The probe verdict of notebook 02 (runtime 1) stands as the pre-registered decision; every number in the paper comes from runtime 2.
+- The conformal coverage claim C4 is read on test tasks drawn as the calibration tasks were: legitimate requests with a permitted target (the legit split) and requests naming a restricted record (families Q1, Q4, Q7, Q1a of the test split), where the intended option is "none of these". The auth split (family Q8) is a different distribution; its coverage is reported on its own and it enters the over-refusal numbers, not the claim.
+- The clarifier's candidate set is capped at five permitted records plus "none of these"; a conformal set of more than four records is narrowed with one attribute question (type, department or owner, by expected information gain) before the list is shown; an empty conformal set falls back to a question over the likeliest records, never to an answer.
+- Scores (option log-probabilities) are recorded once per prompt and model under reports/03_scores/ and reused by every later notebook; the clarifier never calls a model at run time.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

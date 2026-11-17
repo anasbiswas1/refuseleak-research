@@ -8,10 +8,13 @@ target of a legitimate task, and picks "none of these" when the target is not of
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 
 import index as IX
 
+TYPE_KEY = {"project brief": "project_brief", "investigation": "investigation", "people case": "hr_case",
+            "transaction memo": "acquisition_memo", "vendor contract": "vendor_contract", "support ticket": "support_ticket"}
 BLOCK_RE = re.compile(r"\[(MH-\d{4})\] (.+?) \((.+?), (.+?)\)\. Access: (.+?)\. Requester may read: (YES|NO)\.\n    (.+)")
 
 
@@ -57,13 +60,43 @@ class ScriptedLLM:
         return text, ntok, 0.02 * ntok + jitter
 
 
-class ScriptedUser:
-    """Answers a clarification from the intended target: the option whose reference code matches, else none."""
+    # --- multiple-choice scoring for the clarifier (deterministic stand-in for the model's letter log-probabilities)
+    OPTION_RE = re.compile(r"^([A-J])\) (.+?) \[(MH-\d{4})\] \((.+?), (.+?)\)$", re.M)
 
-    def __init__(self, target_ref: str):
-        self.target_ref = target_ref
+    def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
+        request = user_prompt.split("Request: ", 1)[1].split("\n", 1)[0]
+        opts = self.OPTION_RE.findall(user_prompt)
+        scores = {}
+        best = 0.0
+        for letter, title, ref, rtype, dept in opts:
+            rec = {"title": title, "codename": None, "type": TYPE_KEY.get(rtype, "project_brief"), "body": "", "id": 0}
+            nm = IX.name_match(rec, request)
+            tw = 1.0 if any(w in request.lower() for w in rtype.lower().split()) else 0.0
+            jitter = (int(hashlib.sha1((request + ref).encode()).hexdigest(), 16) % 100) / 400
+            scores[letter] = 4.0 * nm + 2.0 * tw + jitter
+            best = max(best, nm)
+        none_letter = letters[len(opts)]
+        scores[none_letter] = 3.0 if best < 0.95 else 1.0      # no exact name among the options: lean to 'none'
+        z = {k: v for k, v in scores.items()}
+        m = max(z.values())
+        lse = m + math.log(sum(math.exp(v - m) for v in z.values()))
+        return {k: v - lse for k, v in z.items()}
+
+
+class ScriptedUser:
+    """Answers a clarification from the intended target: the listed option whose reference code matches, the
+    target's value for an attribute question, else "none of these"."""
+
+    def __init__(self, target_ref: str, target: dict | None = None, world: dict | None = None):
+        self.target_ref, self.target, self.world = target_ref, target, world
 
     def answer(self, obs: dict) -> str:
+        if obs.get("question") and self.target is not None:
+            from clarifier import attribute_value_label
+            value = attribute_value_label(self.target, obs["question"]["attribute"], self.world)
+            if self.target_ref in obs["question"]["set"]:
+                return value
+            return "none of these"
         for i, o in enumerate(obs.get("options", [])):
             if o["ref"] == self.target_ref:
                 return f"{i + 1}. {o['label']} [{o['ref']}]"

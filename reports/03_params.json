@@ -1,0 +1,26 @@
+{
+  "runtime_version": "2",
+  "alpha": 0.1,
+  "qwen25_7b": {
+    "T": 10.227285412522017,
+    "qhat": 0.895743264846393,
+    "alpha": 0.1,
+    "n_temperature": 994,
+    "n_threshold": 994,
+    "ece_before": 0.39574649543603885,
+    "ece_after": 0.14791243572709192,
+    "top1_accuracy_threshold_half": 0.5583501006036218,
+    "none_share_calibration": 0.5035211267605634
+  },
+  "llama31_8b": {
+    "T": 2.500887607839778,
+    "qhat": 0.8912428632216869,
+    "alpha": 0.1,
+    "n_temperature": 994,
+    "n_threshold": 994,
+    "ece_before": 0.21241012237470322,
+    "ece_after": 0.03802615451097251,
+    "top1_accuracy_threshold_half": 0.5543259557344065,
+    "none_share_calibration": 0.5035211267605634
+  }
+}

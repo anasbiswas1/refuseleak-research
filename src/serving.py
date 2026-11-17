@@ -119,6 +119,21 @@ class VLLMChat:
         ntok = r.usage.completion_tokens if r.usage else len(text.split())
         return text, ntok, lat
 
+    def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
+        """Log-probability of each option letter as the first generated token (KnowNo-style scoring). Letters that
+        are not among the top-20 tokens are absent from the result."""
+        messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]
+        r = self._with_retries(lambda: self.client.chat.completions.create(
+            model=self.model_id, messages=messages, max_tokens=1, temperature=0.0, seed=0, logprobs=True, top_logprobs=20))
+        out = {}
+        content = r.choices[0].logprobs.content if r.choices[0].logprobs else []
+        if content:
+            for tl in content[0].top_logprobs:
+                tok = tl.token.strip().strip(")").strip(".").upper()
+                if len(tok) == 1 and tok in letters and (tok not in out or tl.logprob > out[tok]):
+                    out[tok] = float(tl.logprob)
+        return out
+
     def complete(self, prompt: str, max_tokens: int = 120, temperature: float = 0.7, n: int = 1, seed: int = 0) -> list[str]:
         """Sampled completions for the paraphrase pool (notebook 01)."""
         r = self._with_retries(lambda: self.client.chat.completions.create(
@@ -148,5 +163,5 @@ def make_llm(tag: str, port: int = 8000):
     return VLLMChat(client, tag)
 
 
-def records_root():
-    return (config.DATA / "dry_run_records") if DRY_RUN else config.RECORDS
+def records_root(name: str = "02_records"):
+    return (config.DATA / f"dry_run_{name}") if DRY_RUN else (config.REPORTS / name)

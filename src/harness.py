@@ -38,7 +38,10 @@ def run_task(system, unit: dict, world_key: str, llm, shared: dict | None = None
     world = unit["worlds"][world_key]
     requester = acl.person(world, unit["requester"])
     history: list[dict] = []
-    user = ScriptedUser(unit["target_ref"]) if unit["kind"] in ("legit", "auth") else None
+    user = None
+    if unit["kind"] in ("legit", "auth"):
+        target = next((r for r in world["records"] if r["ref"] == unit["target_ref"]), None)
+        user = ScriptedUser(unit["target_ref"], target, world)
     rows = []
     ctx = {"world": world, "requester": requester, "query": unit["query"], "history": history, "llm": llm, "unit": unit}
     if shared and "b0" in shared:
@@ -51,7 +54,7 @@ def run_task(system, unit: dict, world_key: str, llm, shared: dict | None = None
                      "disclosed": disclosed(obs["text"], unit)})
         if obs["reply_kind"] != "ask" or user is None:
             break
-        history.append({"role": "assistant", "text": obs["text"]})
+        history.append({"role": "assistant", "text": obs["text"], "question": obs.get("question")})
         history.append({"role": "user", "text": user.answer(obs)})
     final = rows[-1]
     listed = final["reply_kind"] == "answer" and unit["target_ref"] in final["cites"]
@@ -63,12 +66,23 @@ def run_task(system, unit: dict, world_key: str, llm, shared: dict | None = None
     return rows
 
 
+SYSTEMS: dict = {}          # systems registered by name beyond the baselines (the clarifier with its cache and parameters)
+
+
+def register_system(name: str, factory) -> None:
+    SYSTEMS[name] = factory
+
+
+def make_system(name: str):
+    return SYSTEMS[name]() if name in SYSTEMS else B.make_system(name)
+
+
 def run_unit(unit: dict, world_key: str, systems: list[str], llm, model: str, shared: dict | None = None) -> list[dict]:
     rows = []
     shared = dict(shared or {})
     order = sorted(systems, key=lambda s: (s != "B0", s))        # B0 first: B2 reuses its generation
     for name in order:
-        sysobj = B.make_system(name)
+        sysobj = make_system(name)
         task_rows = run_task(sysobj, unit, world_key, llm, shared)
         if name == "B0":
             shared["b0"] = {k: task_rows[0][k] for k in ("text", "status", "latency")}

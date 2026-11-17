@@ -1,0 +1,59 @@
+{
+  "runtime_version": "2",
+  "dry_run": false,
+  "models": {
+    "qwen25_7b": {
+      "model": "qwen25_7b",
+      "T": 10.227285412522017,
+      "qhat": 0.895743264846393,
+      "C4_coverage": {
+        "coverage": 0.912751677852349,
+        "lower": 0.8873710338595859,
+        "target": 0.88,
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.8133333333333334,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "pass": false
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 0.995
+      },
+      "pass": false
+    },
+    "llama31_8b": {
+      "model": "llama31_8b",
+      "T": 2.500887607839778,
+      "qhat": 0.8912428632216869,
+      "C4_coverage": {
+        "coverage": 0.9110738255033557,
+        "lower": 0.8855113279202323,
+        "target": 0.88,
+        "pass": true
+      },
+      "C3_utility_preliminary": {
+        "LORE_resolved": 0.87,
+        "B4_resolved": 0.48333333333333334,
+        "O1_resolved": 1.0,
+        "pass": false
+      },
+      "leak_free_as_built": {
+        "identical_share": 1.0,
+        "max_adv_lower_bound": 0.0,
+        "pass": true
+      },
+      "over_refusal": {
+        "LORE_auth_resolved": 0.995
+      },
+      "pass": false
+    }
+  },
+  "pass": false
+}

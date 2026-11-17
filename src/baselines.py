@@ -112,9 +112,10 @@ class LLMSystem:
     def context_records(self, ctx: dict) -> list[dict]:
         world, req = ctx["world"], ctx["requester"]
         mode = RETRIEVAL[self.name]
+        ex = IX.people_tokens(world)
         if mode == "pre":
-            return [r for r, _ in IX.search(acl.permitted_view(world, req["pid"]), ctx["query"], config.TOP_K)]
-        hits = [r for r, _ in IX.search(world["records"], ctx["query"], config.TOP_K)]
+            return [r for r, _ in IX.search(acl.permitted_view(world, req["pid"]), ctx["query"], config.TOP_K, ex)]
+        hits = [r for r, _ in IX.search(world["records"], ctx["query"], config.TOP_K, ex)]
         if mode == "post":                          # post-filter: restricted records took slots, then vanish
             hits = [r for r in hits if acl.can_read(req, r)]
         return hits
@@ -162,16 +163,16 @@ class TriggeredRefusal:
 
     def respond(self, ctx: dict) -> dict:
         world, req = ctx["world"], ctx["requester"]
-        if any(not acl.can_read(req, r) for r in IX.candidates(world["records"], ctx["query"])):
+        if any(not acl.can_read(req, r) for r in IX.candidates(world["records"], ctx["query"], exclude=IX.people_tokens(world))):
             return observation(REFUSAL, "refuse", status="refused", latency=0.0, n_tokens=len(REFUSAL.split()))
         return LLMSystem("B3").respond(ctx)
 
 
 # ----------------------------------------------------------------------------- template systems
-def best_or_list(cands: list[dict], q: str) -> dict:
+def best_or_list(cands: list[dict], q: str, exclude: set | None = None) -> dict:
     """One record when the top candidate is strictly the best match, otherwise the list of candidates: the strongest
     behaviour a system without clarification can have."""
-    if len(cands) == 1 or IX.rank_key(cands[0], q) != IX.rank_key(cands[1], q):
+    if len(cands) == 1 or IX.rank_key(cands[0], q, exclude) != IX.rank_key(cands[1], q, exclude):
         r = cands[0]
         return observation(template_answer(r), "answer", resolved=r["ref"])
     return observation(template_list(cands), "answer")
@@ -184,9 +185,10 @@ class Universal:
     def respond(self, ctx: dict) -> dict:
         world, req, q = ctx["world"], ctx["requester"], ctx["query"]
         view = acl.permitted_view(world, req["pid"])
-        cands = IX.candidates(view, q)
+        ex = IX.people_tokens(world)
+        cands = IX.candidates(view, q, exclude=ex)
         if cands:
-            return best_or_list(cands, q)
+            return best_or_list(cands, q, ex)
         agg = _aggregate(view, q)
         if agg:
             return observation(template_list(agg), "answer")
@@ -200,7 +202,7 @@ class TypedCollapse:
 
     def resolve(self, ctx: dict):
         world, req, q = ctx["world"], ctx["requester"], ctx["query"]
-        cands = IX.candidates(world["records"], q)
+        cands = IX.candidates(world["records"], q, exclude=IX.people_tokens(world))
         permitted = [r for r in cands if acl.can_read(req, r)]
         if permitted:
             return "supported", permitted
@@ -214,7 +216,7 @@ class TypedCollapse:
     def respond(self, ctx: dict) -> dict:
         state, payload = self.resolve(ctx)
         if state == "supported":
-            return best_or_list(payload, ctx["query"])
+            return best_or_list(payload, ctx["query"], IX.people_tokens(ctx["world"]))
         if state == "supported_list":
             return observation(template_list(payload), "answer")
         return observation(COLLAPSED, "none")          # withheld and unknown render identically
@@ -240,7 +242,7 @@ class FullViewClarifier:
 
     def respond(self, ctx: dict) -> dict:
         world, req, q = ctx["world"], ctx["requester"], ctx["query"]
-        cands = IX.candidates(world["records"], q)
+        cands = IX.candidates(world["records"], q, exclude=IX.people_tokens(world))
         choice = _user_choice(ctx)
         if choice is not None:
             picked = [r for r in cands if r["ref"] in choice]

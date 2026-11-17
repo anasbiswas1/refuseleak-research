@@ -20,7 +20,7 @@ EXTERNAL = REPO_DIR / "external"         # gitignored
 SUITE_DATA = REPO_DIR / "suite_data"     # committed: paraphrase pool, unit manifests
 RECORDS = REPORTS / "02_records"         # committed: every recorded observation of the probe, gzipped JSON lines
 
-RUNTIME_VERSION = "1"   # bumped whenever prompts, systems or the harness change; observations of an older runtime are re-run
+RUNTIME_VERSION = "2"   # bumped whenever prompts, systems or the harness change; observations of an older runtime are re-run (2: person names never count as record names, filler words dropped from body matching, owner-name secret-string rule)
 WORLD_VERSION = "2"     # bumped whenever the world generator changes; part of every unit id (2: all four sensitive types as confidential anchors, type-aware S2 and S3 queries, HR department)
 
 # ----------------------------------------------------------------------------- world (plan v1, Section 9.1)
@@ -63,6 +63,12 @@ EMBEDDER = "sentence-transformers/all-MiniLM-L6-v2"             # attacker D2
 NLI_MODEL = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"       # attacker D3 and the disclosure judge
 ATTACKERS = ["D1", "D2", "D3", "D5"]
 N_FOLDS = 5
+
+# ----------------------------------------------------------------------------- clarifier (plan v1, Section 6.5)
+CANDIDATES_M = 5                  # permitted candidates offered to the scorer, plus "none of these"
+MAX_LIST_OPTIONS = 4              # a set larger than this is narrowed by an attribute question first (Equation 14)
+CLARIFIER_ATTRIBUTES = ["type", "dept", "owner"]
+LORE = "LORE"                     # system id of the low-view conformal clarifier (method name is a placeholder)
 
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10
