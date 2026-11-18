@@ -1,0 +1,163 @@
+{
+  "dry_run": false,
+  "budget": {
+    "corpus": {
+      "messages": 1212,
+      "by_type": {
+        "email_business": 638,
+        "email_legal": 63,
+        "email_logistics": 306,
+        "email_personal": 141,
+        "email_employment": 64
+      },
+      "restricted": 268,
+      "with_key": 685,
+      "clusters_available": 113
+    },
+    "recording_units": {
+      "train": 1000,
+      "certify": 2000,
+      "utility": 500
+    },
+    "calibration_tasks": {
+      "cal_target": 500,
+      "cal_none": 500,
+      "test_target": 300,
+      "test_auth": 200,
+      "test_none": 150,
+      "probe": 0
+    },
+    "scoring_prompts": 3985,
+    "configs": [
+      "L0-RT-pre",
+      "L1-RT-pre",
+      "L2-RT-pre",
+      "L3-RT-pre",
+      "L0-RT-post",
+      "L1-RT-post",
+      "L2-RT-post",
+      "L3-RT-post",
+      "L2-RS-pre",
+      "L2-RF-pre"
+    ],
+    "seconds": 173.0
+  },
+  "qwen25_7b": {
+    "scores": {
+      "prompts": 3985,
+      "scored_now": 3985,
+      "seconds": 154.3
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 16000,
+        "seconds": 219.9
+      },
+      "certify": {
+        "tasks_run": 4000,
+        "rows_total": 48000,
+        "seconds": 450.5
+      },
+      "utility": {
+        "tasks_run": 500,
+        "rows_total": 56045,
+        "seconds": 60.9
+      }
+    },
+    "renders": {
+      "L2-RS-pre": {
+        "mode": "RS",
+        "distinct": 3568,
+        "rendered_now": 3568,
+        "seconds": 442.7,
+        "file_bytes": 308272
+      },
+      "L2-RF-pre": {
+        "mode": "RF",
+        "distinct": 4013,
+        "rendered_now": 4013,
+        "seconds": 512.4,
+        "file_bytes": 291762
+      }
+    },
+    "derived": {
+      "L2-RS-pre": 7013,
+      "L2-RF-pre": 7013
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 69260,
+      "L0-RT-post.jsonl.gz": 507423,
+      "L0-RT-pre.jsonl.gz": 630674,
+      "L1-RT-post.jsonl.gz": 693527,
+      "L1-RT-pre.jsonl.gz": 842958,
+      "L2-RF-pre.jsonl.gz": 916401,
+      "L2-RS-pre.jsonl.gz": 915218,
+      "L2-RT-post.jsonl.gz": 719238,
+      "L2-RT-pre.jsonl.gz": 871636,
+      "L3-RT-post.jsonl.gz": 727816,
+      "L3-RT-pre.jsonl.gz": 877895,
+      "O1.jsonl.gz": 50445
+    },
+    "seconds_model": 2157.7
+  },
+  "llama31_8b": {
+    "scores": {
+      "prompts": 3985,
+      "scored_now": 3985,
+      "seconds": 135.1
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 16000,
+        "seconds": 222.6
+      },
+      "certify": {
+        "tasks_run": 4000,
+        "rows_total": 48000,
+        "seconds": 452.1
+      },
+      "utility": {
+        "tasks_run": 500,
+        "rows_total": 56066,
+        "seconds": 60.8
+      }
+    },
+    "renders": {
+      "L2-RS-pre": {
+        "mode": "RS",
+        "distinct": 3523,
+        "rendered_now": 3523,
+        "seconds": 542.9,
+        "file_bytes": 347007
+      },
+      "L2-RF-pre": {
+        "mode": "RF",
+        "distinct": 4018,
+        "rendered_now": 4018,
+        "seconds": 933.9,
+        "file_bytes": 606798
+      }
+    },
+    "derived": {
+      "L2-RS-pre": 7018,
+      "L2-RF-pre": 7018
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 69234,
+      "L0-RT-post.jsonl.gz": 509807,
+      "L0-RT-pre.jsonl.gz": 638683,
+      "L1-RT-post.jsonl.gz": 699301,
+      "L1-RT-pre.jsonl.gz": 849974,
+      "L2-RF-pre.jsonl.gz": 1285221,
+      "L2-RS-pre.jsonl.gz": 987181,
+      "L2-RT-post.jsonl.gz": 725352,
+      "L2-RT-pre.jsonl.gz": 878927,
+      "L3-RT-post.jsonl.gz": 733640,
+      "L3-RT-pre.jsonl.gz": 885218,
+      "O1.jsonl.gz": 50487
+    },
+    "seconds_model": 2527.8
+  }
+}

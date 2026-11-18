@@ -178,16 +178,30 @@ def corpus_hash(corpus: list[dict]) -> str:
 
 
 # ----------------------------------------------------------------------------- key words (the code-name analogue)
+SUBJECT_GENERIC = {"confidential", "privileged", "communication", "communications", "important", "question", "questions",
+                   "thanks", "thank", "help", "info", "information", "attached", "attachment", "just", "great", "request",
+                   "requests", "internal", "private", "please", "update", "updated", "updates", "draft", "final", "revised",
+                   "call", "note", "notes", "meeting", "meetings", "follow", "followup", "message", "test", "press",
+                   "release", "memo", "letter", "today", "tomorrow", "week", "weekly", "daily", "morning", "conference",
+                   "agenda", "minutes", "schedule", "reminder", "urgent", "response", "reply", "comments", "review",
+                   "summary", "report", "status", "version", "copy", "list", "issue", "issues", "news", "article",
+                   "attention", "approval", "action", "items", "item", "general", "friday", "monday", "tuesday",
+                   "wednesday", "thursday", "january", "february", "march", "april", "june", "july", "august",
+                   "september", "october", "november", "december", "enron", "ect", "corp", "houston", "email", "mail"}
+MIN_KEY_CHARS = 5                      # a misspelt key word must still have four letters for name matching
+
+
 def assign_keys(corpus: list[dict], min_share: int = 2) -> list[dict]:
-    """The key word of a message: the least common usable subject token that at least `min_share` other messages
-    of a permitted type also carry in their subject. Messages without one have no key (they are never anchors)."""
+    """The key word of a message: the least common usable subject token (five letters or more, no staff name, no
+    email-generic word) that at least `min_share` other messages of a permitted type also carry in their subject.
+    Messages without one have no key (they are never anchors)."""
     names = set()
     for r in corpus:
         nm = _name_from_address(r["sender"] or "")
         if nm:
             names |= {nm[0].lower(), nm[1].lower()}
-    banned = names | {"enron", "ect", "corp", "houston"}
-    subj_tokens = [[t for t in IX.tokens(r["subject"]) if len(t) >= 4 and t not in IX.GENERIC and t not in banned and not t.isdigit()]
+    banned = names | SUBJECT_GENERIC
+    subj_tokens = [[t for t in IX.tokens(r["subject"]) if len(t) >= MIN_KEY_CHARS and t not in IX.GENERIC and t not in banned and not t.isdigit()]
                    for r in corpus]
     df = Counter(t for toks in subj_tokens for t in set(toks))
     permitted_df = Counter(t for r, toks in zip(corpus, subj_tokens) if r["type"] not in RESTRICTED_TYPES for t in set(toks))

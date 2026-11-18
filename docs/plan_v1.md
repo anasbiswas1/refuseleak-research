@@ -51,6 +51,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Domain 2 splits: calibration 1,500 and utility 500 (clarifier fit), train 1,000, certify 2,000, test 1,000, legit 300, auth 200. The certified grid in Domain 2 is the eight template configurations plus the rendered variants of the level selected in Domain 1 (ten configurations, Bonferroni at 0.05/10).
 - Reference codes of Domain 2 records are EN-nnnn; citation parsing accepts both prefixes.
 
+## Amendments made with notebook 07b (18 November 2026)
+
+- Domain 2 key words exclude email-generic subject words and words under five letters; the corpus file and manifests of notebook 07a are rewritten under this rule before anything is recorded in Domain 2.
+- The Domain 2 clarifier is fitted on Domain 2 calibration tasks alone (500 legitimate and 500 restricted-target requests), by the procedure of notebook 03b; the three scorers are fitted and the model-column weight reported.
+- The Domain 2 certificate covers ten configurations (eight template ones and the two rendered variants of the level selected in Domain 1) at delta/10; D4 trains on the first 500 training units.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

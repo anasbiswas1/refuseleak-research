@@ -1,0 +1,272 @@
+{
+  "domain": "enron",
+  "runtime_version": "2",
+  "alpha": 0.1,
+  "scorers": [
+    "combined",
+    "evidence",
+    "llm"
+  ],
+  "qwen25_7b": {
+    "combined": {
+      "scorer": "combined",
+      "cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_names": [
+        "name_match",
+        "body_match",
+        "type_cue",
+        "best_name",
+        "none",
+        "none_minus_best_name",
+        "none_minus_type_cue",
+        "model_logit"
+      ],
+      "weights": [
+        -0.7477198503880026,
+        0.50400955127268,
+        -0.12938335035201162,
+        2.5297053465136248,
+        0.2621968850146275,
+        -2.3545254889902734,
+        -0.19579011768331975,
+        0.03042519375117091
+      ],
+      "qhat_by_k": {
+        "1": 0.7738494340750861,
+        "2": 0.7936321410705092,
+        "3": 0.8438505231697953,
+        "4": 0.8739387458943995
+      },
+      "qhat_pooled": 0.8371789979242603,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.472,
+      "model_logit_weight": 0.03042519375117091
+    },
+    "evidence": {
+      "scorer": "evidence",
+      "cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feature_names": [
+        "name_match",
+        "body_match",
+        "type_cue",
+        "best_name",
+        "none",
+        "none_minus_best_name",
+        "none_minus_type_cue"
+      ],
+      "weights": [
+        -0.6866645097696095,
+        0.6669538450519973,
+        -0.19458825494045676,
+        2.494881903693302,
+        0.4571249251687076,
+        -2.364683253270078,
+        -0.3258565900545889
+      ],
+      "qhat_by_k": {
+        "1": 0.7304950156107287,
+        "2": 0.7817887363366368,
+        "3": 0.8195681453238098,
+        "4": 0.8644978276905962
+      },
+      "qhat_pooled": 0.8195867826371939,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.476,
+      "model_logit_weight": null
+    },
+    "llm": {
+      "scorer": "llm",
+      "cols": [
+        7
+      ],
+      "feature_names": [
+        "model_logit"
+      ],
+      "weights": [
+        0.056950258176139974
+      ],
+      "qhat_by_k": {
+        "1": 0.7740896287458483,
+        "2": 0.8267841805871745,
+        "3": 0.8625402662991785,
+        "4": 0.8886750385686728
+      },
+      "qhat_pooled": 0.8579392098408879,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.414,
+      "model_logit_weight": 0.056950258176139974
+    }
+  },
+  "llama31_8b": {
+    "combined": {
+      "scorer": "combined",
+      "cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "feature_names": [
+        "name_match",
+        "body_match",
+        "type_cue",
+        "best_name",
+        "none",
+        "none_minus_best_name",
+        "none_minus_type_cue",
+        "model_logit"
+      ],
+      "weights": [
+        -0.8453057884700033,
+        0.31220691636815306,
+        0.22644397217579357,
+        2.4267682502916768,
+        0.5935868974093408,
+        -2.5150659080008078,
+        -0.1835714626167765,
+        0.20412709628698886
+      ],
+      "qhat_by_k": {
+        "1": 0.7500347087331718,
+        "2": 0.8008112902942806,
+        "3": 0.8698562414657451,
+        "4": 0.9046886076334657
+      },
+      "qhat_pooled": 0.8551159909159523,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.516,
+      "model_logit_weight": 0.20412709628698886
+    },
+    "evidence": {
+      "scorer": "evidence",
+      "cols": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feature_names": [
+        "name_match",
+        "body_match",
+        "type_cue",
+        "best_name",
+        "none",
+        "none_minus_best_name",
+        "none_minus_type_cue"
+      ],
+      "weights": [
+        -0.6866645097696095,
+        0.6669538450519973,
+        -0.19458825494045676,
+        2.494881903693302,
+        0.4571249251687076,
+        -2.364683253270078,
+        -0.3258565900545889
+      ],
+      "qhat_by_k": {
+        "1": 0.7304950156107287,
+        "2": 0.7817887363366368,
+        "3": 0.8195681453238098,
+        "4": 0.8644978276905962
+      },
+      "qhat_pooled": 0.8195867826371939,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.476,
+      "model_logit_weight": null
+    },
+    "llm": {
+      "scorer": "llm",
+      "cols": [
+        7
+      ],
+      "feature_names": [
+        "model_logit"
+      ],
+      "weights": [
+        0.12702671916627276
+      ],
+      "qhat_by_k": {
+        "1": 0.7956808673707501,
+        "2": 0.8350916705724012,
+        "3": 0.8403308132709831,
+        "4": 0.8676463679604463
+      },
+      "qhat_pooled": 0.8491479549290151,
+      "n_by_k": {
+        "1": 150,
+        "2": 175,
+        "3": 111,
+        "4": 64
+      },
+      "alpha": 0.1,
+      "n_weights": 500,
+      "n_threshold": 500,
+      "top1_accuracy_threshold_half": 0.394,
+      "model_logit_weight": 0.12702671916627276
+    }
+  }
+}

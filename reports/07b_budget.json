@@ -1,0 +1,42 @@
+{
+  "corpus": {
+    "messages": 1212,
+    "by_type": {
+      "email_business": 638,
+      "email_legal": 63,
+      "email_logistics": 306,
+      "email_personal": 141,
+      "email_employment": 64
+    },
+    "restricted": 268,
+    "with_key": 685,
+    "clusters_available": 113
+  },
+  "recording_units": {
+    "train": 1000,
+    "certify": 2000,
+    "utility": 500
+  },
+  "calibration_tasks": {
+    "cal_target": 500,
+    "cal_none": 500,
+    "test_target": 300,
+    "test_auth": 200,
+    "test_none": 150,
+    "probe": 0
+  },
+  "scoring_prompts": 3985,
+  "configs": [
+    "L0-RT-pre",
+    "L1-RT-pre",
+    "L2-RT-pre",
+    "L3-RT-pre",
+    "L0-RT-post",
+    "L1-RT-post",
+    "L2-RT-post",
+    "L3-RT-post",
+    "L2-RS-pre",
+    "L2-RF-pre"
+  ],
+  "seconds": 173.0
+}
