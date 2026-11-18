@@ -38,6 +38,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Scorers cache by content (reply text, or reply and statement), because replies repeat across configurations; the counts are unchanged by caching.
 - The utility used for selection (Equation 17) is the resolution rate on the utility split recorded in notebook 04 (families Q4 and Q5 together); the held-out utility on the test split follows in notebook 06.
 
+## Amendments made with notebook 06 (18 November 2026)
+
+- Notebook 06 runs on an L4: the baselines' training and test observations are generated here (notebook 04 recorded only the configurations), and the judge attacker needs the other model.
+- Held-out attackers train on the first 1,000 training units (both worlds) for every system, the selected configuration included; the certificate of notebook 05 used 2,000 for D1, D2, D3, D5, D6 and 1,000 for D4. The held-out p-values are single tests at δ, not a second certificate.
+- Routing is measured as the share of S1 test units (world 1) whose request the controller routed to the owner of a restricted record, with the world-0 share (no secret record; routing to other unreadable records only) as the control; requests without a record name are not routed.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

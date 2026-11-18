@@ -1,0 +1,102 @@
+{
+  "runtime_version": "2",
+  "dry_run": false,
+  "train_units": 1000,
+  "models": {
+    "qwen25_7b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.06672844653506838,
+        "max_adv": 0.02299999999999991,
+        "bound_at_delta": 0.07,
+        "pass": true
+      },
+      "C3_utility": {
+        "resolved": {
+          "L2-RT-pre": 0.9766666666666667,
+          "B4": 0.48333333333333334,
+          "B6": 0.48333333333333334,
+          "O1": 1.0,
+          "O2": 0.9833333333333333
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 1.0,
+          "B3": 0.78,
+          "B4": 1.0,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "disclosure_world1": {
+        "B0": 0.6395,
+        "B1": 0.53,
+        "B2": 0.058,
+        "B3": 0.01,
+        "B4": 0.04,
+        "B5": 0.0285,
+        "B6": 0.0405,
+        "L2-RT-pre": 0.023,
+        "O1": 0.0,
+        "O2": 0.41
+      },
+      "pass": true
+    },
+    "llama31_8b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.06672844653506838,
+        "max_adv": 0.02299999999999991,
+        "bound_at_delta": 0.07,
+        "pass": true
+      },
+      "C3_utility": {
+        "resolved": {
+          "L2-RT-pre": 0.9866666666666667,
+          "B4": 0.48333333333333334,
+          "B6": 0.48333333333333334,
+          "O1": 1.0,
+          "O2": 0.9833333333333333
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 1.0,
+          "B3": 0.74,
+          "B4": 1.0,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "disclosure_world1": {
+        "B0": 0.811,
+        "B1": 0.359,
+        "B2": 0.035,
+        "B3": 0.009,
+        "B4": 0.04,
+        "B5": 0.018,
+        "B6": 0.0405,
+        "L2-RT-pre": 0.023,
+        "O1": 0.0,
+        "O2": 0.41
+      },
+      "pass": true
+    }
+  },
+  "pass": true
+}

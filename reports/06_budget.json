@@ -1,0 +1,22 @@
+{
+  "units": {
+    "train": 1000,
+    "test": 2000,
+    "legit": 300,
+    "auth": 200
+  },
+  "selected": {
+    "qwen25_7b": "L2-RT-pre",
+    "llama31_8b": "L2-RT-pre"
+  },
+  "scoring_prompts": 2244,
+  "llm_baselines": [
+    "B0",
+    "B1",
+    "B3",
+    "B5"
+  ],
+  "leak_rows_per_llm_baseline": 6000,
+  "generations_upper_bound_per_model": 30000,
+  "judge_inputs_upper_bound_per_model": 40000
+}
