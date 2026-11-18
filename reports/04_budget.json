@@ -1,0 +1,42 @@
+{
+  "units": {
+    "train": 2000,
+    "certify": 3000,
+    "utility": 1000
+  },
+  "pool_hash": "008237670faa",
+  "scoring_prompts": 4937,
+  "scoring_prompts_by_retrieval": {
+    "post": 4119,
+    "pre": 3889
+  },
+  "decision_configs": [
+    "L0-RT-pre",
+    "L0-RT-post",
+    "L1-RT-pre",
+    "L1-RT-post",
+    "L2-RT-pre",
+    "L2-RT-post",
+    "L3-RT-pre",
+    "L3-RT-post"
+  ],
+  "rendered_configs": [
+    "L0-RS-pre",
+    "L0-RS-post",
+    "L0-RF-pre",
+    "L0-RF-post",
+    "L1-RS-pre",
+    "L1-RS-post",
+    "L1-RF-pre",
+    "L1-RF-post",
+    "L2-RS-pre",
+    "L2-RS-post",
+    "L2-RF-pre",
+    "L2-RF-post",
+    "L3-RS-pre",
+    "L3-RS-post",
+    "L3-RF-pre",
+    "L3-RF-post"
+  ],
+  "seconds_build": 103.9
+}

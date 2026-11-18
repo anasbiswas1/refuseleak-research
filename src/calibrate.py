@@ -62,16 +62,19 @@ def prompt_rows(tasks: dict[str, list[dict]]) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------------- scoring
-def score_all(rows: pd.DataFrame, cache: CL.ScoreCache, progress_every: int = 500) -> dict:
+def score_all(rows: pd.DataFrame, cache: CL.ScoreCache, progress_every: int = 500, workers: int = config.WORKERS) -> dict:
+    """Scores every prompt not yet in the cache, `workers` at a time (the cache appends under a lock)."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     keys = rows.drop_duplicates("key")
-    t0, n_new = time.time(), 0
-    for i, r in enumerate(keys.itertuples(), 1):
-        if r.key not in cache.rows:
-            cache.logprobs(r.system, r.user, r.n_cands + 1)
-            n_new += 1
-        if i % progress_every == 0:
-            print(f"  {i}/{len(keys)} prompts, {time.time() - t0:.0f} s", flush=True)
-    return {"prompts": int(len(keys)), "scored_now": n_new, "seconds": round(time.time() - t0, 1)}
+    todo = [r for r in keys.itertuples() if r.key not in cache.rows]
+    t0 = time.time()
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = [ex.submit(cache.logprobs, r.system, r.user, r.n_cands + 1) for r in todo]
+        for i, f in enumerate(as_completed(futs), 1):
+            f.result()
+            if i % progress_every == 0:
+                print(f"  {i}/{len(todo)} prompts, {time.time() - t0:.0f} s", flush=True)
+    return {"prompts": int(len(keys)), "scored_now": len(todo), "seconds": round(time.time() - t0, 1)}
 
 
 def logits_matrix(rows: pd.DataFrame, cache: CL.ScoreCache) -> tuple[np.ndarray, np.ndarray, list[np.ndarray]]:

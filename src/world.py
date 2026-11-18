@@ -323,7 +323,7 @@ def build_unit(split: str, index: int, pool: dict | None = None) -> dict:
     rng = random.Random(f"unit|{seed}")
     world = build_world(seed, pool)
     people, records, clusters = world["people"], world["records"], world["clusters"]
-    kind = {"probe": "leak", "train": "leak", "calibration": "leak", "test": "leak",
+    kind = {"probe": "leak", "train": "leak", "calibration": "leak", "test": "leak", "certify": "leak",
             "legit": "legit", "utility": "legit", "auth": "auth"}[split]
     unit = {"uid": f"{split}-{index:05d}", "split": split, "index": index, "seed": seed, "pool_hash": phash,
             "kind": kind, "world_version": config.WORLD_VERSION}

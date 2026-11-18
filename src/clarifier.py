@@ -44,6 +44,17 @@ def candidate_set(world: dict, pid: int, query: str, m: int = config.CANDIDATES_
     return cands[:m]
 
 
+def post_candidate_set(world: dict, pid: int, query: str, m: int = config.CANDIDATES_M) -> list[dict]:
+    """Post-filter retrieval: the top-m over the full index (restricted records take slots), then the restricted
+    ones are dropped. Fewer or thinner results are the side channel this retrieval mode is expected to leak by."""
+    req = acl.person(world, pid)
+    ex = IX.people_tokens(world)
+    cands = IX.candidates(world["records"], query, m, exclude=ex)
+    if not cands:
+        cands = [r for r, _ in IX.search(world["records"], query, m, exclude=ex)]
+    return [r for r in cands[:m] if acl.can_read(req, r)]
+
+
 def option_line(letter: str, rec: dict) -> str:
     return f"{letter}) {rec['title']} [{rec['ref']}] ({TYPE_LABEL[rec['type']]}, {rec['dept']})"
 
@@ -65,7 +76,9 @@ class ScoreCache:
     """Letter log-probabilities keyed by prompt. Reads a JSON-lines file, appends new scores, never re-scores."""
 
     def __init__(self, path: Path, scorer=None):
+        import threading
         self.path, self.scorer = Path(path), scorer
+        self.lock = threading.Lock()
         self.rows: dict[str, dict] = {}
         if self.path.exists():
             for line in self.path.read_text().splitlines():
@@ -83,10 +96,12 @@ class ScoreCache:
         letters = LETTERS[:n_options]
         lp = self.scorer.choice_logprobs(system, user, letters)
         row = {"key": key, "n_options": n_options, "logprobs": {l: float(lp.get(l, float("nan"))) for l in letters}}
-        with open(self.path, "a") as fh:
-            fh.write(json.dumps(row) + "\n")
-        self.rows[key] = row
-        return row["logprobs"]
+        with self.lock:
+            if key not in self.rows:
+                with open(self.path, "a") as fh:
+                    fh.write(json.dumps(row) + "\n")
+                self.rows[key] = row
+        return self.rows[key]["logprobs"]
 
 
 def logits_from(lp: dict[str, float], n_options: int) -> np.ndarray:
@@ -334,6 +349,16 @@ class EvidenceClarifier:
     def threshold(self, k: int) -> float:
         return self.qhat_by_k.get(int(k), self.qhat_pooled)
 
+    # hooks a configuration may override (retrieval mode, disclosure level)
+    def candidates(self, world: dict, pid: int, query: str) -> list[dict]:
+        return candidate_set(world, pid, query)
+
+    def aggregate(self, world: dict, pid: int, query: str) -> list[dict]:
+        return _aggregate(acl.permitted_view(world, pid), query)
+
+    def universal(self, ctx: dict) -> dict:
+        return observation(UNIVERSAL, "none")
+
     def scores(self, world: dict, requester: dict, query: str, cands: list[dict]) -> np.ndarray:
         z = None
         if self.uses_llm:
@@ -347,14 +372,13 @@ class EvidenceClarifier:
     def respond(self, ctx: dict) -> dict:
         world, req, q = ctx["world"], ctx["requester"], ctx["query"]
         pid = req["pid"]
-        view = acl.permitted_view(world, pid)
         ex = IX.people_tokens(world)
         if not [t for t in IX.query_name_tokens(q) if t not in ex]:          # aggregate or person request: list by content
-            agg = _aggregate(view, q)
-            return observation(template_list(agg), "answer") if agg else observation(UNIVERSAL, "none")
-        cands = candidate_set(world, pid, q)
+            agg = self.aggregate(world, pid, q)
+            return observation(template_list(agg), "answer") if agg else self.universal(ctx)
+        cands = self.candidates(world, pid, q)
         if not cands:
-            return observation(UNIVERSAL, "none")
+            return self.universal(ctx)
         probs = self.scores(world, req, q, cands)
         answer = _user_choice(ctx)
         if answer is not None:
@@ -365,7 +389,7 @@ class EvidenceClarifier:
             order = [int(i) for i in np.argsort(-probs) if int(i) != none_i]
             return list_question([cands[i] for i in order[:config.MAX_LIST_OPTIONS]])
         if S == [none_i]:
-            return observation(UNIVERSAL, "none")
+            return self.universal(ctx)
         recs = [cands[i] for i in S if i != none_i]
         if len(S) == 1:
             return observation(template_answer(recs[0]), "answer", resolved=recs[0]["ref"])
@@ -395,7 +419,7 @@ class EvidenceClarifier:
             rest = [cands[i] for i in order if cands[i]["ref"] not in offered]
             if rest:
                 return list_question(rest[:config.MAX_LIST_OPTIONS])
-            return observation(UNIVERSAL, "none")
+            return self.universal(ctx)
         picked = [r for r in cands if r["ref"] in answer]
         if picked:
             return observation(template_answer(picked[0]), "answer", resolved=picked[0]["ref"])
@@ -407,7 +431,7 @@ class EvidenceClarifier:
                 return observation(template_answer(keep[0]), "answer", resolved=keep[0]["ref"])
             if keep:
                 return list_question(keep[:config.MAX_LIST_OPTIONS])
-        return observation(UNIVERSAL, "none")
+        return self.universal(ctx)
 
 
 # ----------------------------------------------------------------------------- calibration helpers

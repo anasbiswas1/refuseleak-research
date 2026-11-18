@@ -63,6 +63,14 @@ class ScriptedLLM:
     # --- multiple-choice scoring for the clarifier (deterministic stand-in for the model's letter log-probabilities)
     OPTION_RE = re.compile(r"^([A-J])\) (.+?) \[(MH-\d{4})\] \((.+?), (.+?)\)$", re.M)
 
+    def complete(self, prompt: str, max_tokens: int = 120, temperature: float = 0.7, n: int = 1, seed: int = 0) -> list[str]:
+        """Deterministic stand-in for a rendered reply: echoes the slot lines of the prompt in a fixed wording."""
+        marker = next((m for m in ("SLOTS\n", "FACTS\n") if m in prompt), None)
+        body = prompt.split(marker, 1)[1] if marker else prompt
+        lines = [l.strip(" -") for l in body.splitlines() if l.strip()]
+        text = "Here is what I can tell you. " + " ".join(lines)
+        return [text[: max_tokens * 4]] * n
+
     def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
         request = user_prompt.split("Request: ", 1)[1].split("\n", 1)[0]
         opts = self.OPTION_RE.findall(user_prompt)

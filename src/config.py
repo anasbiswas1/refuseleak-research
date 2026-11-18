@@ -41,7 +41,8 @@ AUTH_FAMILY = "Q8"                # authorised requests, over-refusal check
 
 # ----------------------------------------------------------------------------- unit splits (unit ids are deterministic)
 SPLITS = {"probe": 600, "legit": 300, "auth": 200,           # notebook 02
-          "train": 2000, "calibration": 3000, "utility": 1000, "test": 2000}   # notebooks 03 onward
+          "train": 2000, "calibration": 3000, "utility": 1000, "test": 2000,   # notebooks 03 onward
+          "certify": 3000}          # notebook 04 onward: the certificate's units (the calibration split fitted the clarifier)
 
 # ----------------------------------------------------------------------------- systems and harness
 TOP_K = 5                         # records in a responder's context, and candidates for template systems
@@ -74,6 +75,17 @@ MIN_STRATUM = 50                  # a stratum with fewer threshold-half points u
 SCORER = "combined"               # the method's conformity score: permitted-view evidence plus the model's option log-probability
 LORE_ABLATIONS = {"LORE-E": "evidence", "LORE-L": "llm"}   # same mechanism, evidence-only and model-only scores
 
+# ----------------------------------------------------------------------------- configuration space (plan v1, Section 7.3)
+LEVELS = ["L0", "L1", "L2", "L3"]        # universal reply only; + clarification; + private access routing; + explicit restricted-match notice (positive control)
+RENDERS = ["RT", "RS", "RF"]             # template; model rewrite restricted to low-view slots (greedy); free model wording (temperature 0.7)
+RETRIEVALS = ["pre", "post"]             # candidates from the permitted index; top-m over the full index with restricted records dropped
+RENDER_TEMPERATURE = {"RS": 0.0, "RF": 0.7}
+RENDER_MAX_TOKENS = 160
+LENGTH_BUCKET_CHARS = 160                # reply text padded to a multiple of this
+MAX_REPLY_CHARS = 1120                   # seven buckets; longer text is cut first
+LATENCY_FLOOR_S = 1.0                    # every reply is held to this latency (one bucket for all reply kinds)
+CERT_SPLITS = {"train": "train", "certify": "certify", "test": "test", "utility": "utility", "legit": "legit", "auth": "auth"}
+
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10
 DELTA = 0.05
@@ -98,4 +110,6 @@ def preregistration() -> dict:
         "max_tokens": MAX_TOKENS, "temperature": TEMPERATURE, "models": MODELS, "embedder": EMBEDDER,
         "nli_model": NLI_MODEL, "baselines": BASELINES, "attackers": ATTACKERS, "n_folds": N_FOLDS,
         "epsilon": EPSILON, "delta": DELTA, "alpha": ALPHA, "probe": PROBE,
+        "levels": LEVELS, "renders": RENDERS, "retrievals": RETRIEVALS, "length_bucket_chars": LENGTH_BUCKET_CHARS,
+        "latency_floor_s": LATENCY_FLOOR_S,
     }

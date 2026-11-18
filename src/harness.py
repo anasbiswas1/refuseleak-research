@@ -125,6 +125,20 @@ class Store:
     def all_rows(self) -> list[dict]:
         return [r for rs in self.rows.values() for r in rs]
 
+    def compact(self) -> dict:
+        """Rewrites every record file as one gzip stream. Appends during recording create one gzip member per
+        append, which compresses poorly; a compacted file is five to ten times smaller and reads the same."""
+        sizes = {}
+        with self.lock:
+            for f in sorted(self.dir.glob("*.jsonl.gz")):
+                lines = [l for l in gzip.open(f, "rt") if l.strip()]
+                tmp = f.with_suffix(".tmp.gz")
+                with gzip.open(tmp, "wt", compresslevel=9) as fh:
+                    fh.writelines(lines)
+                tmp.replace(f)
+                sizes[f.name] = f.stat().st_size
+        return sizes
+
 
 def record_grid(units: list[dict], systems: list[str], llm, model: str, store: Store, workers: int = config.WORKERS,
                 progress_every: int = 200) -> dict:

@@ -24,6 +24,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Follow-through: a requester who answers "none of these" to a list question is asked over the candidates not yet offered, in score order, before the universal reply; the turn budget stays at three.
 - The weight fitted on the model's log-probability column is reported, and an evidence-only clarifier (LORE-E, no model call on the routing path) and a model-only one (LORE-L) are run as the ablation of the score.
 
+## Amendments made with notebook 04 (17 November 2026)
+
+- A new split, certify (3,000 units), carries the certificate; the calibration split fitted the clarifier (notebooks 03 and 03b) and is not reused. The test split is recorded in notebook 06 for the selected configuration and the baselines, so notebook 06 runs on an L4.
+- Record once, replay many, applied to rendering: the eight template configurations are run; the sixteen RS and RF configurations are the same decisions rendered by the seeded model once per distinct low-view input and replayed. The scripted requester answers from structured options, so a task's dialogue path is shared by its render modes.
+- Level definitions as built: L0 answers a one-record conformal set and otherwise gives the universal reply, never a question or a list; L2 files a private access request whenever a restricted record matches the request by name and appends one constant sentence to the universal reply; L3 appends the explicit restricted-match sentence whenever such a record matches (positive control). Length bucket 160 characters (cut at 1,120) and a one-second latency floor in all 24 configurations.
+- The clarifier of notebook 03b (combined score, thresholds per tie-size stratum, follow-through) is the clarifier of every configuration from L1 upward; post-filter configurations apply it to the post-filtered candidates.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
