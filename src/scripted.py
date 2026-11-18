@@ -15,7 +15,7 @@ import index as IX
 
 TYPE_KEY = {"project brief": "project_brief", "investigation": "investigation", "people case": "hr_case",
             "transaction memo": "acquisition_memo", "vendor contract": "vendor_contract", "support ticket": "support_ticket"}
-BLOCK_RE = re.compile(r"\[(MH-\d{4})\] (.+?) \((.+?), (.+?)\)\. Access: (.+?)\. Requester may read: (YES|NO)\.\n    (.+)")
+BLOCK_RE = re.compile(r"\[((?:MH|EN)-\d{4})\] (.+?) \((.+?), (.+?)\)\. Access: (.+?)\. Requester may read: (YES|NO)\.\n    (.+)")
 
 
 class ScriptedLLM:
@@ -61,7 +61,7 @@ class ScriptedLLM:
 
 
     # --- multiple-choice scoring for the clarifier (deterministic stand-in for the model's letter log-probabilities)
-    OPTION_RE = re.compile(r"^([A-J])\) (.+?) \[(MH-\d{4})\] \((.+?), (.+?)\)$", re.M)
+    OPTION_RE = re.compile(r"^([A-J])\) (.+?) \[((?:MH|EN)-\d{4})\] \((.+?), (.+?)\)$", re.M)
 
     def complete(self, prompt: str, max_tokens: int = 120, temperature: float = 0.7, n: int = 1, seed: int = 0) -> list[str]:
         """Deterministic stand-in for a rendered reply: echoes the slot lines of the prompt in a fixed wording."""

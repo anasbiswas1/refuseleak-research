@@ -86,6 +86,12 @@ MAX_REPLY_CHARS = 1120                   # seven buckets; longer text is cut fir
 LATENCY_FLOOR_S = 1.0                    # every reply is held to this latency (one bucket for all reply kinds)
 CERT_SPLITS = {"train": "train", "certify": "certify", "test": "test", "utility": "utility", "legit": "legit", "auth": "auth"}
 
+# ----------------------------------------------------------------------------- Domain 2 (Enron, notebook 07)
+ENRON_SPLITS = {"calibration": 1500, "utility": 500, "train": 1000, "certify": 2000, "test": 1000, "legit": 300, "auth": 200}
+ENRON_NONE_SAMPLE = {"calibration": 500, "test": 150}        # restricted-target tasks for the clarifier's threshold and its test
+ENRON_CONFIGS = ["L0-RT-pre", "L1-RT-pre", "L2-RT-pre", "L3-RT-pre", "L0-RT-post", "L1-RT-post", "L2-RT-post", "L3-RT-post",
+                 "L2-RS-pre", "L2-RF-pre"]                  # the eight decision configurations and the rendered variants of the selected level
+
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10
 DELTA = 0.05

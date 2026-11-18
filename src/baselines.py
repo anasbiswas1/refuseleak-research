@@ -18,7 +18,7 @@ import config
 import index as IX
 from world import handle
 
-CITE_RE = re.compile(r"\[(MH-\d{4})\]")
+CITE_RE = re.compile(r"\[((?:MH|EN)-\d{4})\]")
 UNIVERSAL = ("I couldn't find an accessible record matching your request. If you have a link or a reference code, "
              "send it and I will look again.")
 COLLAPSED = "No supported record is available for this request. A link or a reference code lets me check again."

@@ -28,7 +28,9 @@ from baselines import (NONE_OPTION, UNIVERSAL, _aggregate, _user_choice, observa
 LETTERS = "ABCDEFGHIJ"
 ATTRIBUTE_LABEL = {"type": "record type", "dept": "department", "owner": "owner"}
 TYPE_LABEL = {"project_brief": "project brief", "investigation": "investigation", "hr_case": "people case",
-              "acquisition_memo": "transaction memo", "vendor_contract": "vendor contract", "support_ticket": "support ticket"}
+              "acquisition_memo": "transaction memo", "vendor_contract": "vendor contract", "support_ticket": "support ticket",
+              "email_business": "business email", "email_logistics": "logistics email", "email_personal": "personal email",
+              "email_employment": "employment email", "email_legal": "legal email"}
 SCORER_SYSTEM = ("You match a staff member's request to the record it refers to. Answer with a single letter: the "
                  "option that the request is about, or the last option if none of the records is the one meant.")
 
@@ -243,7 +245,10 @@ class ConformalClarifier:
 # ----------------------------------------------------------------------------- scorer v2: permitted-view evidence
 TYPE_WORDS = {"project_brief": ["project", "brief"], "investigation": ["investigation", "case"],
               "hr_case": ["people", "case", "hr"], "acquisition_memo": ["transaction", "memo", "acquisition"],
-              "vendor_contract": ["vendor", "contract", "agreement", "supply"], "support_ticket": ["ticket", "support"]}
+              "vendor_contract": ["vendor", "contract", "agreement", "supply"], "support_ticket": ["ticket", "support"],
+              "email_business": ["business email", "email", "thread", "message"], "email_logistics": ["logistics email", "email", "thread", "message"],
+              "email_personal": ["personal email", "email", "thread", "message"], "email_employment": ["employment email", "email", "thread", "message"],
+              "email_legal": ["legal email", "email", "thread", "message"]}
 EVIDENCE_NAMES = ["name_match", "body_match", "type_cue", "best_name", "none", "none_minus_best_name", "none_minus_type_cue"]
 FEATURE_NAMES = EVIDENCE_NAMES + ["model_logit"]
 SCORERS = {"evidence": list(range(7)), "llm": [7], "combined": list(range(8))}

@@ -1,0 +1,91 @@
+{
+  "dry_run": false,
+  "corpus_hash": "0de2bc491982",
+  "splits": {
+    "calibration": {
+      "units": 1500,
+      "families": {
+        "Q1": 84,
+        "Q3": 250,
+        "Q1a": 250,
+        "Q2": 84,
+        "Q3b": 250,
+        "Q2a": 250,
+        "Q4": 83,
+        "Q5": 83,
+        "Q6": 83,
+        "Q7": 83
+      }
+    },
+    "utility": {
+      "units": 500,
+      "families": {
+        "Q4": 250,
+        "Q5": 250
+      }
+    },
+    "train": {
+      "units": 1000,
+      "families": {
+        "Q1": 56,
+        "Q3": 167,
+        "Q1a": 167,
+        "Q2": 56,
+        "Q3b": 166,
+        "Q2a": 166,
+        "Q4": 56,
+        "Q5": 56,
+        "Q6": 55,
+        "Q7": 55
+      }
+    },
+    "certify": {
+      "units": 2000,
+      "families": {
+        "Q1": 112,
+        "Q3": 334,
+        "Q1a": 333,
+        "Q2": 111,
+        "Q3b": 333,
+        "Q2a": 333,
+        "Q4": 111,
+        "Q5": 111,
+        "Q6": 111,
+        "Q7": 111
+      }
+    },
+    "test": {
+      "units": 1000,
+      "families": {
+        "Q1": 56,
+        "Q3": 167,
+        "Q1a": 167,
+        "Q2": 56,
+        "Q3b": 166,
+        "Q2a": 166,
+        "Q4": 56,
+        "Q5": 56,
+        "Q6": 55,
+        "Q7": 55
+      }
+    },
+    "legit": {
+      "units": 300,
+      "families": {
+        "Q4": 150,
+        "Q5": 150
+      }
+    },
+    "auth": {
+      "units": 200,
+      "families": {
+        "Q8": 200
+      }
+    }
+  },
+  "equation_2": {
+    "leak_units_checked": 4000,
+    "violations": []
+  },
+  "distinct_key_words_in_leak_units": 100
+}

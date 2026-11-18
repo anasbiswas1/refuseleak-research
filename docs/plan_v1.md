@@ -44,6 +44,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Held-out attackers train on the first 1,000 training units (both worlds) for every system, the selected configuration included; the certificate of notebook 05 used 2,000 for D1, D2, D3, D5, D6 and 1,000 for D4. The held-out p-values are single tests at δ, not a second certificate.
 - Routing is measured as the share of S1 test units (world 1) whose request the controller routed to the owner of a restricted record, with the world-0 share (no secret record; routing to other unreadable records only) as the control; requests without a record name are not routed.
 
+## Amendments made with notebook 07a (18 November 2026)
+
+- Domain 2's sensitivity labels are the UC Berkeley categories of the labelled Enron subset (personal 1.2 and 1.3, employment 1.5, legal advice 3.10), which is also where SARA takes its sensitivity notion; SARA's topics, queries and judgements are not used (topic-level, and an inconsistently stated licence).
+- Domain 2 requests come from fixed templates (several per family) rather than a model-written paraphrase pool; the record name is the message's key subject word with natural ties; one synthetic attribute line (priority) carries the attribute secret on real text.
+- Domain 2 splits: calibration 1,500 and utility 500 (clarifier fit), train 1,000, certify 2,000, test 1,000, legit 300, auth 200. The certified grid in Domain 2 is the eight template configurations plus the rendered variants of the level selected in Domain 1 (ten configurations, Bonferroni at 0.05/10).
+- Reference codes of Domain 2 records are EN-nnnn; citation parsing accepts both prefixes.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

@@ -33,10 +33,15 @@ GENERIC = {"project", "projects", "investigation", "investigations", "people", "
            "lane", "street", "house", "meeting", "room", "floor", "kitchen", "depot", "reception", "office", "wing",
            "north", "south", "east", "west", "fault", "offline", "failure", "broken", "leak", "jam", "dropouts",
            "lights", "reader", "desk", "water", "heating", "printer", "projector", "flickering", "badge", "door",
-           "standing", "acquisition", "acquisitions", "divestment", "divestments", "open", "closed", "deal", "deals"}
+           "standing", "acquisition", "acquisitions", "divestment", "divestments", "open", "closed", "deal", "deals",
+           "email", "emails", "thread", "threads", "message", "messages", "mail", "legal", "employment", "personal",
+           "logistics", "business", "urgent", "routine", "marked", "flagged", "copied", "restricted"}
 TYPE_HINTS = {"project_brief": "project projects brief initiative", "investigation": "investigation investigations case",
               "hr_case": "people case cases grievance", "acquisition_memo": "transaction transactions deal memo acquisition divestment",
-              "vendor_contract": "contract contracts supply agreement vendor supplier", "support_ticket": "ticket tickets issue facilities"}
+              "vendor_contract": "contract contracts supply agreement vendor supplier", "support_ticket": "ticket tickets issue facilities",
+              "email_business": "email emails thread message business", "email_logistics": "email emails thread message logistics",
+              "email_personal": "email emails thread message personal", "email_employment": "email emails thread message employment",
+              "email_legal": "email emails thread message legal"}
 
 
 def tokens(text: str) -> list[str]:
