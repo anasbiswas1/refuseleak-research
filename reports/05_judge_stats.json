@@ -1,0 +1,17 @@
+{
+  "dry_run": false,
+  "qwen25_7b": {
+    "judge": "llama31_8b",
+    "distinct": 25055,
+    "judged_now": 25055,
+    "seconds": 836.5,
+    "file_bytes": 787110
+  },
+  "llama31_8b": {
+    "judge": "qwen25_7b",
+    "distinct": 26719,
+    "judged_now": 26719,
+    "seconds": 874.5,
+    "file_bytes": 746778
+  }
+}

@@ -31,6 +31,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Level definitions as built: L0 answers a one-record conformal set and otherwise gives the universal reply, never a question or a list; L2 files a private access request whenever a restricted record matches the request by name and appends one constant sentence to the universal reply; L3 appends the explicit restricted-match sentence whenever such a record matches (positive control). Length bucket 160 characters (cut at 1,120) and a one-second latency floor in all 24 configurations.
 - The clarifier of notebook 03b (combined score, thresholds per tie-size stratum, follow-through) is the clarifier of every configuration from L1 upward; post-filter configurations apply it to the post-filtered candidates.
 
+## Amendments made with notebook 05 (18 November 2026)
+
+- The judge attacker D4 is the other model family answering A or B to whether the reply gives reason to believe the unit's statement; its threshold (a logistic regression on the probability of A) is trained on the first 1,000 training units rather than all 2,000, to bound its cost; every other attacker trains on all 2,000.
+- D6 (the stack) is a logistic regression over out-of-fold training scores of D1 to D5 (five grouped folds), applied to the frozen attackers' certify scores.
+- Scorers cache by content (reply text, or reply and statement), because replies repeat across configurations; the counts are unchanged by caching.
+- The utility used for selection (Equation 17) is the resolution rate on the utility split recorded in notebook 04 (families Q4 and Q5 together); the held-out utility on the test split follows in notebook 06.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

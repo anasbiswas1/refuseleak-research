@@ -64,3 +64,21 @@ def simulate(acc_true: float, n: int, eps: float, delta_m: float, seeds: int = 2
     rng = np.random.default_rng(seed)
     ks = rng.binomial(n, acc_true, size=seeds)
     return float(np.mean([p_value(int(k), n, eps) <= delta_m for k in ks]))
+
+
+def certificate_table(all_counts: dict[str, dict[str, tuple[int, int]]], eps: float, delta: float):
+    """One row per configuration and attacker with the count, the advantage and its Wilson interval, the attacker's
+    p-value at eps, plus the configuration's p-value, certified flag and smallest certified bound (Equation 18)."""
+    import pandas as pd
+    from metrics import advantage
+    m = len(all_counts)
+    cert = certify(all_counts, eps, delta)
+    rows = []
+    for lam, counts in all_counts.items():
+        eps_hat = certified_bound(counts, delta / m)
+        for d, (k, n) in counts.items():
+            a = advantage(k, n)
+            rows.append({"config": lam, "attacker": d, "k": k, "n": n, "acc": a["acc"], "adv": a["adv"], "adv_lo": a["adv_lo"],
+                         "adv_hi": a["adv_hi"], "p_attacker": p_value(k, n, eps), "p_config": cert[lam]["p"],
+                         "threshold": cert[lam]["threshold"], "certified": cert[lam]["certified"], "eps_hat": eps_hat})
+    return pd.DataFrame(rows)

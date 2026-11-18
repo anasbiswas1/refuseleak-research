@@ -1,0 +1,18 @@
+{
+  "judge_units": 1000,
+  "epsilon": 0.1,
+  "delta": 0.05,
+  "configs": 24,
+  "qwen25_7b": {
+    "nli_pairs": 21506,
+    "judge_triples": 25055,
+    "distinct_texts": 17595,
+    "judge": "llama31_8b"
+  },
+  "llama31_8b": {
+    "nli_pairs": 26544,
+    "judge_triples": 26719,
+    "distinct_texts": 24158,
+    "judge": "qwen25_7b"
+  }
+}

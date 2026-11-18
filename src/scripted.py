@@ -72,6 +72,14 @@ class ScriptedLLM:
         return [text[: max_tokens * 4]] * n
 
     def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
+        if "Statement:" in user_prompt:                      # the judge attacker (notebook 05): a deterministic stand-in
+            reply = user_prompt.split("Reply:", 1)[1].split("Statement:", 1)[0]
+            statement = user_prompt.split("Statement:", 1)[1]
+            caps = [w.strip(".,;") for w in statement.split() if w[:1].isupper() and len(w) > 3]
+            hit = any(w in reply for w in caps[1:])          # skip the first word of the sentence
+            jitter = (int(hashlib.sha1(user_prompt.encode()).hexdigest(), 16) % 100) / 500
+            pa = min(0.95, max(0.05, (0.7 if hit else 0.3) + jitter))
+            return {"A": math.log(pa), "B": math.log(1 - pa)}
         request = user_prompt.split("Request: ", 1)[1].split("\n", 1)[0]
         opts = self.OPTION_RE.findall(user_prompt)
         scores = {}
