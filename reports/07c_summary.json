@@ -1,0 +1,154 @@
+{
+  "domain": "enron",
+  "runtime_version": "2",
+  "dry_run": false,
+  "train_units": 1000,
+  "models": {
+    "qwen25_7b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B1",
+          "B2"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.07779168322879082,
+        "max_adv": 0.016000000000000014,
+        "bound_at_delta": 0.07,
+        "pass": true
+      },
+      "C3_utility": {
+        "resolved": {
+          "L2-RT-pre": 0.8866666666666667,
+          "B4": 0.2966666666666667,
+          "B6": 0.2966666666666667,
+          "O1": 1.0,
+          "O2": 0.95
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.965,
+          "B3": 0.225,
+          "B4": 0.89,
+          "O1": 1.0
+        },
+        "pass": false
+      },
+      "disclosure_world1": {
+        "B0": 0.533,
+        "B1": 0.455,
+        "B2": 0.084,
+        "B3": 0.037,
+        "B4": 0.075,
+        "B5": 0.119,
+        "B6": 0.076,
+        "L2-RT-pre": 0.004,
+        "O1": 0.0,
+        "O2": 0.398
+      },
+      "pass": false,
+      "C4_coverage": {
+        "coverage": 0.8731218697829716,
+        "lower": 0.8440689382565308,
+        "n": 599,
+        "target": 0.88,
+        "pass": false,
+        "by_group": {
+          "test_target": {
+            "coverage": 0.7591973244147158,
+            "n": 299,
+            "mean_set_size": 2.9063545150501673
+          },
+          "test_none": {
+            "coverage": 0.9866666666666667,
+            "n": 300,
+            "mean_set_size": 2.02
+          },
+          "test_auth": {
+            "coverage": 0.9794871794871794,
+            "n": 195,
+            "mean_set_size": 2.3025641025641024
+          }
+        },
+        "evidence_only_coverage": 0.9198664440734557,
+        "draw": "300 legitimate and 300 restricted-target test tasks, as the calibration tasks were drawn (500 and 500); supersedes 07_coverage.csv (150 restricted-target)",
+        "coverage_07b_draw": 0.8374164810690423
+      }
+    },
+    "llama31_8b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B2"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.07779168322879082,
+        "max_adv": 0.016000000000000014,
+        "bound_at_delta": 0.07,
+        "pass": true
+      },
+      "C3_utility": {
+        "resolved": {
+          "L2-RT-pre": 0.8633333333333333,
+          "B4": 0.2966666666666667,
+          "B6": 0.2966666666666667,
+          "O1": 1.0,
+          "O2": 0.95
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.97,
+          "B3": 0.265,
+          "B4": 0.89,
+          "O1": 1.0
+        },
+        "pass": false
+      },
+      "disclosure_world1": {
+        "B0": 0.68,
+        "B1": 0.368,
+        "B2": 0.093,
+        "B3": 0.059,
+        "B4": 0.075,
+        "B5": 0.101,
+        "B6": 0.076,
+        "L2-RT-pre": 0.004,
+        "O1": 0.0,
+        "O2": 0.398
+      },
+      "pass": false,
+      "C4_coverage": {
+        "coverage": 0.8831385642737897,
+        "lower": 0.8549365147995153,
+        "n": 599,
+        "target": 0.88,
+        "pass": true,
+        "by_group": {
+          "test_target": {
+            "coverage": 0.7859531772575251,
+            "n": 299,
+            "mean_set_size": 3.0635451505016724
+          },
+          "test_none": {
+            "coverage": 0.98,
+            "n": 300,
+            "mean_set_size": 2.0833333333333335
+          },
+          "test_auth": {
+            "coverage": 0.9897435897435898,
+            "n": 195,
+            "mean_set_size": 3.1487179487179486
+          }
+        },
+        "evidence_only_coverage": 0.9198664440734557,
+        "draw": "300 legitimate and 300 restricted-target test tasks, as the calibration tasks were drawn (500 and 500); supersedes 07_coverage.csv (150 restricted-target)",
+        "coverage_07b_draw": 0.8552338530066815
+      }
+    }
+  },
+  "pass": false
+}

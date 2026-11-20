@@ -57,6 +57,11 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The Domain 2 clarifier is fitted on Domain 2 calibration tasks alone (500 legitimate and 500 restricted-target requests), by the procedure of notebook 03b; the three scorers are fitted and the model-column weight reported.
 - The Domain 2 certificate covers ten configurations (eight template ones and the two rendered variants of the level selected in Domain 1) at delta/10; D4 trains on the first 500 training units.
 
+## Amendments made with notebook 07c (19 November 2026)
+
+- The Domain 2 held-out test follows notebook 06's protocol: the selected configuration and B0 to B6, O1, O2 generated on the Domain 2 train (1,000 units), test (1,000), legit (300) and auth (200) splits; attackers D1 to D6 frozen on the training rows, D4 trained on all 1,000 training units; single tests at delta.
+- The C4 draw in Domain 2 is corrected: notebook 07b read coverage on 300 legitimate and 150 restricted-target test tasks while the calibration tasks were 500 and 500, so the test tasks were not drawn as the calibration tasks were. Notebook 07c draws 300 restricted-target test tasks (one per legitimate task, as in Domain 1), with the clarifier parameters of notebook 07b unchanged; reports/07c_coverage.csv supersedes reports/07_coverage.csv for C4, and the 07b numbers (0.84 and 0.86) stay in the record.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

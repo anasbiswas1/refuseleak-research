@@ -15,7 +15,8 @@ import index as IX
 
 TYPE_KEY = {"project brief": "project_brief", "investigation": "investigation", "people case": "hr_case",
             "transaction memo": "acquisition_memo", "vendor contract": "vendor_contract", "support ticket": "support_ticket"}
-BLOCK_RE = re.compile(r"\[((?:MH|EN)-\d{4})\] (.+?) \((.+?), (.+?)\)\. Access: (.+?)\. Requester may read: (YES|NO)\.\n    (.+)")
+BLOCK_RE = re.compile(r"\[((?:MH|EN)-\d{4})\] (.+) \((.+?), (.+?)\)\. Access: (.+?)\. Requester may read: (YES|NO)\.\n    (.+)")
+# the title is greedy: real email subjects can contain parentheses, and the type and department are the last parenthesis before "Access"
 
 
 class ScriptedLLM:

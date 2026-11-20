@@ -1,0 +1,133 @@
+{
+  "dry_run": false,
+  "budget": {
+    "domain": "enron",
+    "corpus_hash": "0de2bc491982",
+    "units": {
+      "train": 1000,
+      "test": 1000,
+      "legit": 300,
+      "auth": 200
+    },
+    "coverage_tasks": {
+      "cal_target": 500,
+      "cal_none": 500,
+      "test_target": 300,
+      "test_auth": 200,
+      "test_none": 300,
+      "probe": 0
+    },
+    "selected": {
+      "qwen25_7b": "L2-RT-pre",
+      "llama31_8b": "L2-RT-pre"
+    },
+    "scoring_prompts": 2565,
+    "llm_baselines": [
+      "B0",
+      "B1",
+      "B3",
+      "B5"
+    ],
+    "leak_rows_per_llm_baseline": 4000,
+    "generations_upper_bound_per_model": 22000,
+    "judge_inputs_upper_bound_per_model": 30000
+  },
+  "qwen25_7b": {
+    "scores": {
+      "prompts": 2565,
+      "scored_now": 381,
+      "seconds": 18.6
+    },
+    "records": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 20000,
+        "seconds": 2007.6
+      },
+      "test": {
+        "tasks_run": 2000,
+        "rows_total": 40000,
+        "seconds": 2007.1
+      },
+      "legit": {
+        "tasks_run": 300,
+        "rows_total": 43578,
+        "seconds": 397.1
+      },
+      "auth": {
+        "tasks_run": 200,
+        "rows_total": 45950,
+        "seconds": 258.9
+      }
+    },
+    "compacted_bytes": {
+      "B0.jsonl.gz": 684951,
+      "B1.jsonl.gz": 623554,
+      "B2.jsonl.gz": 638549,
+      "B3.jsonl.gz": 428998,
+      "B4.jsonl.gz": 467198,
+      "B5.jsonl.gz": 586825,
+      "B6.jsonl.gz": 456652,
+      "L2-RT-pre.jsonl.gz": 619047,
+      "O1.jsonl.gz": 214827,
+      "O2.jsonl.gz": 613260
+    },
+    "seconds_generation": 4975.0,
+    "judge": {
+      "judge": "llama31_8b",
+      "distinct": 18888,
+      "judged_now": 18888,
+      "seconds": 669.0,
+      "file_bytes": 563494
+    }
+  },
+  "llama31_8b": {
+    "scores": {
+      "prompts": 2565,
+      "scored_now": 381,
+      "seconds": 15.1
+    },
+    "records": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 20000,
+        "seconds": 2783.0
+      },
+      "test": {
+        "tasks_run": 2000,
+        "rows_total": 40000,
+        "seconds": 2796.8
+      },
+      "legit": {
+        "tasks_run": 300,
+        "rows_total": 43564,
+        "seconds": 593.8
+      },
+      "auth": {
+        "tasks_run": 200,
+        "rows_total": 45929,
+        "seconds": 359.2
+      }
+    },
+    "compacted_bytes": {
+      "B0.jsonl.gz": 666533,
+      "B1.jsonl.gz": 496529,
+      "B2.jsonl.gz": 601925,
+      "B3.jsonl.gz": 417740,
+      "B4.jsonl.gz": 468745,
+      "B5.jsonl.gz": 520313,
+      "B6.jsonl.gz": 457893,
+      "L2-RT-pre.jsonl.gz": 621314,
+      "O1.jsonl.gz": 214911,
+      "O2.jsonl.gz": 615090
+    },
+    "seconds_generation": 6723.5,
+    "judge": {
+      "judge": "qwen25_7b",
+      "distinct": 18203,
+      "judged_now": 18203,
+      "seconds": 525.5,
+      "file_bytes": 492453
+    }
+  }
+}

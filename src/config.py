@@ -88,7 +88,9 @@ CERT_SPLITS = {"train": "train", "certify": "certify", "test": "test", "utility"
 
 # ----------------------------------------------------------------------------- Domain 2 (Enron, notebook 07)
 ENRON_SPLITS = {"calibration": 1500, "utility": 500, "train": 1000, "certify": 2000, "test": 1000, "legit": 300, "auth": 200}
-ENRON_NONE_SAMPLE = {"calibration": 500, "test": 150}        # restricted-target tasks for the clarifier's threshold and its test
+ENRON_NONE_SAMPLE = {"calibration": 500, "test": 300}        # restricted-target tasks for the clarifier's threshold and its test:
+# one per legitimate task in both (500 and 500; 300 and 300), as in Domain 1, so the test tasks are drawn as the
+# calibration tasks were. Notebook 07b drew 150 (one per two legitimate tasks); notebook 07c corrects the draw.
 ENRON_CONFIGS = ["L0-RT-pre", "L1-RT-pre", "L2-RT-pre", "L3-RT-pre", "L0-RT-post", "L1-RT-post", "L2-RT-post", "L3-RT-post",
                  "L2-RS-pre", "L2-RF-pre"]                  # the eight decision configurations and the rendered variants of the selected level
 

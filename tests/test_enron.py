@@ -94,3 +94,16 @@ def test_systems_run_on_email_records(corpus):
     for r in leak:
         by.setdefault(r["uid"], {})[r["world"]] = r["text"]
     assert all(v["0"] == v["1"] for v in by.values())
+
+
+def test_stub_parses_titles_with_parentheses():
+    """The dry-run stand-in reads record blocks back from the system prompt; subjects may contain parentheses."""
+    import baselines as B
+    import scripted as S
+    rec = {"id": 0, "ref": "EN-0007", "title": "TW Gas Sales (Phase 2)", "type": "email_logistics", "dept": "Trading",
+           "body": "Body text here.", "acl": {"depts": ["all"], "roles": ["all"], "owner": None}, "owner": None, "codename": "sales"}
+    world = {"people": [], "records": [rec]}
+    requester = {"pid": 0, "name": "A B", "dept": "Trading", "role": "analyst"}
+    block = B.record_block(rec, world, requester)
+    parsed = S.ScriptedLLM()._records("x\n" + block + "\n")
+    assert len(parsed) == 1 and parsed[0]["type"] == "email_logistics" and parsed[0]["title"] == "TW Gas Sales (Phase 2)", parsed
