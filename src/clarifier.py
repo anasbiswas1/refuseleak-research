@@ -46,6 +46,14 @@ def candidate_set(world: dict, pid: int, query: str, m: int = config.CANDIDATES_
     return cands[:m]
 
 
+def named_candidates(world: dict, pid: int, query: str, m: int = config.CANDIDATES_M) -> bool:
+    """True when the permitted view holds a record whose name matches the request (the candidates did not come from
+    the content fallback). A request that names a permitted record is never refused outright: when the prediction
+    set does not single a record out, the clarifier asks (Equation 13 as amended with notebook 07d)."""
+    view = acl.permitted_view(world, pid)
+    return bool(IX.candidates(view, query, m, exclude=IX.people_tokens(world)))
+
+
 def post_candidate_set(world: dict, pid: int, query: str, m: int = config.CANDIDATES_M) -> list[dict]:
     """Post-filter retrieval: the top-m over the full index (restricted records take slots), then the restricted
     ones are dropped. Fewer or thinner results are the side channel this retrieval mode is expected to leak by."""
@@ -358,6 +366,9 @@ class EvidenceClarifier:
     def candidates(self, world: dict, pid: int, query: str) -> list[dict]:
         return candidate_set(world, pid, query)
 
+    def named(self, world: dict, pid: int, query: str) -> bool:
+        return named_candidates(world, pid, query)
+
     def aggregate(self, world: dict, pid: int, query: str) -> list[dict]:
         return _aggregate(acl.permitted_view(world, pid), query)
 
@@ -390,11 +401,11 @@ class EvidenceClarifier:
             return self.after_answer(ctx, cands, probs, answer)
         none_i = len(cands)
         S = self.prediction_set(probs, tie_size(world, q, cands))
-        if not S:                                   # no option within the threshold: ask over the likeliest records
+        if S == [none_i] and not self.named(world, pid, q):   # 'none' alone over content-only candidates: nothing named is held
+            return self.universal(ctx)
+        if not S or S == [none_i]:                  # no record within the threshold: ask over the likeliest records
             order = [int(i) for i in np.argsort(-probs) if int(i) != none_i]
             return list_question([cands[i] for i in order[:config.MAX_LIST_OPTIONS]])
-        if S == [none_i]:
-            return self.universal(ctx)
         recs = [cands[i] for i in S if i != none_i]
         if len(S) == 1:
             return observation(template_answer(recs[0]), "answer", resolved=recs[0]["ref"])

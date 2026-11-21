@@ -146,6 +146,11 @@ class LoRe(CL.EvidenceClarifier):
             return CL.post_candidate_set(world, pid, query)
         return CL.candidate_set(world, pid, query)
 
+    def named(self, world, pid, query):
+        if self.retrieval == "post":                 # post-filter: name matches over the full index, restricted ones dropped
+            return bool(IX.candidates(world["records"], query, config.CANDIDATES_M, exclude=IX.people_tokens(world)))
+        return CL.named_candidates(world, pid, query)
+
     def aggregate(self, world, pid, query):
         if self.retrieval == "post":
             req = acl.person(world, pid)

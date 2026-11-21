@@ -10,6 +10,7 @@ P2  sanity:           B4's advantage interval contains 0 for every attacker, and
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -43,6 +44,19 @@ def record_model(model: str, llm, splits: dict[str, list[dict]], systems: list[s
 
 def load_rows(root, model: str) -> pd.DataFrame:
     return pd.DataFrame(Store(root, model).all_rows())
+
+
+def load_rows_any(root, model: str, systems: list[str]) -> pd.DataFrame:
+    """Rows of the named systems whatever runtime recorded them: for systems a runtime change did not touch (the
+    baselines recorded in notebook 07c are read unchanged after the clarifier amendment of notebook 07d)."""
+    import gzip
+    rows = []
+    for system in systems:
+        f = Path(root) / model / f"{system}.jsonl.gz"
+        if f.exists():
+            with gzip.open(f, "rt") as fh:
+                rows += [json.loads(line) for line in fh if line.strip()]
+    return pd.DataFrame(rows)
 
 
 # ----------------------------------------------------------------------------- analyses

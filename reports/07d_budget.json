@@ -1,0 +1,38 @@
+{
+  "domain": "enron",
+  "runtime_version": "3",
+  "corpus_hash": "0de2bc491982",
+  "recording_units": {
+    "train": 1000,
+    "certify": 2000,
+    "utility": 500
+  },
+  "heldout_units": {
+    "train": 1000,
+    "test": 1000,
+    "legit": 300,
+    "auth": 200
+  },
+  "fresh_units": {
+    "legit": 300,
+    "auth": 200
+  },
+  "scoring_prompts": 4884,
+  "configs": [
+    "L0-RT-pre",
+    "L1-RT-pre",
+    "L2-RT-pre",
+    "L3-RT-pre",
+    "L0-RT-post",
+    "L1-RT-post",
+    "L2-RT-post",
+    "L3-RT-post",
+    "L2-RS-pre",
+    "L2-RF-pre"
+  ],
+  "selected_before_amendment": {
+    "qwen25_7b": "L2-RT-pre",
+    "llama31_8b": "L2-RT-pre"
+  },
+  "seconds": 108.2
+}

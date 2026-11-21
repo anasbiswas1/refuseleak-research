@@ -1,0 +1,164 @@
+{
+  "domain": "enron",
+  "runtime_version": "3",
+  "dry_run": false,
+  "fresh_draw": {
+    "legit": [
+      300,
+      300
+    ],
+    "auth": [
+      200,
+      200
+    ]
+  },
+  "baselines_from": "07c (records and tables; the baselines do not use the clarifier)",
+  "models": {
+    "qwen25_7b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B1",
+          "B2"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.07779168322879082,
+        "max_adv": 0.016000000000000014,
+        "bound_at_delta": 0.07,
+        "pass": true
+      },
+      "C3_utility_fresh": {
+        "resolved": {
+          "L2-RT-pre": 0.9866666666666667,
+          "B4": 0.28,
+          "B6": 0.28,
+          "O1": 1.0,
+          "O2": 0.97
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.955,
+          "B3": NaN,
+          "B4": 0.865,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "C3_utility_original_split": {
+        "resolved": {
+          "L2-RT-pre": 0.9766666666666667,
+          "B4": 0.2966666666666667,
+          "B6": 0.2966666666666667,
+          "O1": 1.0,
+          "O2": 0.95
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.975,
+          "B3": 0.225,
+          "B4": 0.89,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "C4_coverage": {
+        "coverage": 0.8731218697829716,
+        "lower": 0.8440689382565308,
+        "target": 0.88,
+        "pass": false,
+        "source": "07c_coverage.csv: the prediction sets are unchanged by the amendment"
+      },
+      "disclosure_world1": {
+        "B0": 0.533,
+        "B1": 0.455,
+        "B2": 0.084,
+        "B3": 0.037,
+        "B4": 0.075,
+        "B5": 0.119,
+        "B6": 0.076,
+        "O1": 0.0,
+        "O2": 0.398,
+        "L2-RT-pre": 0.004
+      },
+      "before_amendment_07c": {
+        "resolved_legit": 0.8866666666666667,
+        "resolved_auth": 0.965
+      },
+      "pass": false
+    },
+    "llama31_8b": {
+      "selected": "L2-RT-pre",
+      "C1_leak": {
+        "leaking_baselines": [
+          "B0",
+          "B2"
+        ],
+        "pass": true
+      },
+      "C2_heldout": {
+        "max_adv_upper_bound": 0.08177193853626985,
+        "max_adv": 0.020000000000000018,
+        "bound_at_delta": 0.08,
+        "pass": true
+      },
+      "C3_utility_fresh": {
+        "resolved": {
+          "L2-RT-pre": 0.9866666666666667,
+          "B4": 0.28,
+          "B6": 0.28,
+          "O1": 1.0,
+          "O2": 0.97
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.955,
+          "B3": NaN,
+          "B4": 0.865,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "C3_utility_original_split": {
+        "resolved": {
+          "L2-RT-pre": 0.9766666666666667,
+          "B4": 0.2966666666666667,
+          "B6": 0.2966666666666667,
+          "O1": 1.0,
+          "O2": 0.95
+        },
+        "auth_resolved": {
+          "L2-RT-pre": 0.975,
+          "B3": 0.265,
+          "B4": 0.89,
+          "O1": 1.0
+        },
+        "pass": true
+      },
+      "C4_coverage": {
+        "coverage": 0.8831385642737897,
+        "lower": 0.8549365147995153,
+        "target": 0.88,
+        "pass": true,
+        "source": "07c_coverage.csv: the prediction sets are unchanged by the amendment"
+      },
+      "disclosure_world1": {
+        "B0": 0.68,
+        "B1": 0.368,
+        "B2": 0.093,
+        "B3": 0.059,
+        "B4": 0.075,
+        "B5": 0.101,
+        "B6": 0.076,
+        "O1": 0.0,
+        "O2": 0.398,
+        "L2-RT-pre": 0.004
+      },
+      "before_amendment_07c": {
+        "resolved_legit": 0.8633333333333333,
+        "resolved_auth": 0.97
+      },
+      "pass": true
+    }
+  },
+  "pass": false
+}

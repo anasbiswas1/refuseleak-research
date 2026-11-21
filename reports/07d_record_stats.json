@@ -1,0 +1,318 @@
+{
+  "dry_run": false,
+  "runtime_version": "3",
+  "budget": {
+    "domain": "enron",
+    "runtime_version": "3",
+    "corpus_hash": "0de2bc491982",
+    "recording_units": {
+      "train": 1000,
+      "certify": 2000,
+      "utility": 500
+    },
+    "heldout_units": {
+      "train": 1000,
+      "test": 1000,
+      "legit": 300,
+      "auth": 200
+    },
+    "fresh_units": {
+      "legit": 300,
+      "auth": 200
+    },
+    "scoring_prompts": 4884,
+    "configs": [
+      "L0-RT-pre",
+      "L1-RT-pre",
+      "L2-RT-pre",
+      "L3-RT-pre",
+      "L0-RT-post",
+      "L1-RT-post",
+      "L2-RT-post",
+      "L3-RT-post",
+      "L2-RS-pre",
+      "L2-RF-pre"
+    ],
+    "selected_before_amendment": {
+      "qwen25_7b": "L2-RT-pre",
+      "llama31_8b": "L2-RT-pre"
+    },
+    "seconds": 108.2
+  },
+  "qwen25_7b": {
+    "scores": {
+      "prompts": 4884,
+      "scored_now": 1018,
+      "seconds": 40.2
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 16000,
+        "seconds": 232.5
+      },
+      "certify": {
+        "tasks_run": 4000,
+        "rows_total": 48000,
+        "seconds": 471.6
+      },
+      "utility": {
+        "tasks_run": 500,
+        "rows_total": 56294,
+        "seconds": 64.9
+      },
+      "heldout_test": {
+        "tasks_run": 2000,
+        "rows_total": 58294,
+        "seconds": 27.3
+      },
+      "heldout_legit": {
+        "tasks_run": 300,
+        "rows_total": 58948,
+        "seconds": 5.6
+      },
+      "heldout_auth": {
+        "tasks_run": 200,
+        "rows_total": 59346,
+        "seconds": 7.5
+      }
+    },
+    "renders": {
+      "L2-RS-pre": {
+        "mode": "RS",
+        "distinct": 4016,
+        "rendered_now": 448,
+        "seconds": 49.7,
+        "file_bytes": 339236
+      },
+      "L2-RF-pre": {
+        "mode": "RF",
+        "distinct": 4053,
+        "rendered_now": 448,
+        "seconds": 44.9,
+        "file_bytes": 318895
+      }
+    },
+    "derived": {
+      "L2-RS-pre": 7053,
+      "L2-RF-pre": 7053
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 69221,
+      "L0-RT-post.jsonl.gz": 507272,
+      "L0-RT-pre.jsonl.gz": 630665,
+      "L1-RT-post.jsonl.gz": 749910,
+      "L1-RT-pre.jsonl.gz": 880219,
+      "L2-RF-pre.jsonl.gz": 952726,
+      "L2-RS-pre.jsonl.gz": 951517,
+      "L2-RT-post.jsonl.gz": 776271,
+      "L2-RT-pre.jsonl.gz": 1270801,
+      "L3-RT-post.jsonl.gz": 785284,
+      "L3-RT-pre.jsonl.gz": 907553,
+      "O1.jsonl.gz": 50448
+    },
+    "seconds_model": 1286.8,
+    "judge": {
+      "certificate": {
+        "judge": "llama31_8b",
+        "distinct": 10719,
+        "judged_now": 1320,
+        "seconds": 40.7
+      },
+      "heldout": {
+        "judge": "llama31_8b",
+        "distinct": 2000,
+        "judged_now": 191,
+        "seconds": 6.7
+      },
+      "file_bytes": 896451
+    }
+  },
+  "llama31_8b": {
+    "scores": {
+      "prompts": 4884,
+      "scored_now": 1018,
+      "seconds": 37.1
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 16000,
+        "seconds": 237.2
+      },
+      "certify": {
+        "tasks_run": 4000,
+        "rows_total": 48000,
+        "seconds": 479.6
+      },
+      "utility": {
+        "tasks_run": 500,
+        "rows_total": 56309,
+        "seconds": 65.6
+      },
+      "heldout_test": {
+        "tasks_run": 2000,
+        "rows_total": 58309,
+        "seconds": 27.9
+      },
+      "heldout_legit": {
+        "tasks_run": 300,
+        "rows_total": 58956,
+        "seconds": 5.7
+      },
+      "heldout_auth": {
+        "tasks_run": 200,
+        "rows_total": 59346,
+        "seconds": 7.5
+      }
+    },
+    "renders": {
+      "L2-RS-pre": {
+        "mode": "RS",
+        "distinct": 4013,
+        "rendered_now": 490,
+        "seconds": 65.0,
+        "file_bytes": 388131
+      },
+      "L2-RF-pre": {
+        "mode": "RF",
+        "distinct": 4058,
+        "rendered_now": 490,
+        "seconds": 103.9,
+        "file_bytes": 676304
+      }
+    },
+    "derived": {
+      "L2-RS-pre": 7058,
+      "L2-RF-pre": 7058
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 69255,
+      "L0-RT-post.jsonl.gz": 510008,
+      "L0-RT-pre.jsonl.gz": 638632,
+      "L1-RT-post.jsonl.gz": 760780,
+      "L1-RT-pre.jsonl.gz": 894014,
+      "L2-RF-pre.jsonl.gz": 1324707,
+      "L2-RS-pre.jsonl.gz": 1038635,
+      "L2-RT-post.jsonl.gz": 787069,
+      "L2-RT-pre.jsonl.gz": 1294604,
+      "L3-RT-post.jsonl.gz": 795795,
+      "L3-RT-pre.jsonl.gz": 921360,
+      "O1.jsonl.gz": 50469
+    },
+    "seconds_model": 1835.8,
+    "judge": {
+      "certificate": {
+        "judge": "qwen25_7b",
+        "distinct": 10816,
+        "judged_now": 1440,
+        "seconds": 41.7
+      },
+      "heldout": {
+        "judge": "qwen25_7b",
+        "distinct": 2000,
+        "judged_now": 216,
+        "seconds": 5.9
+      },
+      "file_bytes": 803126
+    }
+  },
+  "heldout": {
+    "qwen25_7b": {
+      "train": {
+        "tasks_run": 0,
+        "rows_total": 73452,
+        "seconds": 0.0
+      },
+      "test": {
+        "tasks_run": 0,
+        "rows_total": 73452,
+        "seconds": 0.0
+      },
+      "legit": {
+        "tasks_run": 0,
+        "rows_total": 73452,
+        "seconds": 0.0
+      },
+      "auth": {
+        "tasks_run": 0,
+        "rows_total": 73452,
+        "seconds": 0.0
+      },
+      "fresh_legit": {
+        "tasks_run": 300,
+        "rows_total": 75566,
+        "seconds": 12.3
+      },
+      "fresh_auth": {
+        "tasks_run": 200,
+        "rows_total": 76932,
+        "seconds": 14.9
+      },
+      "compacted_bytes": {
+        "B4.jsonl.gz": 131673,
+        "B6.jsonl.gz": 61336,
+        "L0-RT-post.jsonl.gz": 507272,
+        "L0-RT-pre.jsonl.gz": 630665,
+        "L1-RT-post.jsonl.gz": 749910,
+        "L1-RT-pre.jsonl.gz": 880219,
+        "L2-RF-pre.jsonl.gz": 952726,
+        "L2-RS-pre.jsonl.gz": 951517,
+        "L2-RT-post.jsonl.gz": 776271,
+        "L2-RT-pre.jsonl.gz": 1381812,
+        "L3-RT-post.jsonl.gz": 785284,
+        "L3-RT-pre.jsonl.gz": 907553,
+        "O1.jsonl.gz": 99053,
+        "O2.jsonl.gz": 116134
+      }
+    },
+    "llama31_8b": {
+      "train": {
+        "tasks_run": 0,
+        "rows_total": 73462,
+        "seconds": 0.0
+      },
+      "test": {
+        "tasks_run": 0,
+        "rows_total": 73462,
+        "seconds": 0.0
+      },
+      "legit": {
+        "tasks_run": 0,
+        "rows_total": 73462,
+        "seconds": 0.0
+      },
+      "auth": {
+        "tasks_run": 0,
+        "rows_total": 73462,
+        "seconds": 0.0
+      },
+      "fresh_legit": {
+        "tasks_run": 300,
+        "rows_total": 75566,
+        "seconds": 12.0
+      },
+      "fresh_auth": {
+        "tasks_run": 200,
+        "rows_total": 76920,
+        "seconds": 14.5
+      },
+      "compacted_bytes": {
+        "B4.jsonl.gz": 131704,
+        "B6.jsonl.gz": 61320,
+        "L0-RT-post.jsonl.gz": 510008,
+        "L0-RT-pre.jsonl.gz": 638632,
+        "L1-RT-post.jsonl.gz": 760780,
+        "L1-RT-pre.jsonl.gz": 894014,
+        "L2-RF-pre.jsonl.gz": 1324707,
+        "L2-RS-pre.jsonl.gz": 1038635,
+        "L2-RT-post.jsonl.gz": 787069,
+        "L2-RT-pre.jsonl.gz": 1411629,
+        "L3-RT-post.jsonl.gz": 795795,
+        "L3-RT-pre.jsonl.gz": 921360,
+        "O1.jsonl.gz": 99086,
+        "O2.jsonl.gz": 116096
+      }
+    }
+  }
+}

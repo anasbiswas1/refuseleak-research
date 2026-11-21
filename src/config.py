@@ -20,7 +20,8 @@ EXTERNAL = REPO_DIR / "external"         # gitignored
 SUITE_DATA = REPO_DIR / "suite_data"     # committed: paraphrase pool, unit manifests
 RECORDS = REPORTS / "02_records"         # committed: every recorded observation of the probe, gzipped JSON lines
 
-RUNTIME_VERSION = "2"   # bumped whenever prompts, systems or the harness change; observations of an older runtime are re-run (2: person names never count as record names, filler words dropped from body matching, owner-name secret-string rule)
+RUNTIME_VERSION = "3"   # bumped whenever prompts, systems or the harness change; observations of an older runtime are re-run (2: person names never count as record names, filler words dropped from body matching, owner-name secret-string rule;
+                        # 3: a request that names a permitted record is never refused outright, the clarifier asks instead (Equation 13 as amended with notebook 07d))
 WORLD_VERSION = "2"     # bumped whenever the world generator changes; part of every unit id (2: all four sensitive types as confidential anchors, type-aware S2 and S3 queries, HR department)
 
 # ----------------------------------------------------------------------------- world (plan v1, Section 9.1)
@@ -91,6 +92,8 @@ ENRON_SPLITS = {"calibration": 1500, "utility": 500, "train": 1000, "certify": 2
 ENRON_NONE_SAMPLE = {"calibration": 500, "test": 300}        # restricted-target tasks for the clarifier's threshold and its test:
 # one per legitimate task in both (500 and 500; 300 and 300), as in Domain 1, so the test tasks are drawn as the
 # calibration tasks were. Notebook 07b drew 150 (one per two legitimate tasks); notebook 07c corrects the draw.
+ENRON_FRESH = {"legit": (300, 300), "auth": (200, 200)}   # (first index, count): legitimate and authorised units never seen before notebook 07d,
+# drawn as the legit and auth splits were (same split names, later indices); utility is read on them because the amended rule was found on legit 0 to 299
 ENRON_CONFIGS = ["L0-RT-pre", "L1-RT-pre", "L2-RT-pre", "L3-RT-pre", "L0-RT-post", "L1-RT-post", "L2-RT-post", "L3-RT-post",
                  "L2-RS-pre", "L2-RF-pre"]                  # the eight decision configurations and the rendered variants of the selected level
 

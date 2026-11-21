@@ -62,6 +62,15 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The Domain 2 held-out test follows notebook 06's protocol: the selected configuration and B0 to B6, O1, O2 generated on the Domain 2 train (1,000 units), test (1,000), legit (300) and auth (200) splits; attackers D1 to D6 frozen on the training rows, D4 trained on all 1,000 training units; single tests at delta.
 - The C4 draw in Domain 2 is corrected: notebook 07b read coverage on 300 legitimate and 150 restricted-target test tasks while the calibration tasks were 500 and 500, so the test tasks were not drawn as the calibration tasks were. Notebook 07c draws 300 restricted-target test tasks (one per legitimate task, as in Domain 1), with the clarifier parameters of notebook 07b unchanged; reports/07c_coverage.csv supersedes reports/07_coverage.csv for C4, and the 07b numbers (0.84 and 0.86) stay in the record.
 
+## Amendments made with notebook 07d (21 November 2026)
+
+- Equation 13 is amended (RUNTIME_VERSION 3): when the conformal set is {none of these} and the request names a record in the requester's permitted view, the clarifier asks over the likeliest permitted records instead of giving the universal reply. The universal reply stays for requests matched by content only and for requests with no candidate. The rule reads only the permitted view, so pre-filter replies stay identical across worlds.
+- Reason: on the Domain 2 held-out legit split (notebook 07c) most failed legitimate requests (27 of 34 for Qwen, 34 of 41 for Llama) were refused at the first turn although the request named the target: a lone permitted candidate and a lone permitted decoy of a restricted record look the same in the permitted view, so the set was {none of these}.
+- Domain 2 is re-recorded and re-certified under runtime 3 with the clarifier parameters of notebook 07b unchanged; prediction sets do not change, so C4 stays as read in notebook 07c (reports/07c_coverage.csv).
+- Because the rule was found on legit units 0 to 299, C3 in Domain 2 is read on a fresh draw (legit units 300 to 599, auth units 200 to 399; config.ENRON_FRESH; manifests enron_manifest_legit_fresh.json and enron_manifest_auth_fresh.json); the original split is reported beside it.
+- The baselines do not use the clarifier; their notebook 07c records and tables are reused (B4 and O1 re-recorded on the utility split under runtime 3 are checked byte-identical to notebook 07b's).
+- Domain 1 is re-recorded under runtime 3 in notebooks 04b (recording and certificate) and 06b (held out).
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
