@@ -119,6 +119,12 @@ class VLLMChat:
         ntok = r.usage.completion_tokens if r.usage else len(text.split())
         return text, ntok, lat
 
+    def messages(self, messages: list[dict], max_tokens: int = 300, temperature: float = 0.0) -> str:
+        """One greedy completion for a full message list (the agent of notebook 08)."""
+        r = self._with_retries(lambda: self.client.chat.completions.create(
+            model=self.model_id, messages=messages, max_tokens=max_tokens, temperature=temperature, seed=0))
+        return r.choices[0].message.content or ""
+
     def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
         """Log-probability of each option letter as the first generated token (KnowNo-style scoring). Letters that
         are not among the top-20 tokens are absent from the result."""

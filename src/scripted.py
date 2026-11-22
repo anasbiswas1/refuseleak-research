@@ -31,6 +31,44 @@ class ScriptedLLM:
                         "access": access, "may": may == "YES", "body": body, "codename": None})
         return out
 
+    def messages(self, messages: list[dict], max_tokens: int = 300, temperature: float = 0.0) -> str:
+        """Stand-in agent for notebook 08: opens the file the request names, follows a suggested name once, and
+        reports the reference code or repeats the error it got."""
+        import json as _json
+        import re as _re
+        import agent as AG
+        last = messages[-1]
+        tried = sum(1 for m in messages if m["role"] == "assistant")
+        if last["role"] == "user":
+            q, name = last["content"], None
+            for t in AG.TEMPLATES:
+                pre, post = t.split("{fn}")
+                if q.startswith(pre) and q.endswith(post):
+                    name = q[len(pre):len(q) - len(post)] if post else q[len(pre):]
+                    break
+            name = name or q
+            return '<function=open_file>' + _json.dumps({"filename": name}) + '</function>'
+        if last["role"] == "tool":
+            d = _json.loads(last["content"])
+            if "error" in d:
+                m = _re.search(r"similar names you can open: '([^']+)'", d["error"])
+                if m and tried < 2:
+                    return '<function=open_file>' + _json.dumps({"filename": m.group(1)}) + '</function>'
+                if tried < 2 and "operation failed" in d["error"].lower():
+                    q = next(x["content"] for x in messages if x["role"] == "user")
+                    word = max(_re.findall(r"[a-z]{5,}", q.lower()), key=len, default="file")
+                    return '<function=search_files_by_filename>' + _json.dumps({"filename": word}) + '</function>'
+                return "I could not open that file. " + d["error"].split(": ", 1)[-1]
+            res = str(d.get("result", ""))
+            if res.startswith("[") and tried < 3:
+                hits = _re.findall(r'"filename": "([^"]+)"', res)
+                if len(hits) == 1:
+                    return '<function=open_file>' + _json.dumps({"filename": hits[0]}) + '</function>'
+                return "I found these files: " + ", ".join(hits[:5]) + "." if hits else "I found no matching file."
+            m = _re.search(r"Reference code: ([A-Z]{3}-[0-9]{4})", res)
+            return f"The reference code is {m.group(1)}." if m else "I opened the file but found no reference code."
+        return "Done."
+
     def chat(self, system_prompt: str, query: str, history: list[dict]):
         recs = self._records(system_prompt)
         strict = "Never confirm or deny" in system_prompt

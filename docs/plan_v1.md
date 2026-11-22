@@ -78,6 +78,14 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Held out in Domain 1: the selected configuration on the notebook 06 units; the baselines' notebook 06 records and tables are reused (B4, B6, O1 and O2 re-recorded on legit and auth are checked byte-identical).
 - No fresh draw in Domain 1: the amendment changes no legitimate or authorised reply there.
 
+## Amendments made with notebook 08 (22 November 2026)
+
+- The agent setting uses the AgentDojo 0.1.34 pipeline and the workspace suite's drive with five access-enforcing drive tools (the suite's own drive tools do not check sharing lists). The requester is the drive's account holder; each unit adds colleague files shared with her, restricted files and the target.
+- A fourth arm is added beside raw errors, generic errors and projection: trimmed (listing and search over the requester's view, raw errors), which isolates the error channel from the listing channel of an agent whose search is not security-trimmed.
+- Leak units carry S1 (existence) and S3 (the owner as attribute); legitimate tasks name a permitted file exactly, without hyphens and extension, or with a typo; authorised tasks name a sensitive-topic file shared with the requester. Completion is the file's reference code in the final reply.
+- C6 reads: projection keeps every frozen attacker's advantage upper bound within 0.10 on the test split, and its completion on legitimate and authorised tasks is within 5 points of raw errors; the leaks of raw, trimmed and generic and the completion of generic are reported beside it.
+- Prior practice is stated in the paper: answering not-found instead of forbidden is standard for some web APIs; C6 is a measurement in agents, not a new mechanism.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

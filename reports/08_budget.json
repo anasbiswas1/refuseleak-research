@@ -1,0 +1,31 @@
+{
+  "agentdojo": "0.1.34",
+  "base_files": 26,
+  "units": {
+    "train": 500,
+    "test": 2000,
+    "legit": 300,
+    "auth": 100
+  },
+  "secrets": {
+    "S1": 1000,
+    "S3": 1000
+  },
+  "families": {
+    "A-S1": 1250,
+    "A-S3": 1250,
+    "A-legit-exact": 100,
+    "A-legit-variant": 100,
+    "A-legit-typo": 100,
+    "A-auth-exact": 100
+  },
+  "arms": [
+    "raw",
+    "generic",
+    "trimmed",
+    "projection"
+  ],
+  "conversations_per_model": 21600,
+  "max_tool_rounds": 4,
+  "seconds": 5.9
+}

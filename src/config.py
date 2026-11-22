@@ -92,6 +92,11 @@ ENRON_SPLITS = {"calibration": 1500, "utility": 500, "train": 1000, "certify": 2
 ENRON_NONE_SAMPLE = {"calibration": 500, "test": 300}        # restricted-target tasks for the clarifier's threshold and its test:
 # one per legitimate task in both (500 and 500; 300 and 300), as in Domain 1, so the test tasks are drawn as the
 # calibration tasks were. Notebook 07b drew 150 (one per two legitimate tasks); notebook 07c corrects the draw.
+AGENTDOJO_VERSION = "0.1.34"                                  # pinned as in agent-trust-research
+AGENT_SPLITS = {"train": 500, "test": 2000, "legit": 300, "auth": 100}   # notebook 08: leak units (S1 and S3 alternate), legitimate (exact,
+# variant, typo names in turn) and authorised (a sensitive-topic file shared with the requester) tasks
+AGENT_MAX_ITERS = 4                                            # tool rounds per conversation
+AGENT_MAX_TOKENS = 300
 ENRON_FRESH = {"legit": (300, 300), "auth": (200, 200)}   # (first index, count): legitimate and authorised units never seen before notebook 07d,
 # drawn as the legit and auth splits were (same split names, later indices); utility is read on them because the amended rule was found on legit 0 to 299
 ENRON_CONFIGS = ["L0-RT-pre", "L1-RT-pre", "L2-RT-pre", "L3-RT-pre", "L0-RT-post", "L1-RT-post", "L2-RT-post", "L3-RT-post",

@@ -1,0 +1,9 @@
+model,system,identical_share,units
+llama31_8b,generic,0.182,2000
+llama31_8b,projection,0.9995,2000
+llama31_8b,raw,0.1115,2000
+llama31_8b,trimmed,0.783,2000
+qwen25_7b,generic,0.346,2000
+qwen25_7b,projection,1.0,2000
+qwen25_7b,raw,0.118,2000
+qwen25_7b,trimmed,0.6875,2000
