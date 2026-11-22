@@ -191,7 +191,7 @@ class ConformalClarifier:
         pid = req["pid"]
         view = acl.permitted_view(world, pid)
         ex = IX.people_tokens(world)
-        if not [t for t in IX.query_name_tokens(q) if t not in ex]:          # aggregate or person request: list by content
+        if not IX.has_name(world, q):          # aggregate or person request: list by content
             agg = _aggregate(view, q)
             return observation(template_list(agg), "answer") if agg else observation(UNIVERSAL, "none")
         cands = candidate_set(world, pid, q)
@@ -267,9 +267,14 @@ def type_cue(rec: dict, query: str) -> float:
     return 1.0 if any(w in q for w in TYPE_WORDS[rec["type"]]) else 0.0
 
 
-def any_type_word(query: str) -> bool:
+DOMAIN1_TYPES = ["project_brief", "investigation", "hr_case", "acquisition_memo", "vendor_contract", "support_ticket"]
+
+
+def any_type_word(query: str, domain: str | None = None) -> bool:
+    """Domain 1 reads its own six type words, as measured in notebooks 03b to 06; Domain 2 reads every type word."""
     q = query.lower()
-    return any(w in q for ws in TYPE_WORDS.values() for w in ws)
+    words = TYPE_WORDS.values() if domain == "enron" else [TYPE_WORDS[t] for t in DOMAIN1_TYPES]
+    return any(w in q for ws in words for w in ws)
 
 
 def evidence(world: dict, query: str, cands: list[dict]) -> np.ndarray:
@@ -284,7 +289,7 @@ def evidence(world: dict, query: str, cands: list[dict]) -> np.ndarray:
         X[:-1, 0], X[:-1, 1], X[:-1, 2] = nm, bm, tc
         X[:-1, 3] = (nm == nm.max()).astype(float)
         X[-1, 5] = -nm.max()
-        X[-1, 6] = -(tc.max() if any_type_word(query) else 0.5)
+        X[-1, 6] = -(tc.max() if any_type_word(query, world.get("domain")) else 0.5)
     X[-1, 4] = 1.0
     return X
 
@@ -389,7 +394,7 @@ class EvidenceClarifier:
         world, req, q = ctx["world"], ctx["requester"], ctx["query"]
         pid = req["pid"]
         ex = IX.people_tokens(world)
-        if not [t for t in IX.query_name_tokens(q) if t not in ex]:          # aggregate or person request: list by content
+        if not IX.has_name(world, q):          # aggregate or person request: list by content
             agg = self.aggregate(world, pid, q)
             return observation(template_list(agg), "answer") if agg else self.universal(ctx)
         cands = self.candidates(world, pid, q)
@@ -463,7 +468,7 @@ def intended_option(unit: dict, world_key: str, cands: list[dict]) -> int:
 def needs_scoring(world: dict, pid: int, query: str) -> bool:
     """The clarifier scores only named-record requests with at least one permitted candidate."""
     ex = IX.people_tokens(world)
-    if not [t for t in IX.query_name_tokens(query) if t not in ex]:
+    if not IX.has_name(world, query):
         return False
     return bool(candidate_set(world, pid, query))
 

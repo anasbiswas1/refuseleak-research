@@ -1,0 +1,298 @@
+{
+  "dry_run": false,
+  "runtime_version": "3",
+  "budget": {
+    "domain": "meridian",
+    "runtime_version": "3",
+    "pool_hash": "008237670faa",
+    "recording_units": {
+      "train": 2000,
+      "certify": 3000,
+      "utility": 1000
+    },
+    "heldout_units": {
+      "train": 1000,
+      "test": 2000,
+      "legit": 300,
+      "auth": 200
+    },
+    "scoring_prompts": 7034,
+    "recording_prompts_as_in_04": 4937,
+    "configs": 24,
+    "selected_before_amendment": {
+      "qwen25_7b": "L2-RT-pre",
+      "llama31_8b": "L2-RT-pre"
+    },
+    "seconds": 149.9
+  },
+  "qwen25_7b": {
+    "scores": {
+      "prompts": 7034,
+      "scored_now": 440,
+      "seconds": 15.9
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 4000,
+        "rows_total": 32000,
+        "seconds": 322.5
+      },
+      "certify": {
+        "tasks_run": 6000,
+        "rows_total": 80000,
+        "seconds": 474.9
+      },
+      "utility": {
+        "tasks_run": 1000,
+        "rows_total": 91384,
+        "seconds": 67.4
+      },
+      "heldout_test": {
+        "tasks_run": 4000,
+        "rows_total": 95384,
+        "seconds": 37.6
+      },
+      "heldout_legit": {
+        "tasks_run": 300,
+        "rows_total": 97306,
+        "seconds": 7.9
+      },
+      "heldout_auth": {
+        "tasks_run": 200,
+        "rows_total": 98494,
+        "seconds": 4.9
+      }
+    },
+    "renders": {
+      "RS-pre": {
+        "mode": "RS",
+        "distinct": 8346,
+        "rendered_now": 2922,
+        "seconds": 302.9
+      },
+      "RS-post": {
+        "mode": "RS",
+        "distinct": 8987,
+        "rendered_now": 42,
+        "seconds": 7.9
+      },
+      "RS-file-bytes": 690376,
+      "RF-pre": {
+        "mode": "RF",
+        "distinct": 12225,
+        "rendered_now": 2922,
+        "seconds": 319.1
+      },
+      "RF-post": {
+        "mode": "RF",
+        "distinct": 13676,
+        "rendered_now": 42,
+        "seconds": 7.9
+      },
+      "RF-file-bytes": 1151069
+    },
+    "derived": {
+      "L0-RS-pre": 11000,
+      "L1-RS-pre": 11565,
+      "L2-RS-pre": 11565,
+      "L3-RS-pre": 11565,
+      "L0-RS-post": 11000,
+      "L1-RS-post": 11563,
+      "L2-RS-post": 11563,
+      "L3-RS-post": 11563,
+      "L0-RF-pre": 11000,
+      "L1-RF-pre": 11565,
+      "L2-RF-pre": 11565,
+      "L3-RF-pre": 11565,
+      "L0-RF-post": 11000,
+      "L1-RF-post": 11563,
+      "L2-RF-post": 11563,
+      "L3-RF-post": 11563
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 53191,
+      "B6.jsonl.gz": 53128,
+      "L0-RF-post.jsonl.gz": 961686,
+      "L0-RF-pre.jsonl.gz": 1004405,
+      "L0-RS-post.jsonl.gz": 896772,
+      "L0-RS-pre.jsonl.gz": 964595,
+      "L0-RT-post.jsonl.gz": 887011,
+      "L0-RT-pre.jsonl.gz": 962143,
+      "L1-RF-post.jsonl.gz": 1409786,
+      "L1-RF-pre.jsonl.gz": 1486437,
+      "L1-RS-post.jsonl.gz": 1269876,
+      "L1-RS-pre.jsonl.gz": 1370831,
+      "L1-RT-post.jsonl.gz": 1220533,
+      "L1-RT-pre.jsonl.gz": 1337922,
+      "L2-RF-post.jsonl.gz": 1447715,
+      "L2-RF-pre.jsonl.gz": 1520017,
+      "L2-RS-post.jsonl.gz": 1307574,
+      "L2-RS-pre.jsonl.gz": 1405192,
+      "L2-RT-post.jsonl.gz": 1254942,
+      "L2-RT-pre.jsonl.gz": 1929399,
+      "L3-RF-post.jsonl.gz": 1496686,
+      "L3-RF-pre.jsonl.gz": 1564757,
+      "L3-RS-post.jsonl.gz": 1331744,
+      "L3-RS-pre.jsonl.gz": 1426663,
+      "L3-RT-post.jsonl.gz": 1273468,
+      "L3-RT-pre.jsonl.gz": 1382552,
+      "O1.jsonl.gz": 46428,
+      "O2.jsonl.gz": 79502
+    },
+    "seconds_model": 1963.5,
+    "judge": {
+      "certificate": {
+        "judge": "llama31_8b",
+        "distinct": 27334,
+        "judged_now": 6436,
+        "seconds": 228.8
+      },
+      "heldout": {
+        "judge": "llama31_8b",
+        "distinct": 2973,
+        "judged_now": 513,
+        "seconds": 17.1
+      },
+      "file_bytes": 1721239
+    }
+  },
+  "llama31_8b": {
+    "scores": {
+      "prompts": 7034,
+      "scored_now": 440,
+      "seconds": 13.0
+    },
+    "decisions": {
+      "train": {
+        "tasks_run": 4000,
+        "rows_total": 32000,
+        "seconds": 319.9
+      },
+      "certify": {
+        "tasks_run": 6000,
+        "rows_total": 80000,
+        "seconds": 510.2
+      },
+      "utility": {
+        "tasks_run": 1000,
+        "rows_total": 91432,
+        "seconds": 72.9
+      },
+      "heldout_test": {
+        "tasks_run": 4000,
+        "rows_total": 95432,
+        "seconds": 39.3
+      },
+      "heldout_legit": {
+        "tasks_run": 300,
+        "rows_total": 97358,
+        "seconds": 8.2
+      },
+      "heldout_auth": {
+        "tasks_run": 200,
+        "rows_total": 98541,
+        "seconds": 5.4
+      }
+    },
+    "renders": {
+      "RS-pre": {
+        "mode": "RS",
+        "distinct": 8339,
+        "rendered_now": 3037,
+        "seconds": 418.1
+      },
+      "RS-post": {
+        "mode": "RS",
+        "distinct": 9001,
+        "rendered_now": 44,
+        "seconds": 9.5
+      },
+      "RS-file-bytes": 768030,
+      "RF-pre": {
+        "mode": "RF",
+        "distinct": 12246,
+        "rendered_now": 3037,
+        "seconds": 639.6
+      },
+      "RF-post": {
+        "mode": "RF",
+        "distinct": 13700,
+        "rendered_now": 44,
+        "seconds": 13.7
+      },
+      "RF-file-bytes": 2471426
+    },
+    "derived": {
+      "L0-RS-pre": 11000,
+      "L1-RS-pre": 11573,
+      "L2-RS-pre": 11573,
+      "L3-RS-pre": 11573,
+      "L0-RS-post": 11000,
+      "L1-RS-post": 11571,
+      "L2-RS-post": 11571,
+      "L3-RS-post": 11571,
+      "L0-RF-pre": 11000,
+      "L1-RF-pre": 11573,
+      "L2-RF-pre": 11573,
+      "L3-RF-pre": 11573,
+      "L0-RF-post": 11000,
+      "L1-RF-post": 11571,
+      "L2-RF-post": 11571,
+      "L3-RF-post": 11571
+    },
+    "compacted_bytes": {
+      "B4.jsonl.gz": 53180,
+      "B6.jsonl.gz": 53139,
+      "L0-RF-post.jsonl.gz": 1567185,
+      "L0-RF-pre.jsonl.gz": 1575483,
+      "L0-RS-post.jsonl.gz": 933593,
+      "L0-RS-pre.jsonl.gz": 995090,
+      "L0-RT-post.jsonl.gz": 886288,
+      "L0-RT-pre.jsonl.gz": 961678,
+      "L1-RF-post.jsonl.gz": 1963383,
+      "L1-RF-pre.jsonl.gz": 1977304,
+      "L1-RS-post.jsonl.gz": 1374068,
+      "L1-RS-pre.jsonl.gz": 1462935,
+      "L1-RT-post.jsonl.gz": 1220500,
+      "L1-RT-pre.jsonl.gz": 1335245,
+      "L2-RF-post.jsonl.gz": 2002009,
+      "L2-RF-pre.jsonl.gz": 2012865,
+      "L2-RS-post.jsonl.gz": 1410421,
+      "L2-RS-pre.jsonl.gz": 1496159,
+      "L2-RT-post.jsonl.gz": 1255147,
+      "L2-RT-pre.jsonl.gz": 1926301,
+      "L3-RF-post.jsonl.gz": 2091719,
+      "L3-RF-pre.jsonl.gz": 2109152,
+      "L3-RS-post.jsonl.gz": 1451688,
+      "L3-RS-pre.jsonl.gz": 1534971,
+      "L3-RT-post.jsonl.gz": 1273391,
+      "L3-RT-pre.jsonl.gz": 1380203,
+      "O1.jsonl.gz": 46432,
+      "O2.jsonl.gz": 79523
+    },
+    "seconds_model": 2268.3,
+    "judge": {
+      "certificate": {
+        "judge": "qwen25_7b",
+        "distinct": 28515,
+        "judged_now": 6699,
+        "seconds": 231.2
+      },
+      "heldout": {
+        "judge": "qwen25_7b",
+        "distinct": 2972,
+        "judged_now": 553,
+        "seconds": 14.4
+      },
+      "file_bytes": 1590490
+    }
+  },
+  "heldout": {
+    "qwen25_7b": {
+      "recorded_in_stage_3": true
+    },
+    "llama31_8b": {
+      "recorded_in_stage_3": true
+    }
+  }
+}

@@ -33,9 +33,18 @@ GENERIC = {"project", "projects", "investigation", "investigations", "people", "
            "lane", "street", "house", "meeting", "room", "floor", "kitchen", "depot", "reception", "office", "wing",
            "north", "south", "east", "west", "fault", "offline", "failure", "broken", "leak", "jam", "dropouts",
            "lights", "reader", "desk", "water", "heating", "printer", "projector", "flickering", "badge", "door",
-           "standing", "acquisition", "acquisitions", "divestment", "divestments", "open", "closed", "deal", "deals",
-           "email", "emails", "thread", "threads", "message", "messages", "mail", "legal", "employment", "personal",
-           "logistics", "business", "urgent", "routine", "marked", "flagged", "copied", "restricted"}
+           "standing", "acquisition", "acquisitions", "divestment", "divestments", "open", "closed", "deal", "deals"}
+GENERIC_ENRON = GENERIC | {"email", "emails", "thread", "threads", "message", "messages", "mail", "legal", "employment", "personal",
+                           "logistics", "business", "urgent", "routine", "marked", "flagged", "copied", "restricted"}
+# Domain 2 (notebook 07a): email words are never record names there. Domain 1 keeps its own list, as measured in notebooks 02 to 06.
+
+
+def generic_of(domain: str | None) -> set[str]:
+    return GENERIC_ENRON if domain == "enron" else GENERIC
+
+
+def record_domain(rec: dict) -> str | None:
+    return "enron" if str(rec.get("ref", "")).startswith("EN-") else None
 TYPE_HINTS = {"project_brief": "project projects brief initiative", "investigation": "investigation investigations case",
               "hr_case": "people case cases grievance", "acquisition_memo": "transaction transactions deal memo acquisition divestment",
               "vendor_contract": "contract contracts supply agreement vendor supplier", "support_ticket": "ticket tickets issue facilities",
@@ -69,15 +78,23 @@ def dice(a: str, b: str) -> float:
     return 2 * len(ba & bb) / (len(ba) + len(bb))
 
 
-def name_tokens(rec: dict) -> list[str]:
+def name_tokens(rec: dict, generic: set | None = None) -> list[str]:
+    generic = generic_of(record_domain(rec)) if generic is None else generic
     toks = tokens(rec["title"])
     if rec.get("codename"):
         toks.append(rec["codename"].lower())
-    return [t for t in toks if (len(t) >= 4 or (t.isdigit() and len(t) >= 3)) and t not in GENERIC]
+    return [t for t in toks if (len(t) >= 4 or (t.isdigit() and len(t) >= 3)) and t not in generic]
 
 
-def query_name_tokens(query: str) -> list[str]:
-    return [t for t in tokens(query) if (len(t) >= 4 or (t.isdigit() and len(t) >= 3)) and t not in GENERIC]
+def query_name_tokens(query: str, generic: set | None = None) -> list[str]:
+    generic = GENERIC if generic is None else generic
+    return [t for t in tokens(query) if (len(t) >= 4 or (t.isdigit() and len(t) >= 3)) and t not in generic]
+
+
+def has_name(world: dict, query: str) -> bool:
+    """The request carries a word that can name a record (not a staff name, not a generic word of the world's domain)."""
+    ex = people_tokens(world)
+    return bool([t for t in query_name_tokens(query, generic_of(world.get("domain"))) if t not in ex])
 
 
 def people_tokens(world: dict) -> set[str]:
@@ -90,8 +107,9 @@ def people_tokens(world: dict) -> set[str]:
 
 
 def name_match(rec: dict, query: str, exclude: set | None = None) -> float:
-    q = [t for t in query_name_tokens(query) if not exclude or t not in exclude]
-    names = name_tokens(rec)
+    generic = generic_of(record_domain(rec))
+    q = [t for t in query_name_tokens(query, generic) if not exclude or t not in exclude]
+    names = name_tokens(rec, generic)
     best = 0.0
     for qt in q:
         for nt in names:

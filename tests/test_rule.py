@@ -34,8 +34,7 @@ class NoneOnly(PL.LoRe):
 def _named_request(unit, wk):
     world = unit["worlds"][wk]
     req = acl.person(world, unit["requester"])
-    ex = IX.people_tokens(world)
-    has_name = bool([t for t in IX.query_name_tokens(unit["query"]) if t not in ex])
+    has_name = IX.has_name(world, unit["query"])
     cands = CL.candidate_set(world, req["pid"], unit["query"])
     return has_name, bool(cands), CL.named_candidates(world, req["pid"], unit["query"])
 

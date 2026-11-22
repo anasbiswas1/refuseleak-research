@@ -1,0 +1,24 @@
+{
+  "domain": "meridian",
+  "runtime_version": "3",
+  "pool_hash": "008237670faa",
+  "recording_units": {
+    "train": 2000,
+    "certify": 3000,
+    "utility": 1000
+  },
+  "heldout_units": {
+    "train": 1000,
+    "test": 2000,
+    "legit": 300,
+    "auth": 200
+  },
+  "scoring_prompts": 7034,
+  "recording_prompts_as_in_04": 4937,
+  "configs": 24,
+  "selected_before_amendment": {
+    "qwen25_7b": "L2-RT-pre",
+    "llama31_8b": "L2-RT-pre"
+  },
+  "seconds": 149.9
+}

@@ -354,8 +354,7 @@ def prompt_rows(tasks: dict[str, list[dict]]) -> "pd.DataFrame":
             for wk in u["worlds"]:
                 world = u["worlds"][wk]
                 req = acl.person(world, u["requester"])
-                ex = IX.people_tokens(world)
-                if not [t for t in IX.query_name_tokens(u["query"]) if t not in ex]:
+                if not IX.has_name(world, u["query"]):
                     continue
                 for retrieval in config.RETRIEVALS:
                     cands = CL.post_candidate_set(world, req["pid"], u["query"]) if retrieval == "post" else CL.candidate_set(world, req["pid"], u["query"])

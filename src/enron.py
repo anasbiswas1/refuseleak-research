@@ -201,7 +201,7 @@ def assign_keys(corpus: list[dict], min_share: int = 2) -> list[dict]:
         if nm:
             names |= {nm[0].lower(), nm[1].lower()}
     banned = names | SUBJECT_GENERIC
-    subj_tokens = [[t for t in IX.tokens(r["subject"]) if len(t) >= MIN_KEY_CHARS and t not in IX.GENERIC and t not in banned and not t.isdigit()]
+    subj_tokens = [[t for t in IX.tokens(r["subject"]) if len(t) >= MIN_KEY_CHARS and t not in IX.GENERIC_ENRON and t not in banned and not t.isdigit()]
                    for r in corpus]
     df = Counter(t for toks in subj_tokens for t in set(toks))
     permitted_df = Counter(t for r, toks in zip(corpus, subj_tokens) if r["type"] not in RESTRICTED_TYPES for t in set(toks))

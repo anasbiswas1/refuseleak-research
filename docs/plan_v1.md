@@ -71,6 +71,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The baselines do not use the clarifier; their notebook 07c records and tables are reused (B4 and O1 re-recorded on the utility split under runtime 3 are checked byte-identical to notebook 07b's).
 - Domain 1 is re-recorded under runtime 3 in notebooks 04b (recording and certificate) and 06b (held out).
 
+## Amendments made with notebook 04b (21 November 2026)
+
+- Domain 1 is re-recorded and re-certified under runtime 3 (the clarifier amendment of notebook 07d) with the clarifier parameters of notebook 03b unchanged; prediction sets and C4 are unchanged.
+- The word lists are per domain: the email words added for Domain 2 in notebook 07a (never record names there) and the email type words apply to Domain 2 only. Nothing committed for Domain 1 had used them (notebooks 02 to 06 predate 07a); a re-run with the shared lists would have changed 26 of Domain 1's 4,937 scoring prompts. With the lists split, a replay with the earlier rule reproduces notebooks 04 and 06 row for row in Domain 1, and notebook 07d row for row in Domain 2.
+- Held out in Domain 1: the selected configuration on the notebook 06 units; the baselines' notebook 06 records and tables are reused (B4, B6, O1 and O2 re-recorded on legit and auth are checked byte-identical).
+- No fresh draw in Domain 1: the amendment changes no legitimate or authorised reply there.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
