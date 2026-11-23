@@ -1,0 +1,169 @@
+{
+  "runtime_version": "3",
+  "dry_run": false,
+  "selected": {
+    "qwen25_7b": "L2-RT-pre",
+    "llama31_8b": "L2-RT-pre"
+  },
+  "controls": {
+    "A1": [
+      "B1"
+    ],
+    "A2": [
+      "B1",
+      "B3",
+      "B5"
+    ],
+    "A3": [
+      "B3",
+      "B5"
+    ],
+    "A4": [
+      "B3",
+      "B5"
+    ]
+  },
+  "test_units_picked_world1": {
+    "S1": 1017,
+    "S2": 961,
+    "S3": 1028
+  },
+  "models": {
+    "qwen25_7b": {
+      "selected": "L2-RT-pre",
+      "attackers": {
+        "A1": {
+          "selected_max_adv": 0.028000000000000025,
+          "selected_max_adv_hi": 0.07171328770143659,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B1": 0.9747140571570467
+          },
+          "succeeds_against": [
+            "B1"
+          ],
+          "control_pass": true
+        },
+        "A2": {
+          "selected_max_adv": 0.0020000000000000018,
+          "selected_max_adv_hi": 0.0272936000554711,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B1": 0.9747140571570467,
+            "B3": 0.8627915753634654,
+            "B5": 0.2662053798085653
+          },
+          "succeeds_against": [
+            "B1",
+            "B3",
+            "B5"
+          ],
+          "control_pass": true
+        },
+        "A3": {
+          "selected_max_adv": 0.016999999999999904,
+          "selected_max_adv_hi": 0.06074519390913857,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B3": 0.0,
+            "B5": 0.13453686343807547
+          },
+          "succeeds_against": [
+            "B5"
+          ],
+          "control_pass": true
+        },
+        "A4": {
+          "selected_max_adv": 0.016999999999999904,
+          "selected_max_adv_hi": 0.06074519390913857,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B3": 0.9052560549637392,
+            "B5": 0.0335718792225812
+          },
+          "succeeds_against": [
+            "B3"
+          ],
+          "control_pass": true
+        }
+      },
+      "worst_selected": {
+        "attacker": "A1",
+        "k": 4,
+        "learner": "stack",
+        "adv": 0.028000000000000025,
+        "adv_hi": 0.07171328770143659
+      },
+      "pass": true
+    },
+    "llama31_8b": {
+      "selected": "L2-RT-pre",
+      "attackers": {
+        "A1": {
+          "selected_max_adv": 0.028000000000000025,
+          "selected_max_adv_hi": 0.07171328770143659,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B1": 0.952044833077873
+          },
+          "succeeds_against": [
+            "B1"
+          ],
+          "control_pass": true
+        },
+        "A2": {
+          "selected_max_adv": 0.0020000000000000018,
+          "selected_max_adv_hi": 0.0272936000554711,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B1": 0.8383059324653697,
+            "B3": 0.8627915753634654,
+            "B5": 0.2525791995841684
+          },
+          "succeeds_against": [
+            "B1",
+            "B3",
+            "B5"
+          ],
+          "control_pass": true
+        },
+        "A3": {
+          "selected_max_adv": 0.016999999999999904,
+          "selected_max_adv_hi": 0.06074519390913857,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B3": 0.0,
+            "B5": 0.14131026487253084
+          },
+          "succeeds_against": [
+            "B5"
+          ],
+          "control_pass": true
+        },
+        "A4": {
+          "selected_max_adv": 0.016999999999999904,
+          "selected_max_adv_hi": 0.06074519390913857,
+          "selected_within_eps": true,
+          "control_adv_lo_at_last_turn": {
+            "B3": 0.8965421135859901,
+            "B5": 0.06709642906046565
+          },
+          "succeeds_against": [
+            "B3"
+          ],
+          "control_pass": true
+        }
+      },
+      "worst_selected": {
+        "attacker": "A1",
+        "k": 4,
+        "learner": "stack",
+        "adv": 0.028000000000000025,
+        "adv_hi": 0.07171328770143659
+      },
+      "pass": true
+    }
+  },
+  "pass": true,
+  "seconds_tables": 795.9
+}

@@ -102,6 +102,14 @@ ENRON_FRESH = {"legit": (300, 300), "auth": (200, 200)}   # (first index, count)
 ENRON_CONFIGS = ["L0-RT-pre", "L1-RT-pre", "L2-RT-pre", "L3-RT-pre", "L0-RT-post", "L1-RT-post", "L2-RT-post", "L3-RT-post",
                  "L2-RS-pre", "L2-RF-pre"]                  # the eight decision configurations and the rendered variants of the selected level
 
+# ----------------------------------------------------------------------------- adaptive attackers (notebook 09)
+ADAPTIVE_UNITS = {"train": (2000, 1500), "test": (2000, 6000)}   # (first index, count) of fresh Domain 1 units, never used before notebook 09:
+# 500 training and 2,000 test units per secret type (build_unit gives index i the secret SECRET_TYPES[i % 3])
+ADAPTIVE_BASELINE_UNITS = 300           # the language-model baselines run on the first 300 training and 300 test units of each secret type
+ADAPTIVE_BASELINES = {"S1": ["B3", "B5"], "S2": ["B5"], "S3": ["B1"]}   # the baselines that can leak each secret: B3 only existence (its trigger), B5 existence
+# and membership (restricted records take retrieval slots), B1 every secret (privileged context); B3 and B5 cannot leak an attribute by construction
+ADAPTIVE_MAX_FOLLOW = 2                 # follow-up replies A4 reads after answering "none of these"
+
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10
 DELTA = 0.05

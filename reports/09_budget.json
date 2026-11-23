@@ -1,0 +1,66 @@
+{
+  "domain": "meridian",
+  "runtime_version": "3",
+  "pool_hash": "008237670faa",
+  "units": {
+    "train-S1": 500,
+    "train-S2": 500,
+    "train-S3": 500,
+    "test-S1": 2000,
+    "test-S2": 2000,
+    "test-S3": 2000
+  },
+  "baseline_units_per_pool": 300,
+  "selected": {
+    "qwen25_7b": "L2-RT-pre",
+    "llama31_8b": "L2-RT-pre"
+  },
+  "sessions_selected_per_model": 30000,
+  "sessions_baselines_per_model": 10800,
+  "baselines": {
+    "S1": [
+      "B3",
+      "B5"
+    ],
+    "S2": [
+      "B5"
+    ],
+    "S3": [
+      "B1"
+    ]
+  },
+  "controls": {
+    "A1": [
+      "B1"
+    ],
+    "A2": [
+      "B1",
+      "B3",
+      "B5"
+    ],
+    "A3": [
+      "B3",
+      "B5"
+    ],
+    "A4": [
+      "B3",
+      "B5"
+    ]
+  },
+  "scoring_prompts": 42044,
+  "scoring_prompts_already_scored": {
+    "qwen25_7b": 0,
+    "llama31_8b": 0
+  },
+  "generations_counted_offline_per_model": {
+    "B1": 8377,
+    "B3": 6888,
+    "B5": 14011
+  },
+  "test_units_picked_world1": {
+    "S1": 1017,
+    "S2": 961,
+    "S3": 1028
+  },
+  "seconds": 224.3
+}

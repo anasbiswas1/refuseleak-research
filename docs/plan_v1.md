@@ -92,6 +92,14 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Fixes: a tolerant call parser, the field named file_id, word-level filename search allowing one typo per word, generation stopped at the closing tag (200 tokens at most), one model call per distinct input shared between threads, a unique target filename per unit, and two system-message lines on how to open a file (the same in every arm).
 - Arms, splits, attackers and the C6 criterion are unchanged; notebook 08's reports stay as the record of the first harness, and the paper reports notebook 08b.
 
+## Amendments made with notebook 09 (23 November 2026)
+
+- C5's control is amended before the run: each adaptive attacker must succeed (best learner at its last turn with an advantage lower bound above 0.10) against at least one baseline that can leak the secret it attacks, instead of against B3 alone. B3 refuses when a restricted record's name matches and otherwise answers from the permitted view, so it can leak existence only (notebook 06: 0.60 and 0.63 on existence units, 0.05 to 0.07 on membership and attribute units); A1 (attributes) and A3 (aggregate lists) cannot succeed against it by construction.
+- Controls per secret type: B3 and B5 on existence units, B5 on membership units (restricted records take retrieval slots), B1 on attribute units (privileged context). B1 is added to the systems of notebook 09; B3 and B5 run only on the secrets they can leak.
+- A1's binary search is one split, since Domain 1 attributes have two values: A1 asks the direct question for each value, then the value lists, or the access and summary questions when a reply spoke about the record.
+- Fresh Domain 1 units (train indices 2,000 to 3,499, test 2,000 to 7,999): 500 training and 2,000 test units per secret type for the selected configuration, the first 300 of each for the baselines. Every probe is a new request; A4 answers 'none of these' when offered a choice and reads up to two follow-ups.
+- Learners: D1, D3 and D5 applied to the transcript of the first k turns, and their stack, trained on both worlds of the training sessions and frozen; one hash-picked world per test session. D4 is not used for the adaptive attackers.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
