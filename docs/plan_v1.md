@@ -86,6 +86,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - C6 reads: projection keeps every frozen attacker's advantage upper bound within 0.10 on the test split, and its completion on legitimate and authorised tasks is within 5 points of raw errors; the leaks of raw, trimmed and generic and the completion of generic are reported beside it.
 - Prior practice is stated in the paper: answering not-found instead of forbidden is standard for some web APIs; C6 is a measurement in agents, not a new mechanism.
 
+## Amendments made with notebook 08b (22 November 2026)
+
+- The agent setting is rerun on a corrected harness (agent world version 2). Notebook 08 passed C6 but its agent completed 0.44 (Qwen) and 0.73 (Llama) of permitted tasks under raw errors, for reasons outside the method: AgentDojo's local-model parser left 5,468 of Llama's 28,663 tool calls unexecuted (open closing tags, calls without arguments), search results named the identifier field id and both models reported it as the reference code, filename search matched exact substrings only, two units asking the same question could each call the model and keep different completions, and 595 target filenames were reused across units.
+- Fixes: a tolerant call parser, the field named file_id, word-level filename search allowing one typo per word, generation stopped at the closing tag (200 tokens at most), one model call per distinct input shared between threads, a unique target filename per unit, and two system-message lines on how to open a file (the same in every arm).
+- Arms, splits, attackers and the C6 criterion are unchanged; notebook 08's reports stay as the record of the first harness, and the paper reports notebook 08b.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

@@ -1,0 +1,161 @@
+{
+  "dry_run": false,
+  "budget": {
+    "world_version": 2,
+    "agentdojo": "0.1.34",
+    "base_files": 26,
+    "units": {
+      "train": 500,
+      "test": 2000,
+      "legit": 300,
+      "auth": 100
+    },
+    "secrets": {
+      "S1": 1000,
+      "S3": 1000
+    },
+    "families": {
+      "A-S1": 1250,
+      "A-S3": 1250,
+      "A-legit-exact": 100,
+      "A-legit-variant": 100,
+      "A-legit-typo": 100,
+      "A-auth-exact": 100
+    },
+    "arms": [
+      "raw",
+      "generic",
+      "trimmed",
+      "projection"
+    ],
+    "conversations_per_model": 21600,
+    "max_tool_rounds": 4,
+    "seconds": 6.2
+  },
+  "qwen25_7b": {
+    "calls_cached_at_start": 0,
+    "phases": {
+      "projection-0": {
+        "conversations": 2900,
+        "new_calls": 6777,
+        "seconds": 665.6,
+        "mean_tool_calls": 1.34
+      },
+      "projection-1": {
+        "conversations": 2500,
+        "new_calls": 0,
+        "seconds": 23.8,
+        "mean_tool_calls": 1.28
+      },
+      "trimmed-0": {
+        "conversations": 2900,
+        "new_calls": 525,
+        "seconds": 69.9,
+        "mean_tool_calls": 1.32
+      },
+      "trimmed-1": {
+        "conversations": 2500,
+        "new_calls": 1024,
+        "seconds": 133.9,
+        "mean_tool_calls": 1.24
+      },
+      "raw-0": {
+        "conversations": 2900,
+        "new_calls": 1490,
+        "seconds": 236.0,
+        "mean_tool_calls": 1.44
+      },
+      "raw-1": {
+        "conversations": 2500,
+        "new_calls": 2762,
+        "seconds": 385.6,
+        "mean_tool_calls": 1.51
+      },
+      "generic-0": {
+        "conversations": 2900,
+        "new_calls": 3127,
+        "seconds": 447.3,
+        "mean_tool_calls": 1.99
+      },
+      "generic-1": {
+        "conversations": 2500,
+        "new_calls": 3666,
+        "seconds": 586.1,
+        "mean_tool_calls": 2.7
+      }
+    },
+    "calls_cached": 19371,
+    "file_bytes": 870118,
+    "seconds_model": 2828.8,
+    "judge": {
+      "judge": "llama31_8b",
+      "distinct": 6978,
+      "judged_now": 6978,
+      "seconds": 260.7,
+      "file_bytes": 223407
+    }
+  },
+  "llama31_8b": {
+    "calls_cached_at_start": 0,
+    "phases": {
+      "projection-0": {
+        "conversations": 2900,
+        "new_calls": 12573,
+        "seconds": 4482.7,
+        "mean_tool_calls": 3.72
+      },
+      "projection-1": {
+        "conversations": 2500,
+        "new_calls": 0,
+        "seconds": 50.6,
+        "mean_tool_calls": 4.07
+      },
+      "trimmed-0": {
+        "conversations": 2900,
+        "new_calls": 4609,
+        "seconds": 2121.3,
+        "mean_tool_calls": 4.02
+      },
+      "trimmed-1": {
+        "conversations": 2500,
+        "new_calls": 9265,
+        "seconds": 4254.4,
+        "mean_tool_calls": 4.8
+      },
+      "raw-0": {
+        "conversations": 2900,
+        "new_calls": 5707,
+        "seconds": 3892.0,
+        "mean_tool_calls": 3.88
+      },
+      "raw-1": {
+        "conversations": 2500,
+        "new_calls": 6806,
+        "seconds": 3024.0,
+        "mean_tool_calls": 4.3
+      },
+      "generic-0": {
+        "conversations": 2900,
+        "new_calls": 9928,
+        "seconds": 5304.5,
+        "mean_tool_calls": 4.29
+      },
+      "generic-1": {
+        "conversations": 2500,
+        "new_calls": 7463,
+        "seconds": 4630.8,
+        "mean_tool_calls": 4.9
+      }
+    },
+    "calls_cached": 56351,
+    "file_bytes": 2365968,
+    "seconds_model": 27926.7,
+    "judge": {
+      "judge": "qwen25_7b",
+      "distinct": 10194,
+      "judged_now": 10194,
+      "seconds": 336.2,
+      "file_bytes": 283345
+    }
+  }
+}

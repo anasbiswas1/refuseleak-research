@@ -31,7 +31,7 @@ class ScriptedLLM:
                         "access": access, "may": may == "YES", "body": body, "codename": None})
         return out
 
-    def messages(self, messages: list[dict], max_tokens: int = 300, temperature: float = 0.0) -> str:
+    def messages(self, messages: list[dict], max_tokens: int = 300, temperature: float = 0.0, stop: list[str] | None = None) -> str:
         """Stand-in agent for notebook 08: opens the file the request names, follows a suggested name once, and
         reports the reference code or repeats the error it got."""
         import json as _json
@@ -62,6 +62,8 @@ class ScriptedLLM:
             res = str(d.get("result", ""))
             if res.startswith("[") and tried < 3:
                 hits = _re.findall(r'"filename": "([^"]+)"', res)
+                if len(hits) > 1:
+                    hits = hits[:1]
                 if len(hits) == 1:
                     return '<function=open_file>' + _json.dumps({"filename": hits[0]}) + '</function>'
                 return "I found these files: " + ", ".join(hits[:5]) + "." if hits else "I found no matching file."

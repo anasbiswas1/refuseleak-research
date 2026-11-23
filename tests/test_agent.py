@@ -70,6 +70,62 @@ def test_listing_is_privileged_only_in_raw_and_generic():
         assert (u["target_ref"] in names) == AG.PRIVILEGED_LISTING[arm], arm
 
 
+def test_target_names_are_unique_across_units_and_splits():
+    units = LEAK + [AG.build_unit("test", i, BASE) for i in range(60)] + LEGIT
+    names = [u["target_ref"] for u in units if u["kind"] != "legit"]
+    assert len(names) == len(set(names))
+    for u in units:
+        for w in u["worlds"].values():
+            fns = [f["filename"] for f in w["files"]]
+            assert len(fns) == len(set(fns)), u["uid"]
+
+
+def test_parse_call_reads_the_forms_models_write():
+    assert AG.parse_call('x <function=open_file>{"filename": "a.docx"}</function>') == ("open_file", {"filename": "a.docx"})
+    assert AG.parse_call('<function=open_file>{"filename": "a.docx"}') == ("open_file", {"filename": "a.docx"})
+    assert AG.parse_call('<function=open_file>{"filename": "a.docx"}<function>') == ("open_file", {"filename": "a.docx"})
+    assert AG.parse_call("<function=list_files></function>") == ("list_files", {})
+    assert AG.parse_call('<function=search_files>{"query": "a {b} \\"c\\""}</function>') == ("search_files", {"query": 'a {b} "c"'})
+    assert AG.parse_call("The reference code is ABC-1234.") is None
+    assert AG.parse_call('<function=open_file>{"filename": "a.do') is None
+
+
+def test_call_cache_shares_one_call_between_threads():
+    import threading
+    import time
+
+    class Slow:
+        n = 0
+
+        def messages(self, messages, max_tokens=0, temperature=0.0, stop=None):
+            Slow.n += 1
+            time.sleep(0.05)
+            return f"answer {Slow.n}"
+
+    cache = AG.CallCache(Path(tempfile.mkdtemp()) / "c.jsonl.gz", "m", Slow())
+    out = []
+    ts = [threading.Thread(target=lambda: out.append(cache.text([{"role": "user", "content": "same"}]))) for _ in range(8)]
+    for t in ts:
+        t.start()
+    for t in ts:
+        t.join()
+    assert Slow.n == 1 and len(set(out)) == 1 and len(out) == 8
+
+
+def test_filename_search_finds_variant_and_typo_names():
+    found = 0
+    for u in [x for x in LEGIT if x["family"] in ("A-legit-variant", "A-legit-typo")]:
+        named = u["query"]
+        for t in AG.TEMPLATES:
+            pre, post = t.split("{fn}")
+            if named.startswith(pre) and named.endswith(post):
+                named = named[len(pre):len(named) - len(post)]
+                break
+        hits = AG.Drive(AG.drive_files(BASE, u, "0"), "projection").search_name(named)
+        found += bool(hits) and hits[0]["filename"] == u["target_ref"]
+    assert found >= 18, found
+
+
 def test_agent_loop_identical_under_projection_and_completion_kept():
     cache = AG.CallCache(Path(tempfile.mkdtemp()) / "c.jsonl.gz", "qwen25_7b", serving.make_llm("qwen25_7b"))
     pipe, rt = AG.make_pipeline(cache), AG.make_runtime()
