@@ -1,0 +1,1445 @@
+{
+  "runtime_version": "3",
+  "dry_run": false,
+  "part_a_best_channel_set": {
+    "pre_filter_configs": {
+      "qwen25_7b|L0-RF-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L0-RS-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L0-RT-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L1-RF-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L1-RS-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L1-RT-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L2-RF-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L2-RS-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "qwen25_7b|L2-RT-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L0-RF-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L0-RS-pre": {
+        "channels": "status",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L1-RS-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L0-RT-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L1-RF-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L1-RT-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L2-RF-pre": {
+        "channels": "length",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L2-RS-pre": {
+        "channels": "latency",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L2-RT-pre": {
+        "channels": "citations",
+        "adv": 0.0033,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0391
+      },
+      "llama31_8b|L3-RF-pre": {
+        "channels": "no_padding",
+        "adv": 0.028,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0637
+      },
+      "llama31_8b|L3-RS-pre": {
+        "channels": "no_padding",
+        "adv": 0.11,
+        "adv_lo": 0.0743,
+        "adv_hi": 0.1454
+      },
+      "qwen25_7b|L3-RF-pre": {
+        "channels": "no_padding",
+        "adv": 0.12,
+        "adv_lo": 0.0843,
+        "adv_hi": 0.1553
+      },
+      "llama31_8b|L3-RT-pre": {
+        "channels": "length",
+        "adv": 0.174,
+        "adv_lo": 0.1386,
+        "adv_hi": 0.209
+      },
+      "qwen25_7b|L3-RT-pre": {
+        "channels": "length",
+        "adv": 0.1767,
+        "adv_lo": 0.1412,
+        "adv_hi": 0.2116
+      },
+      "qwen25_7b|L3-RS-pre": {
+        "channels": "no_padding",
+        "adv": 0.184,
+        "adv_lo": 0.1486,
+        "adv_hi": 0.2189
+      }
+    },
+    "post_filter_configs": {
+      "llama31_8b|L0-RS-post": {
+        "channels": "as_built",
+        "adv": 0.086,
+        "adv_lo": 0.0503,
+        "adv_hi": 0.1215
+      },
+      "qwen25_7b|L2-RF-post": {
+        "channels": "no_padding",
+        "adv": 0.09,
+        "adv_lo": 0.0543,
+        "adv_hi": 0.1255
+      },
+      "llama31_8b|L0-RT-post": {
+        "channels": "as_built",
+        "adv": 0.0907,
+        "adv_lo": 0.0549,
+        "adv_hi": 0.1262
+      },
+      "llama31_8b|L0-RF-post": {
+        "channels": "as_built",
+        "adv": 0.092,
+        "adv_lo": 0.0563,
+        "adv_hi": 0.1275
+      },
+      "qwen25_7b|L0-RF-post": {
+        "channels": "as_built",
+        "adv": 0.0927,
+        "adv_lo": 0.0569,
+        "adv_hi": 0.1282
+      },
+      "qwen25_7b|L0-RS-post": {
+        "channels": "as_built",
+        "adv": 0.0927,
+        "adv_lo": 0.0569,
+        "adv_hi": 0.1282
+      },
+      "qwen25_7b|L2-RT-post": {
+        "channels": "no_padding",
+        "adv": 0.0953,
+        "adv_lo": 0.0596,
+        "adv_hi": 0.1308
+      },
+      "qwen25_7b|L1-RT-post": {
+        "channels": "as_built",
+        "adv": 0.096,
+        "adv_lo": 0.0603,
+        "adv_hi": 0.1315
+      },
+      "qwen25_7b|L2-RS-post": {
+        "channels": "as_built",
+        "adv": 0.0967,
+        "adv_lo": 0.0609,
+        "adv_hi": 0.1321
+      },
+      "llama31_8b|L1-RS-post": {
+        "channels": "as_built",
+        "adv": 0.0973,
+        "adv_lo": 0.0616,
+        "adv_hi": 0.1328
+      },
+      "qwen25_7b|L0-RT-post": {
+        "channels": "as_built",
+        "adv": 0.0973,
+        "adv_lo": 0.0616,
+        "adv_hi": 0.1328
+      },
+      "qwen25_7b|L1-RF-post": {
+        "channels": "as_built",
+        "adv": 0.0987,
+        "adv_lo": 0.063,
+        "adv_hi": 0.1341
+      },
+      "llama31_8b|L3-RF-post": {
+        "channels": "as_built",
+        "adv": 0.0987,
+        "adv_lo": 0.063,
+        "adv_hi": 0.1341
+      },
+      "llama31_8b|L2-RT-post": {
+        "channels": "as_built",
+        "adv": 0.0993,
+        "adv_lo": 0.0636,
+        "adv_hi": 0.1348
+      },
+      "qwen25_7b|L1-RS-post": {
+        "channels": "as_built",
+        "adv": 0.1007,
+        "adv_lo": 0.065,
+        "adv_hi": 0.1361
+      },
+      "llama31_8b|L1-RT-post": {
+        "channels": "as_built",
+        "adv": 0.104,
+        "adv_lo": 0.0683,
+        "adv_hi": 0.1394
+      },
+      "llama31_8b|L2-RS-post": {
+        "channels": "as_built",
+        "adv": 0.1087,
+        "adv_lo": 0.073,
+        "adv_hi": 0.1441
+      },
+      "llama31_8b|L2-RF-post": {
+        "channels": "as_built",
+        "adv": 0.1253,
+        "adv_lo": 0.0897,
+        "adv_hi": 0.1607
+      },
+      "llama31_8b|L1-RF-post": {
+        "channels": "as_built",
+        "adv": 0.1333,
+        "adv_lo": 0.0977,
+        "adv_hi": 0.1686
+      },
+      "llama31_8b|L3-RS-post": {
+        "channels": "no_padding",
+        "adv": 0.1793,
+        "adv_lo": 0.1439,
+        "adv_hi": 0.2143
+      },
+      "qwen25_7b|L3-RF-post": {
+        "channels": "no_padding",
+        "adv": 0.2107,
+        "adv_lo": 0.1754,
+        "adv_hi": 0.2454
+      },
+      "qwen25_7b|L3-RS-post": {
+        "channels": "as_built",
+        "adv": 0.2653,
+        "adv_lo": 0.2305,
+        "adv_hi": 0.2995
+      },
+      "qwen25_7b|L3-RT-post": {
+        "channels": "as_built",
+        "adv": 0.272,
+        "adv_lo": 0.2372,
+        "adv_hi": 0.3061
+      },
+      "llama31_8b|L3-RT-post": {
+        "channels": "as_built",
+        "adv": 0.276,
+        "adv_lo": 0.2413,
+        "adv_hi": 0.31
+      }
+    },
+    "baselines": {
+      "qwen25_7b|B6": {
+        "channels": "options",
+        "adv": 0.023,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0667
+      },
+      "qwen25_7b|B4": {
+        "channels": "length",
+        "adv": 0.023,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0667
+      },
+      "llama31_8b|B4": {
+        "channels": "length",
+        "adv": 0.023,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0667
+      },
+      "llama31_8b|B6": {
+        "channels": "options",
+        "adv": 0.023,
+        "adv_lo": 0.0,
+        "adv_hi": 0.0667
+      },
+      "llama31_8b|B5": {
+        "channels": "status",
+        "adv": 0.128,
+        "adv_lo": 0.0843,
+        "adv_hi": 0.1712
+      },
+      "qwen25_7b|B5": {
+        "channels": "status",
+        "adv": 0.128,
+        "adv_lo": 0.0843,
+        "adv_hi": 0.1712
+      },
+      "qwen25_7b|B0": {
+        "channels": "as_built",
+        "adv": 0.132,
+        "adv_lo": 0.0883,
+        "adv_hi": 0.1751
+      },
+      "llama31_8b|B3": {
+        "channels": "length",
+        "adv": 0.21,
+        "adv_lo": 0.1668,
+        "adv_hi": 0.2524
+      },
+      "llama31_8b|B0": {
+        "channels": "as_built",
+        "adv": 0.211,
+        "adv_lo": 0.1678,
+        "adv_hi": 0.2534
+      },
+      "qwen25_7b|B2": {
+        "channels": "no_padding",
+        "adv": 0.212,
+        "adv_lo": 0.1688,
+        "adv_hi": 0.2544
+      },
+      "qwen25_7b|B3": {
+        "channels": "no_padding",
+        "adv": 0.23,
+        "adv_lo": 0.1869,
+        "adv_hi": 0.2722
+      },
+      "qwen25_7b|B1": {
+        "channels": "no_padding",
+        "adv": 0.241,
+        "adv_lo": 0.198,
+        "adv_hi": 0.283
+      },
+      "llama31_8b|B1": {
+        "channels": "as_built",
+        "adv": 0.243,
+        "adv_lo": 0.2001,
+        "adv_hi": 0.285
+      },
+      "llama31_8b|B2": {
+        "channels": "no_padding",
+        "adv": 0.323,
+        "adv_lo": 0.2809,
+        "adv_hi": 0.3638
+      }
+    }
+  },
+  "part_a_padding": [
+    {
+      "model": "llama31_8b",
+      "system": "B0",
+      "as_built": 0.211,
+      "no_padding": 0.211
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B1",
+      "as_built": 0.243,
+      "no_padding": 0.22
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B2",
+      "as_built": 0.323,
+      "no_padding": 0.323
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B3",
+      "as_built": 0.187,
+      "no_padding": 0.186
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B4",
+      "as_built": 0.023,
+      "no_padding": 0.023
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B5",
+      "as_built": 0.106,
+      "no_padding": 0.097
+    },
+    {
+      "model": "llama31_8b",
+      "system": "B6",
+      "as_built": 0.006,
+      "no_padding": 0.006
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RF-post",
+      "as_built": 0.092,
+      "no_padding": 0.078
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RS-post",
+      "as_built": 0.086,
+      "no_padding": 0.0667
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RT-post",
+      "as_built": 0.0907,
+      "no_padding": 0.078
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L0-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RF-post",
+      "as_built": 0.1333,
+      "no_padding": 0.0847
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RS-post",
+      "as_built": 0.0973,
+      "no_padding": 0.0607
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RT-post",
+      "as_built": 0.104,
+      "no_padding": 0.094
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L1-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "as_built": 0.1253,
+      "no_padding": 0.058
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RS-post",
+      "as_built": 0.1087,
+      "no_padding": 0.06
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "as_built": 0.0993,
+      "no_padding": 0.0913
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RF-post",
+      "as_built": 0.0987,
+      "no_padding": 0.0767
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RF-pre",
+      "as_built": 0.0053,
+      "no_padding": 0.028
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RS-post",
+      "as_built": 0.15,
+      "no_padding": 0.1793
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RS-pre",
+      "as_built": 0.0567,
+      "no_padding": 0.11
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RT-post",
+      "as_built": 0.276,
+      "no_padding": 0.276
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L3-RT-pre",
+      "as_built": 0.17,
+      "no_padding": 0.1507
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B0",
+      "as_built": 0.132,
+      "no_padding": 0.084
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B1",
+      "as_built": 0.213,
+      "no_padding": 0.241
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B2",
+      "as_built": 0.212,
+      "no_padding": 0.212
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B3",
+      "as_built": 0.215,
+      "no_padding": 0.23
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B4",
+      "as_built": 0.023,
+      "no_padding": 0.023
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B5",
+      "as_built": 0.109,
+      "no_padding": 0.088
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "B6",
+      "as_built": 0.006,
+      "no_padding": 0.006
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RF-post",
+      "as_built": 0.0927,
+      "no_padding": 0.0693
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RS-post",
+      "as_built": 0.0927,
+      "no_padding": 0.0627
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RT-post",
+      "as_built": 0.0973,
+      "no_padding": 0.0733
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L0-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RF-post",
+      "as_built": 0.0987,
+      "no_padding": 0.084
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RS-post",
+      "as_built": 0.1007,
+      "no_padding": 0.0647
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RT-post",
+      "as_built": 0.096,
+      "no_padding": 0.0867
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L1-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "as_built": 0.09,
+      "no_padding": 0.09
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RS-post",
+      "as_built": 0.0967,
+      "no_padding": 0.06
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RS-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "as_built": 0.086,
+      "no_padding": 0.0953
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "as_built": 0.0033,
+      "no_padding": 0.0033
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RF-post",
+      "as_built": 0.1993,
+      "no_padding": 0.2107
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RF-pre",
+      "as_built": 0.106,
+      "no_padding": 0.12
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RS-post",
+      "as_built": 0.2653,
+      "no_padding": 0.262
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RS-pre",
+      "as_built": 0.1507,
+      "no_padding": 0.184
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RT-post",
+      "as_built": 0.272,
+      "no_padding": 0.2567
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L3-RT-pre",
+      "as_built": 0.1667,
+      "no_padding": 0.148
+    }
+  ],
+  "part_b_timing": [
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "world": "0",
+      "replies": 800,
+      "median_s": 8.4852,
+      "p95_s": 12.2234,
+      "p99_s": 13.0485,
+      "max_s": 13.6351,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5488,
+      "render_s_median": 8.3094
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "world": "1",
+      "replies": 800,
+      "median_s": 8.1881,
+      "p95_s": 12.1573,
+      "p99_s": 13.0478,
+      "max_s": 13.6143,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5438,
+      "render_s_median": 7.9816
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "world": "0",
+      "replies": 800,
+      "median_s": 9.0611,
+      "p95_s": 12.8176,
+      "p99_s": 13.0934,
+      "max_s": 13.4554,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 8.8666
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "world": "1",
+      "replies": 800,
+      "median_s": 9.172,
+      "p95_s": 12.7832,
+      "p99_s": 13.1901,
+      "max_s": 13.7654,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 8.9959
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "world": "0",
+      "replies": 800,
+      "median_s": 0.4033,
+      "p95_s": 0.5225,
+      "p99_s": 0.5402,
+      "max_s": 0.5667,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5488,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "world": "1",
+      "replies": 800,
+      "median_s": 0.4116,
+      "p95_s": 0.5285,
+      "p99_s": 0.5442,
+      "max_s": 0.5682,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5438,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "world": "0",
+      "replies": 800,
+      "median_s": 0.4211,
+      "p95_s": 0.532,
+      "p99_s": 0.5466,
+      "max_s": 0.565,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "world": "1",
+      "replies": 800,
+      "median_s": 0.4171,
+      "p95_s": 0.5324,
+      "p99_s": 0.5482,
+      "max_s": 0.5693,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "world": "0",
+      "replies": 800,
+      "median_s": 4.2902,
+      "p95_s": 7.2703,
+      "p99_s": 9.2129,
+      "max_s": 10.7958,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5488,
+      "render_s_median": 4.094
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "world": "1",
+      "replies": 800,
+      "median_s": 4.1141,
+      "p95_s": 6.9862,
+      "p99_s": 8.1226,
+      "max_s": 9.871,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5438,
+      "render_s_median": 3.9656
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "world": "0",
+      "replies": 800,
+      "median_s": 4.616,
+      "p95_s": 7.6569,
+      "p99_s": 10.2133,
+      "max_s": 13.0892,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 4.421
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "world": "1",
+      "replies": 800,
+      "median_s": 4.5441,
+      "p95_s": 7.7535,
+      "p99_s": 10.2348,
+      "max_s": 13.7918,
+      "above_floor_share": 1.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 4.333
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "world": "0",
+      "replies": 800,
+      "median_s": 0.3644,
+      "p95_s": 0.4421,
+      "p99_s": 0.4631,
+      "max_s": 0.4891,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5488,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "world": "1",
+      "replies": 800,
+      "median_s": 0.3706,
+      "p95_s": 0.443,
+      "p99_s": 0.4614,
+      "max_s": 0.5019,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5438,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "world": "0",
+      "replies": 800,
+      "median_s": 0.3758,
+      "p95_s": 0.4445,
+      "p99_s": 0.4657,
+      "max_s": 0.4943,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 0.0
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "world": "1",
+      "replies": 800,
+      "median_s": 0.3748,
+      "p95_s": 0.4498,
+      "p99_s": 0.4689,
+      "max_s": 0.4896,
+      "above_floor_share": 0.0,
+      "score_calls_mean": 0.5712,
+      "render_s_median": 0.0
+    }
+  ],
+  "part_b_attackers": [
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 308,
+      "acc": 0.5133,
+      "acc_lo": 0.4734,
+      "acc_hi": 0.5531,
+      "adv": 0.0267,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1062
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 308,
+      "acc": 0.5133,
+      "acc_lo": 0.4734,
+      "acc_hi": 0.5531,
+      "adv": 0.0267,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1062
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 297,
+      "acc": 0.495,
+      "acc_lo": 0.4552,
+      "acc_hi": 0.5349,
+      "adv": 0.01,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0897
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-post",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 297,
+      "acc": 0.495,
+      "acc_lo": 0.4552,
+      "acc_hi": 0.5349,
+      "adv": 0.01,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0897
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 329,
+      "acc": 0.5483,
+      "acc_lo": 0.5083,
+      "acc_hi": 0.5877,
+      "adv": 0.0967,
+      "adv_lo": 0.0167,
+      "adv_hi": 0.1754
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 329,
+      "acc": 0.5483,
+      "acc_lo": 0.5083,
+      "acc_hi": 0.5877,
+      "adv": 0.0967,
+      "adv_lo": 0.0167,
+      "adv_hi": 0.1754
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 334,
+      "acc": 0.5567,
+      "acc_lo": 0.5167,
+      "acc_hi": 0.5959,
+      "adv": 0.1133,
+      "adv_lo": 0.0334,
+      "adv_hi": 0.1919
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RF-pre",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 334,
+      "acc": 0.5567,
+      "acc_lo": 0.5167,
+      "acc_hi": 0.5959,
+      "adv": 0.1133,
+      "adv_lo": 0.0334,
+      "adv_hi": 0.1919
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 297,
+      "acc": 0.495,
+      "acc_lo": 0.4552,
+      "acc_hi": 0.5349,
+      "adv": 0.01,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0897
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 316,
+      "acc": 0.5267,
+      "acc_lo": 0.4867,
+      "acc_hi": 0.5663,
+      "adv": 0.0533,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1326
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 307,
+      "acc": 0.5117,
+      "acc_lo": 0.4717,
+      "acc_hi": 0.5515,
+      "adv": 0.0233,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1029
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 307,
+      "acc": 0.5117,
+      "acc_lo": 0.4717,
+      "acc_hi": 0.5515,
+      "adv": 0.0233,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1029
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 302,
+      "acc": 0.5033,
+      "acc_lo": 0.4634,
+      "acc_hi": 0.5432,
+      "adv": 0.0067,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0864
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 308,
+      "acc": 0.5133,
+      "acc_lo": 0.4734,
+      "acc_hi": 0.5531,
+      "adv": 0.0267,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1062
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 308,
+      "acc": 0.5133,
+      "acc_lo": 0.4734,
+      "acc_hi": 0.5531,
+      "adv": 0.0267,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1062
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 317,
+      "acc": 0.5283,
+      "acc_lo": 0.4883,
+      "acc_hi": 0.568,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-post",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 317,
+      "acc": 0.5283,
+      "acc_lo": 0.4883,
+      "acc_hi": 0.568,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 286,
+      "acc": 0.4767,
+      "acc_lo": 0.437,
+      "acc_hi": 0.5167,
+      "adv": 0.0467,
+      "adv_lo": 0.0,
+      "adv_hi": 0.126
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 286,
+      "acc": 0.4767,
+      "acc_lo": 0.437,
+      "acc_hi": 0.5167,
+      "adv": 0.0467,
+      "adv_lo": 0.0,
+      "adv_hi": 0.126
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 286,
+      "acc": 0.4767,
+      "acc_lo": 0.437,
+      "acc_hi": 0.5167,
+      "adv": 0.0467,
+      "adv_lo": 0.0,
+      "adv_hi": 0.126
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RF-pre",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 286,
+      "acc": 0.4767,
+      "acc_lo": 0.437,
+      "acc_hi": 0.5167,
+      "adv": 0.0467,
+      "adv_lo": 0.0,
+      "adv_hi": 0.126
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 301,
+      "acc": 0.5017,
+      "acc_lo": 0.4618,
+      "acc_hi": 0.5415,
+      "adv": 0.0033,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0831
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 327,
+      "acc": 0.545,
+      "acc_lo": 0.505,
+      "acc_hi": 0.5844,
+      "adv": 0.09,
+      "adv_lo": 0.01,
+      "adv_hi": 0.1689
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 304,
+      "acc": 0.5067,
+      "acc_lo": 0.4667,
+      "acc_hi": 0.5465,
+      "adv": 0.0133,
+      "adv_lo": 0.0,
+      "adv_hi": 0.093
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "channels": "latency_floor_off",
+      "n": 600,
+      "correct": 299,
+      "acc": 0.4983,
+      "acc_lo": 0.4585,
+      "acc_hi": 0.5382,
+      "adv": 0.0033,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0831
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "channels": "latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "channels": "side_and_latency_floor_off",
+      "n": 600,
+      "correct": 299,
+      "acc": 0.4983,
+      "acc_lo": 0.4585,
+      "acc_hi": 0.5382,
+      "adv": 0.0033,
+      "adv_lo": 0.0,
+      "adv_hi": 0.0831
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "channels": "side_and_latency_floor_on",
+      "n": 600,
+      "correct": 283,
+      "acc": 0.4717,
+      "acc_lo": 0.432,
+      "acc_hi": 0.5117,
+      "adv": 0.0567,
+      "adv_lo": 0.0,
+      "adv_hi": 0.1359
+    }
+  ],
+  "part_b_agreement": [
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-post",
+      "compared": 1600,
+      "identical": 1583,
+      "identical_share": 0.9894
+    },
+    {
+      "model": "llama31_8b",
+      "system": "L2-RT-pre",
+      "compared": 1600,
+      "identical": 1579,
+      "identical_share": 0.9869
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-post",
+      "compared": 1600,
+      "identical": 1593,
+      "identical_share": 0.9956
+    },
+    {
+      "model": "qwen25_7b",
+      "system": "L2-RT-pre",
+      "compared": 1600,
+      "identical": 1588,
+      "identical_share": 0.9925
+    }
+  ],
+  "part_b_stats": {
+    "qwen25_7b": {
+      "RT": {
+        "jobs": 3200,
+        "run_now": 3200,
+        "seconds": 97.9
+      },
+      "RF": {
+        "jobs": 3200,
+        "run_now": 3200,
+        "seconds": 914.1
+      },
+      "seconds_model": 1304.7
+    },
+    "llama31_8b": {
+      "RT": {
+        "jobs": 3200,
+        "run_now": 3200,
+        "seconds": 114.1
+      },
+      "RF": {
+        "jobs": 3200,
+        "run_now": 3200,
+        "seconds": 1759.5
+      },
+      "seconds_model": 2067.4
+    }
+  },
+  "latency_floor_s": 1.0
+}

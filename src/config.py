@@ -110,6 +110,11 @@ ADAPTIVE_BASELINES = {"S1": ["B3", "B5"], "S2": ["B5"], "S3": ["B1"]}   # the ba
 # and membership (restricted records take retrieval slots), B1 every secret (privileged context); B3 and B5 cannot leak an attribute by construction
 ADAPTIVE_MAX_FOLLOW = 2                 # follow-up replies A4 reads after answering "none of these"
 
+# ----------------------------------------------------------------------------- side channels (notebook 10)
+SIDE_TIMING_UNITS = {"train": 200, "certify": 600}   # the first units of each split, both worlds, timed on the L4
+SIDE_TIMING_CONFIGS = ["L2-RT-pre", "L2-RT-post", "L2-RF-pre", "L2-RF-post"]
+SIDE_TIMING_WORKERS = {"RT": 8, "RF": 16}           # requests in flight: template decisions, then free-text renders
+
 # ----------------------------------------------------------------------------- pre-registered (plan v1, Sections 6 and 11)
 EPSILON = 0.10
 DELTA = 0.05

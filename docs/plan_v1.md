@@ -100,6 +100,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Fresh Domain 1 units (train indices 2,000 to 3,499, test 2,000 to 7,999): 500 training and 2,000 test units per secret type for the selected configuration, the first 300 of each for the baselines. Every probe is a new request; A4 answers 'none of these' when offered a choice and reads up to two follow-ups.
 - Learners: D1, D3 and D5 applied to the transcript of the first k turns, and their stack, trained on both worlds of the training sessions and frozen; one hash-picked world per test session. D4 is not used for the adaptive attackers.
 
+## Amendments made with notebook 10 (23 November 2026)
+
+- Padding off is read from the committed records (padding is trailing spaces, so the unpadded length and word count are exact).
+- Latency floor off is measured on the L4: the decision of L2-RT-pre, L2-RT-post, L2-RF-pre and L2-RF-post with fresh one-token scores (no score cache, the server's prefix cache off) and, for free text, a fresh render; the first 200 train and 600 certify units, both worlds, shuffled together, 8 template or 16 render requests in flight. Floor on means the measured time held to at least 1 s.
+- The side-channel attacker (gradient boosting, as D5) is trained per channel set (as built, no padding, length, citations, options, status, latency), frozen, and applied to one hash-picked world per unit: the 24 configurations of notebook 04b (train to certify) and B0 to B6 of notebook 06 (train to test).
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

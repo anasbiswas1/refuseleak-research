@@ -1,0 +1,5 @@
+model,system,compared,identical,identical_share
+llama31_8b,L2-RT-post,1600,1583,0.989375
+llama31_8b,L2-RT-pre,1600,1579,0.986875
+qwen25_7b,L2-RT-post,1600,1593,0.995625
+qwen25_7b,L2-RT-pre,1600,1588,0.9925
