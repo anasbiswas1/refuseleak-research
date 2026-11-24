@@ -1,0 +1,63 @@
+Units,Model,System,As built: advantage,As built: upper bound,Padding removed: advantage,Padding removed: upper bound,Length only: advantage,Length only: upper bound,Citations only: advantage,Citations only: upper bound,Options only: advantage,Options only: upper bound,Status code only: advantage,Status code only: upper bound,Latency only: advantage,Latency only: upper bound
+held-out test,Qwen2.5-7B-Instruct,B0 Privileged agent,0.132,0.175,0.084,0.127,0.099,0.142,0.084,0.127,0.023,0.067,0.023,0.067,0.096,0.139
+held-out test,Qwen2.5-7B-Instruct,B1 Privacy prompt,0.213,0.255,0.241,0.283,0.162,0.205,0.179,0.222,0.023,0.067,0.023,0.067,0.145,0.188
+held-out test,Qwen2.5-7B-Instruct,B2 Output redaction,0.212,0.254,0.212,0.254,0.138,0.181,0.144,0.187,0.023,0.067,0.023,0.067,0.096,0.139
+held-out test,Qwen2.5-7B-Instruct,B3 Triggered refusal,0.215,0.257,0.23,0.272,0.212,0.254,0.209,0.251,0.023,0.067,0.19,0.233,0.223,0.265
+held-out test,Qwen2.5-7B-Instruct,B4 Universal reply,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067
+held-out test,Qwen2.5-7B-Instruct,B5 Post-filter RAG,0.109,0.152,0.088,0.131,0.001,0.045,0.023,0.067,0.023,0.067,0.128,0.171,0.023,0.067
+held-out test,Qwen2.5-7B-Instruct,B6 Typed collapse,0.006,0.05,0.006,0.05,0.009,0.053,0.015,0.059,0.023,0.067,0.023,0.067,0.023,0.067
+held-out test,Llama-3.1-8B-Instruct,B0 Privileged agent,0.211,0.253,0.211,0.253,0.194,0.237,0.118,0.161,0.023,0.067,0.023,0.067,0.131,0.174
+held-out test,Llama-3.1-8B-Instruct,B1 Privacy prompt,0.243,0.285,0.22,0.262,0.164,0.207,0.206,0.248,0.023,0.067,0.023,0.067,0.102,0.145
+held-out test,Llama-3.1-8B-Instruct,B2 Output redaction,0.323,0.364,0.323,0.364,0.234,0.276,0.18,0.223,0.023,0.067,0.023,0.067,0.131,0.174
+held-out test,Llama-3.1-8B-Instruct,B3 Triggered refusal,0.187,0.23,0.186,0.229,0.21,0.252,0.185,0.228,0.023,0.067,0.19,0.233,0.203,0.245
+held-out test,Llama-3.1-8B-Instruct,B4 Universal reply,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067,0.023,0.067
+held-out test,Llama-3.1-8B-Instruct,B5 Post-filter RAG,0.106,0.149,0.097,0.14,0.029,0.073,0.07,0.114,0.023,0.067,0.128,0.171,0.001,0.045
+held-out test,Llama-3.1-8B-Instruct,B6 Typed collapse,0.006,0.05,0.006,0.05,0.009,0.053,0.015,0.059,0.023,0.067,0.023,0.067,0.023,0.067
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Template, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Template, Post-filter",0.097,0.133,0.073,0.109,0.04,0.076,0.081,0.116,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Slot-restricted LLM, Post-filter",0.093,0.128,0.063,0.098,0.002,0.038,0.081,0.116,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L0 Universal reply, Free LLM, Post-filter",0.093,0.128,0.069,0.105,0.029,0.065,0.081,0.116,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Template, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Template, Post-filter",0.096,0.131,0.087,0.122,0.072,0.108,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Slot-restricted LLM, Post-filter",0.101,0.136,0.065,0.1,0.006,0.042,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L1 Clarifier, Free LLM, Post-filter",0.099,0.134,0.084,0.12,0.022,0.058,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Template, Pre-filter (selected: LoRe)",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Template, Post-filter",0.086,0.122,0.095,0.131,0.071,0.106,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Slot-restricted LLM, Post-filter",0.097,0.132,0.06,0.096,0.002,0.038,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L2 Clarifier and private action, Free LLM, Post-filter",0.09,0.126,0.09,0.126,0.024,0.06,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Template, Pre-filter",0.167,0.202,0.148,0.183,0.177,0.212,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Template, Post-filter",0.272,0.306,0.257,0.291,0.254,0.288,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Slot-restricted LLM, Pre-filter",0.151,0.186,0.184,0.219,0.179,0.214,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Slot-restricted LLM, Post-filter",0.265,0.299,0.262,0.296,0.201,0.236,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Free LLM, Pre-filter",0.106,0.141,0.12,0.155,0.097,0.133,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Qwen2.5-7B-Instruct,"L3 Leak notice (positive control), Free LLM, Post-filter",0.199,0.234,0.211,0.245,0.139,0.175,0.072,0.108,0.019,0.054,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Template, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Template, Post-filter",0.091,0.126,0.078,0.114,0.042,0.078,0.049,0.085,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Slot-restricted LLM, Post-filter",0.086,0.122,0.067,0.102,0.029,0.065,0.049,0.085,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L0 Universal reply, Free LLM, Post-filter",0.092,0.127,0.078,0.114,0.008,0.044,0.049,0.085,0.003,0.039,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Template, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Template, Post-filter",0.104,0.139,0.094,0.129,0.073,0.109,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Slot-restricted LLM, Post-filter",0.097,0.133,0.061,0.096,0.05,0.086,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L1 Clarifier, Free LLM, Post-filter",0.133,0.169,0.085,0.12,0.017,0.052,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Template, Pre-filter (selected: LoRe)",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Template, Post-filter",0.099,0.135,0.091,0.127,0.078,0.114,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Slot-restricted LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Slot-restricted LLM, Post-filter",0.109,0.144,0.06,0.096,0.05,0.086,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Free LLM, Pre-filter",0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L2 Clarifier and private action, Free LLM, Post-filter",0.125,0.161,0.058,0.094,0.023,0.059,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Template, Pre-filter",0.17,0.205,0.151,0.186,0.174,0.209,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Template, Post-filter",0.276,0.31,0.276,0.31,0.25,0.284,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Slot-restricted LLM, Pre-filter",0.057,0.092,0.11,0.145,0.091,0.126,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Slot-restricted LLM, Post-filter",0.15,0.185,0.179,0.214,0.174,0.209,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Free LLM, Pre-filter",0.005,0.041,0.028,0.064,0.023,0.059,0.003,0.039,0.003,0.039,0.003,0.039,0.003,0.039
+certify split,Llama-3.1-8B-Instruct,"L3 Leak notice (positive control), Free LLM, Post-filter",0.099,0.134,0.077,0.112,0.004,0.04,0.077,0.112,0.009,0.044,0.077,0.112,0.003,0.039

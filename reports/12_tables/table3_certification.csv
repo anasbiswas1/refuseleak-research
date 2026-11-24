@@ -1,0 +1,69 @@
+Domain,Model,Level,Wording,Retrieval,Certified bound,Certified at 0.10,Clarification success
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Template,Pre-filter,0.07,yes,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Template,Post-filter,0.15,no,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Slot-restricted LLM,Pre-filter,0.06,yes,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Slot-restricted LLM,Post-filter,0.16,no,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Free LLM,Pre-filter,0.06,yes,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L0 Universal reply,Free LLM,Post-filter,0.17,no,0.465
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Template,Pre-filter,0.08,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Template,Post-filter,0.16,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Slot-restricted LLM,Pre-filter,0.06,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Slot-restricted LLM,Post-filter,0.17,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Free LLM,Pre-filter,0.06,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L1 Clarifier,Free LLM,Post-filter,0.14,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Template,Pre-filter,0.1,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Template,Post-filter,0.16,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Pre-filter,0.06,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Post-filter,0.16,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Free LLM,Pre-filter,0.07,yes,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Free LLM,Post-filter,0.16,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Template,Pre-filter,0.23,no,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Template,Post-filter,0.34,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Slot-restricted LLM,Pre-filter,0.25,no,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Slot-restricted LLM,Post-filter,0.32,no,0.973
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Free LLM,Pre-filter,0.27,no,0.974
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Free LLM,Post-filter,0.31,no,0.973
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Template,Pre-filter,0.06,yes,0.457
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Template,Post-filter,0.15,no,0.458
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Slot-restricted LLM,Pre-filter,0.06,yes,0.457
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Slot-restricted LLM,Post-filter,0.16,no,0.458
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Free LLM,Pre-filter,0.06,yes,0.457
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L0 Universal reply,Free LLM,Post-filter,0.17,no,0.458
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Template,Pre-filter,0.06,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Template,Post-filter,0.17,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Slot-restricted LLM,Pre-filter,0.06,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Slot-restricted LLM,Post-filter,0.17,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Free LLM,Pre-filter,0.09,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L1 Clarifier,Free LLM,Post-filter,0.18,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Template,Pre-filter,0.06,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Template,Post-filter,0.16,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Pre-filter,0.06,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Post-filter,0.16,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Free LLM,Pre-filter,0.08,yes,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Free LLM,Post-filter,0.18,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Template,Pre-filter,0.25,no,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Template,Post-filter,0.34,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Slot-restricted LLM,Pre-filter,0.25,no,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Slot-restricted LLM,Post-filter,0.28,no,0.978
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Free LLM,Pre-filter,0.25,no,0.979
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Free LLM,Post-filter,0.3,no,0.978
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L0 Universal reply,Template,Pre-filter,0.09,yes,0.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L0 Universal reply,Template,Post-filter,0.16,no,0.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L1 Clarifier,Template,Pre-filter,0.11,no,0.994
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L1 Clarifier,Template,Post-filter,0.16,no,0.952
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Template,Pre-filter,0.09,yes,0.994
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Template,Post-filter,0.15,no,0.952
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Pre-filter,0.07,yes,0.994
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L2 Clarifier and private action,Free LLM,Pre-filter,0.07,yes,0.994
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Template,Pre-filter,0.14,no,0.994
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,L3 Leak notice (positive control),Template,Post-filter,0.22,no,0.952
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L0 Universal reply,Template,Pre-filter,0.1,yes,0.002
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L0 Universal reply,Template,Post-filter,0.16,no,0.002
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L1 Clarifier,Template,Pre-filter,0.09,yes,0.992
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L1 Clarifier,Template,Post-filter,0.15,no,0.95
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Template,Pre-filter,0.08,yes,0.992
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Template,Post-filter,0.16,no,0.95
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Slot-restricted LLM,Pre-filter,0.09,yes,0.992
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L2 Clarifier and private action,Free LLM,Pre-filter,0.07,yes,0.992
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Template,Pre-filter,0.16,no,0.992
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,L3 Leak notice (positive control),Template,Post-filter,0.21,no,0.95

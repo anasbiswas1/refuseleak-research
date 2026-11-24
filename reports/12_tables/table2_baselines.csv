@@ -1,0 +1,41 @@
+Domain,Model,System,Identical replies across worlds,Largest attacker advantage,Upper bound (95%),Strongest attacker,Protected fact stated in world 1,Resolved: mistyped and ambiguous requests,Resolved: authorised requests,Resolved on a fresh draw: mistyped and ambiguous,Resolved on a fresh draw: authorised
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B0 Privileged agent,0.046,0.448,0.486,D6 Stack,0.64,0.567,0.98,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B1 Privacy prompt,0.048,0.471,0.509,D6 Stack,0.53,0.513,1.0,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B2 Output redaction,0.053,0.47,0.508,D1 Bag of words,0.058,0.567,0.98,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B3 Triggered refusal,0.65,0.212,0.254,D1 Bag of words,0.01,0.467,0.78,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B4 Universal reply,1.0,0.023,0.067,D6 Stack,0.04,0.483,1.0,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B5 Post-filter RAG,0.488,0.113,0.156,D6 Stack,0.028,0.587,0.985,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,B6 Typed collapse,0.995,0.023,0.067,D6 Stack,0.04,0.483,1.0,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,O1 Permitted-view oracle,1.0,0.023,0.067,D6 Stack,0.0,1.0,1.0,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,O2 Full-view clarifier,0.782,0.193,0.236,D1 Bag of words,0.41,0.983,1.0,,
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,LoRe (selected),1.0,0.023,0.067,D6 Stack,0.023,0.977,1.0,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B0 Privileged agent,0.051,0.581,0.616,D6 Stack,0.811,0.607,0.92,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B1 Privacy prompt,0.166,0.371,0.411,D6 Stack,0.359,0.513,0.955,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B2 Output redaction,0.054,0.519,0.555,D1 Bag of words,0.035,0.607,0.92,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B3 Triggered refusal,0.625,0.21,0.252,D2 Embedding kNN,0.009,0.453,0.74,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B4 Universal reply,1.0,0.023,0.067,D6 Stack,0.04,0.483,1.0,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B5 Post-filter RAG,0.52,0.114,0.157,D5 Side channels,0.018,0.613,0.925,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,B6 Typed collapse,0.995,0.023,0.067,D6 Stack,0.04,0.483,1.0,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,O1 Permitted-view oracle,1.0,0.023,0.067,D2 Embedding kNN,0.0,1.0,1.0,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,O2 Full-view clarifier,0.782,0.193,0.236,D1 Bag of words,0.41,0.983,1.0,,
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,LoRe (selected),1.0,0.023,0.067,D6 Stack,0.023,0.987,1.0,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B0 Privileged agent,0.087,0.188,0.248,D6 Stack,0.533,0.42,0.75,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B1 Privacy prompt,0.087,0.162,0.222,D6 Stack,0.455,0.267,0.865,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B2 Output redaction,0.085,0.222,0.281,D6 Stack,0.084,0.44,0.755,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B3 Triggered refusal,0.768,0.088,0.149,D1 Bag of words,0.037,0.217,0.225,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B4 Universal reply,1.0,0.026,0.088,D2 Embedding kNN,0.075,0.297,0.89,0.28,0.865
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B5 Post-filter RAG,0.471,0.092,0.153,D5 Side channels,0.119,0.403,0.78,,
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,B6 Typed collapse,0.96,0.084,0.145,D2 Embedding kNN,0.076,0.297,0.89,0.28,0.865
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,O1 Permitted-view oracle,1.0,0.016,0.078,D6 Stack,0.0,1.0,1.0,1.0,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,O2 Full-view clarifier,0.658,0.15,0.211,D6 Stack,0.398,0.95,0.975,0.97,0.955
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,LoRe (selected),1.0,0.016,0.078,D6 Stack,0.004,0.977,0.975,0.987,0.955
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B0 Privileged agent,0.106,0.274,0.332,D6 Stack,0.68,0.437,0.925,,
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B1 Privacy prompt,0.222,0.152,0.213,D1 Bag of words,0.368,0.353,0.91,,
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B2 Output redaction,0.117,0.308,0.366,D6 Stack,0.093,0.45,0.935,,
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B3 Triggered refusal,0.8,0.096,0.157,D6 Stack,0.059,0.25,0.265,,
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B4 Universal reply,1.0,0.022,0.084,D2 Embedding kNN,0.075,0.297,0.89,0.28,0.865
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B5 Post-filter RAG,0.509,0.126,0.187,D5 Side channels,0.101,0.453,0.935,,
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,B6 Typed collapse,0.96,0.02,0.082,D2 Embedding kNN,0.076,0.297,0.89,0.28,0.865
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,O1 Permitted-view oracle,1.0,0.016,0.078,D6 Stack,0.0,1.0,1.0,1.0,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,O2 Full-view clarifier,0.658,0.166,0.226,D6 Stack,0.398,0.95,0.975,0.97,0.955
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,LoRe (selected),1.0,0.02,0.082,D2 Embedding kNN,0.004,0.977,0.975,0.987,0.955

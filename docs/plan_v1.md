@@ -112,6 +112,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The same variants are replayed on Domain 2 (the certify and utility splits of notebook 07d, its clarifier parameters and stored scores), where the attribute question is used.
 - Render mode and temperature are compared as built (RT; RS at temperature 0; RF at 0.7) from the records of notebook 04b, with the fidelity of RS and RF to the template's reference codes and option count. No separate temperature sweep is run: the renderer reads only the permitted view.
 
+## Amendments made with notebook 12 (24 November 2026)
+
+- Figures and tables are drawn from the committed reports only (notebook 12, CPU). Figure 7 recomputes coverage and mean set size on an alpha grid from 0.02 to 0.30 in steps of 0.01 from the parameters of notebook 03b and the stored scores; at alpha 0.05, 0.10 and 0.20 it equals reports/03b_coverage.csv.
+- Figure 8 pools both models (template wording, certify split). Figure 3 shows Qwen2.5-7B-Instruct.
+- The timing table adds a paired comparison of the same certify units in both worlds (mean difference in reply time and in tokens, Wilcoxon signed-rank test), computed from notebook 10's measurements, to tell a difference between the worlds from sampling noise in the frozen timing attacker.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
