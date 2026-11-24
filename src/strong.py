@@ -317,11 +317,25 @@ def agent_hypotheses(manifest_rows: list[dict]) -> dict[str, str]:
 # ----------------------------------------------------------------------------- recomputed tables
 def merged(score_file: Path, d7: pd.DataFrame | None) -> pd.DataFrame:
     s = scored_rows(score_file)
-    if d7 is None:
-        return s
-    m = s.merge(d7[["uid", "world", "p_D7"]], on=["uid", "world"], how="left", validate="one_to_one")
-    assert m["p_D7"].notna().all(), (str(score_file), "D7 does not cover every stored row")
+    return s if d7 is None else merge_frame(s, d7, str(score_file))
+
+
+def merge_frame(scored: pd.DataFrame, d7: pd.DataFrame, label: str = "") -> pd.DataFrame:
+    """The stored D1 to D6 scores with D7's probability on the same rows (every row must be covered)."""
+    s = scored.assign(world=scored["world"].astype(str), uid=scored["uid"].astype(str))
+    m = s.merge(d7[["uid", "world", "p_D7"]].assign(world=lambda d: d["world"].astype(str)), on=["uid", "world"], how="left", validate="one_to_one")
+    assert m["p_D7"].notna().all(), (label, "D7 does not cover every stored row")
     return m
+
+
+def frame_job(group: str, model: str, system: str, train: pd.DataFrame, scored: pd.DataFrame) -> dict:
+    """A D7 job from in-memory frames: both worlds of the training units, and the scored (picked) test rows."""
+    keep = ["uid", "world", "split", "query", "text", "hypothesis"]
+    tr = train[keep].assign(world=train["world"].astype(str)).reset_index(drop=True)
+    te = scored[keep].assign(world=scored["world"].astype(str)).reset_index(drop=True)
+    assert set(tr["world"]) == {"0", "1"} and tr.groupby("uid").size().eq(2).all(), (group, model, system, "training units need both worlds")
+    assert te["uid"].is_unique and (te["world"] == te["uid"].map(AT.world_pick)).all(), (group, model, system, "test rows must be the picked rows")
+    return {"group": group, "model": model, "system": system, "train": tr, "test": te}
 
 
 def counts(frame: pd.DataFrame, attackers: list[str]) -> dict[str, tuple[int, int]]:

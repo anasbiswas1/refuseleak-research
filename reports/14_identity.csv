@@ -1,0 +1,11 @@
+model,system,identical_share,units
+qwen25_14b,B0,0.0475,2000
+qwen25_14b,B1,0.05,2000
+qwen25_14b,B2,0.05,2000
+qwen25_14b,B3,0.761,2000
+qwen25_14b,B4,1.0,2000
+qwen25_14b,B5,0.6375,2000
+qwen25_14b,B6,0.995,2000
+qwen25_14b,L2-RT-pre,1.0,2000
+qwen25_14b,O1,1.0,2000
+qwen25_14b,O2,0.782,2000

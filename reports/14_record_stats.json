@@ -1,0 +1,80 @@
+{
+  "dry_run": false,
+  "budget": {
+    "dry_run": false,
+    "model": "qwen25_14b",
+    "model_id": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+    "judge": "llama31_8b",
+    "selected": "L2-RT-pre",
+    "units": {
+      "train": 1000,
+      "test": 2000,
+      "legit": 300,
+      "auth": 200
+    },
+    "calibration_prompts": 3138,
+    "heldout_prompts": 2244,
+    "scoring_prompts": 4586,
+    "llm_baselines": [
+      "B0",
+      "B1",
+      "B3",
+      "B5"
+    ],
+    "leak_rows_per_llm_baseline": 6000,
+    "generations_upper_bound": 30000,
+    "judge_inputs_upper_bound": 40000,
+    "d7_fits": 10,
+    "api_calls": 0,
+    "seconds": 51.1
+  },
+  "qwen25_14b": {
+    "scores": {
+      "prompts": 4586,
+      "scored_now": 4586,
+      "seconds": 59.4
+    },
+    "records": {
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 20000,
+        "seconds": 336.7
+      },
+      "test": {
+        "tasks_run": 4000,
+        "rows_total": 60000,
+        "seconds": 670.6
+      },
+      "legit": {
+        "tasks_run": 300,
+        "rows_total": 63424,
+        "seconds": 56.5
+      },
+      "auth": {
+        "tasks_run": 200,
+        "rows_total": 65606,
+        "seconds": 32.5
+      }
+    },
+    "compacted_bytes": {
+      "B0.jsonl.gz": 855075,
+      "B1.jsonl.gz": 815897,
+      "B2.jsonl.gz": 756802,
+      "B3.jsonl.gz": 631788,
+      "B4.jsonl.gz": 586288,
+      "B5.jsonl.gz": 721559,
+      "B6.jsonl.gz": 584942,
+      "L2-RT-pre.jsonl.gz": 818027,
+      "O1.jsonl.gz": 312710,
+      "O2.jsonl.gz": 654861
+    },
+    "seconds_generation": 1406.1,
+    "judge": {
+      "judge": "llama31_8b",
+      "distinct": 25665,
+      "judged_now": 25665,
+      "seconds": 122.3,
+      "file_bytes": 763058
+    }
+  }
+}

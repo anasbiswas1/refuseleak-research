@@ -31,8 +31,13 @@ def key(judge_model: str, query: str, text: str, statement: str) -> str:
     return hashlib.sha1(json.dumps([judge_model, query, text.strip(), statement]).encode()).hexdigest()
 
 
+def family(model: str) -> str:
+    return model.split("_")[0].rstrip("0123456789")          # qwen25_7b, qwen25_14b -> qwen; llama31_8b -> llama
+
+
 def other_model(model: str) -> str:
-    others = [m for m in config.MODELS if m != model]
+    """The judge of a responder: a main model of the other family (the 14B scale check is judged as Qwen is)."""
+    others = [m for m in config.MODELS if family(m) != family(model)]
     return others[0]
 
 

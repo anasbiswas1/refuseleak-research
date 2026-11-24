@@ -29,6 +29,7 @@ SYSTEMS = {"B0": "B0 Privileged agent", "B1": "B1 Privacy prompt", "B2": "B2 Out
            "O2": "O2 Full-view clarifier", "L2-RT-pre": "LoRe (selected)"}
 ATTACKERS = {"D1": "D1 Bag of words", "D2": "D2 Embedding kNN", "D3": "D3 Entailment", "D4": "D4 LLM judge",
              "D5": "D5 Side channels", "D6": "D6 Stack", "D7": "D7 Fine-tuned entailment"}
+SCALE_MODELS = {"qwen25_14b": "Qwen2.5-14B-Instruct (4-bit)"}    # notebook 14: the scale check on the Domain 1 held-out test
 TIE = "Several tied"            # more than one attacker at the largest advantage (tables with seven attackers)
 ADAPTIVE = {"A1": "A1 Attribute search", "A2": "A2 Five-query entailment", "A3": "A3 Count and list", "A4": "A4 Misspelt names"}
 LEVELS = {"L0": "L0 Universal reply", "L1": "L1 Clarifier", "L2": "L2 Clarifier and private action", "L3": "L3 Leak notice (positive control)"}
@@ -441,6 +442,25 @@ def figure8(out: Path, reports: Path) -> dict:
     return save(fig, out, "figure8_side_channel")
 
 
+def scale_table(reports: Path, main_file: str = "14_main.csv", base_file: str = "13_main_meridian.csv") -> pd.DataFrame:
+    """Domain 1 held-out test with seven attackers: largest attacker advantage and share of mistyped and ambiguous
+    requests resolved, per system, for the two main models and the larger responder of notebook 14."""
+    d = pd.concat([pd.read_csv(reports / base_file), pd.read_csv(reports / main_file)], ignore_index=True)
+    names = {**MODELS, **SCALE_MODELS}
+    order = ["B0", "B1", "B2", "B3", "B5", "O2", "B4", "B6", "O1", "L2-RT-pre"]
+    rows = []
+    for s in [x for x in order if x in set(d["system"])]:
+        r = {"System": SYSTEMS.get(s, s)}
+        for m, name in names.items():
+            x = d[(d["model"] == m) & (d["system"] == s)]
+            r[f"{name}: largest attacker advantage"] = float(x["max_adv"].iloc[0]) if len(x) else float("nan")
+        for m, name in names.items():
+            x = d[(d["model"] == m) & (d["system"] == s)]
+            r[f"{name}: resolved"] = float(x["resolved_legit"].iloc[0]) if len(x) else float("nan")
+        rows.append(r)
+    return pd.DataFrame(rows)
+
+
 # ----------------------------------------------------------------------------- Figure 9: the certificate against the number of certify units
 SENS_CLASS = {"pre": "Pre-filter, levels L0 to L2", "post": "Post-filter, levels L0 to L2", "L3": "L3 positive control"}
 SENS_COLOR = {"pre": C["blue"], "post": C["green"], "L3": C["vermillion"]}
@@ -452,6 +472,7 @@ def figure9(out: Path, sens: pd.DataFrame, eps: float, n_eq19: dict) -> dict:
     """Median certified bound with its 10th to 90th percentile band (left) and the share of configurations certified
     at eps (right) against the number of certify units, from random subsets of the stored per-unit guesses."""
     style()
+    top = max(0.5, float(np.ceil(sens.groupby(["domain", "class", "n"])["eps_hat"].quantile(0.9).max() * 20) / 20) + 0.05)
     fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 2.9))
     for dom in [d for d in DOMAIN_STYLE if d in set(sens["domain"])]:
         d = sens[sens["domain"] == dom]
@@ -478,10 +499,10 @@ def figure9(out: Path, sens: pd.DataFrame, eps: float, n_eq19: dict) -> dict:
     axes[0].axhline(eps, color="#444444", lw=0.8, ls=(0, (4, 2)))
     axes[0].text(260, eps + 0.008, f"\u03b5 = {eps:.2f}", fontsize=6.3, color="#444444")
     for dom, n_d in n_eq19.items():
-        axes[0].text(n_d * 0.97, 0.495, f"{n_d:,}", rotation=90, ha="right", va="top", fontsize=5.8, color="#555555")
-    axes[0].text(max(n_eq19.values()) * 1.05, 0.495, "Equation 19,\n80% power", fontsize=6.0, color="#555555", va="top")
+        axes[0].text(n_d * 0.97, top - 0.005, f"{n_d:,}", rotation=90, ha="right", va="top", fontsize=5.8, color="#555555")
+    axes[0].text(max(n_eq19.values()) * 1.05, top - 0.005, "Equation 19,\n80% power", fontsize=6.0, color="#555555", va="top")
     axes[0].set_ylabel("Certified bound \u03b5\u0302")
-    axes[0].set_ylim(0, 0.5)
+    axes[0].set_ylim(0, top)
     axes[1].set_ylabel(f"Share certified at \u03b5 = {eps:.2f}")
     axes[1].set_ylim(-0.03, 1.03)
     handles = [Line2D([], [], color=SENS_COLOR[k], lw=1.6, label=v) for k, v in SENS_CLASS.items()]

@@ -19,6 +19,11 @@ import config
 DRY_RUN = os.environ.get("REFUSELEAK_DRY_RUN") == "1"
 
 
+def hf_id(tag: str) -> str:
+    """Hugging Face id of a model tag: the two main models and the scale-check model of notebook 14."""
+    return {**config.MODELS, **config.SCALE_MODELS}[tag]
+
+
 def _port_open(port: int) -> bool:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.settimeout(1.0)
@@ -50,7 +55,7 @@ class Server:
         if DRY_RUN:
             self.tag = tag
             return
-        model_id = config.MODELS[tag]
+        model_id = hf_id(tag)
         if served_model(self.port) == model_id:
             self.tag = tag
             return
@@ -105,7 +110,7 @@ class VLLMChat:
 
     def __init__(self, client, tag: str):
         self.client, self.tag = client, tag
-        self.model_id = config.MODELS[tag]
+        self.model_id = hf_id(tag)
 
     def chat(self, system_prompt: str, query: str, history: list[dict]):
         messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": query}]

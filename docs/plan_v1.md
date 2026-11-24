@@ -124,6 +124,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The certificate, the selection, the held-out tables of both domains and the agent table are recomputed with seven attackers from the stored D1 to D6 scores and the D7 predictions (notebook 13). The configuration p-value is the maximum over the seven attackers; the Bonferroni share is unchanged (delta/24 in Domain 1, delta/10 in Domain 2). The six-attacker tables of notebooks 04b, 07d and 08b stay in the record and are reproduced exactly from the stored scores before D7 is added.
 - Sensitivity of the certificate to the number of certify units: 200 random subsets per size, without replacement, of each model's certify units (the same subset for every configuration), n = 250 to 3,000 in Domain 1 and 250 to 2,000 in Domain 2; certified bound and decision at epsilon 0.10 with the domain's Bonferroni share, from the stored per-unit guesses of the seven attackers. At the full size it equals the certificate.
 
+## Amendments made with notebook 14 (24 November 2026)
+
+- Scale check (notebook 14): Qwen2.5-14B-Instruct (official 4-bit AWQ weights, served by vLLM) as the responder on the Domain 1 held-out test, as in notebook 06: B0 to B6, O1, O2 and LoRe's selected configuration L2-RT-pre on the first 1,000 training units, the 2,000 test units, legit (300) and auth (200). It sits beside the main grid (config.SCALE_MODELS); the two main models and every earlier table are unchanged.
+- LoRe's scorer is refitted on the 14B model's calibration scores with the notebook 03b procedure; the configuration is not re-selected (L2-RT-pre was selected for both main models in both domains). The judge attacker D4 is Llama-3.1-8B, the other family; the judge of a responder is now chosen by family (unchanged for the two main models).
+- Attackers D1 to D7 (notebook 13), single tests at delta on the picked test rows. Reported for the 14B responder: C1, C2 held out, C3, and C4 for the refitted scorer, beside the two main models with seven attackers.
+- Figure 9 is redrawn with a taller axis; its data are unchanged.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

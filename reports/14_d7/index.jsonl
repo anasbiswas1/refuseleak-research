@@ -1,0 +1,10 @@
+{"group": "scale", "model": "qwen25_14b", "system": "B0", "key": "4667786f1f84c2546e5923573e2801a4bd8bffcd", "seconds": 8.6, "steps": 189, "loss_by_epoch": [0.4916, 0.3366, 0.2822], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B1", "key": "63354b1ef71300c5ae39463918bba9134b370eaf", "seconds": 7.9, "steps": 189, "loss_by_epoch": [0.523, 0.3549, 0.302], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B2", "key": "fed2d5028fb13acb54160623ee27952f4981915e", "seconds": 8.0, "steps": 189, "loss_by_epoch": [0.5794, 0.4124, 0.3652], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B3", "key": "33f6622bd433a903fcca58611105e1ac11775c8d", "seconds": 7.8, "steps": 189, "loss_by_epoch": [0.8451, 0.5864, 0.5726], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B4", "key": "ab894f76bc10601d053f6636b90abb63a5834e71", "seconds": 8.8, "steps": 189, "loss_by_epoch": [0.821, 0.6942, 0.6949], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B5", "key": "afa1a6bebde2c7ae770f8681e3fc8b335c6f7f3b", "seconds": 8.0, "steps": 189, "loss_by_epoch": [0.81, 0.6952, 0.6942], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "B6", "key": "9878d6293e991b3a5802c211a5a0741fca2452fa", "seconds": 8.8, "steps": 189, "loss_by_epoch": [0.8284, 0.6967, 0.6939], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "O1", "key": "b52a47d9ea4ffdfa4e24493773523bd6d0e931fb", "seconds": 7.4, "steps": 189, "loss_by_epoch": [0.8493, 0.6968, 0.695], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "O2", "key": "7fe765418e37f8269ac564810043a496074d6cfa", "seconds": 8.7, "steps": 189, "loss_by_epoch": [0.867, 0.6712, 0.5893], "n_train": 2000, "n_test": 2000}
+{"group": "scale", "model": "qwen25_14b", "system": "L2-RT-pre", "key": "b5fbcff59aa1306f07459610731c2f06b3ea858e", "seconds": 8.3, "steps": 189, "loss_by_epoch": [0.8095, 0.6942, 0.6934], "n_train": 2000, "n_test": 2000}

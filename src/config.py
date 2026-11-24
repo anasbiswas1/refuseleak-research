@@ -61,6 +61,9 @@ MODELS = {
     "qwen25_7b": "Qwen/Qwen2.5-7B-Instruct",
     "llama31_8b": "meta-llama/Llama-3.1-8B-Instruct",
 }
+SCALE_MODELS = {                  # notebook 14: a larger responder on the Domain 1 held-out test (not part of the main grid)
+    "qwen25_14b": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+}
 EMBEDDER = "sentence-transformers/all-MiniLM-L6-v2"             # attacker D2
 NLI_MODEL = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"       # attacker D3 and the disclosure judge
 ATTACKERS = ["D1", "D2", "D3", "D5"]

@@ -1,0 +1,28 @@
+{
+  "dry_run": false,
+  "model": "qwen25_14b",
+  "model_id": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+  "judge": "llama31_8b",
+  "selected": "L2-RT-pre",
+  "units": {
+    "train": 1000,
+    "test": 2000,
+    "legit": 300,
+    "auth": 200
+  },
+  "calibration_prompts": 3138,
+  "heldout_prompts": 2244,
+  "scoring_prompts": 4586,
+  "llm_baselines": [
+    "B0",
+    "B1",
+    "B3",
+    "B5"
+  ],
+  "leak_rows_per_llm_baseline": 6000,
+  "generations_upper_bound": 30000,
+  "judge_inputs_upper_bound": 40000,
+  "d7_fits": 10,
+  "api_calls": 0,
+  "seconds": 51.1
+}
