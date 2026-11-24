@@ -1,0 +1,58 @@
+{
+  "dry_run": false,
+  "d7_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "d7_recipe": {
+    "epochs": 3,
+    "lr": 2e-05,
+    "batch": 32,
+    "max_len": 256,
+    "warmup": 0.1,
+    "weight_decay": 0.01,
+    "clip": 1.0,
+    "group": 50
+  },
+  "jobs": {
+    "cert_meridian": 48,
+    "cert_enron": 20,
+    "heldout_meridian": 20,
+    "heldout_enron": 20,
+    "agent": 8
+  },
+  "fits": 116,
+  "training_rows": 320000,
+  "training_passes": 960000,
+  "scored_rows": 260000,
+  "estimate_minutes_L4": 67,
+  "estimate_basis": "assumed 250 training rows and 1,500 scored rows per second on the L4 (bf16); Stage 3 prints the measured time",
+  "api_calls": 0,
+  "llm_generations": 0,
+  "reproduced_six_attacker_tables": {
+    "04b_certificate.csv": {
+      "rows": 288,
+      "identical": 288,
+      "eps_hat_identical": 288,
+      "certified_identical": 288
+    },
+    "07d_certificate.csv": {
+      "rows": 120,
+      "identical": 120,
+      "eps_hat_identical": 120,
+      "certified_identical": 120
+    },
+    "04b_attackers.csv": {
+      "rows": 120,
+      "identical": 120,
+      "bound_identical": 120
+    },
+    "07d_attackers.csv": {
+      "rows": 120,
+      "identical": 120,
+      "bound_identical": 120
+    },
+    "08b_attackers.csv": {
+      "rows": 48,
+      "identical": 48
+    }
+  },
+  "seconds": 81.2
+}

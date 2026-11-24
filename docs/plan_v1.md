@@ -118,6 +118,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Figure 8 pools both models (template wording, certify split). Figure 3 shows Qwen2.5-7B-Instruct.
 - The timing table adds a paired comparison of the same certify units in both worlds (mean difference in reply time and in tokens, Wilcoxon signed-rank test), computed from notebook 10's measurements, to tell a difference between the worlds from sampling noise in the frozen timing attacker.
 
+## Amendments made with notebook 13 (24 November 2026)
+
+- D7 joins the declared attacker family: the entailment model of D3 (DeBERTa-v3-base MNLI) fine-tuned end to end on each system's training observations. Premise: the request and the reply; hypothesis: the unit's protected statement; world-1 probability from the pretrained head (entailment against the log-sum-exp of the other two labels). Fixed recipe: 3 epochs, learning rate 2e-5 with 10% warm-up and linear decay, batch 32, at most 256 tokens, weight decay 0.01, gradient clipping 1.0. Like D1 to D6 it trains on both worlds of the training units, is frozen, and guesses one hash-picked world per certify or test unit, on exactly the rows of the stored D1 to D6 scores. D6 stays the stack of D1 to D5.
+- The certificate, the selection, the held-out tables of both domains and the agent table are recomputed with seven attackers from the stored D1 to D6 scores and the D7 predictions (notebook 13). The configuration p-value is the maximum over the seven attackers; the Bonferroni share is unchanged (delta/24 in Domain 1, delta/10 in Domain 2). The six-attacker tables of notebooks 04b, 07d and 08b stay in the record and are reproduced exactly from the stored scores before D7 is added.
+- Sensitivity of the certificate to the number of certify units: 200 random subsets per size, without replacement, of each model's certify units (the same subset for every configuration), n = 250 to 3,000 in Domain 1 and 250 to 2,000 in Domain 2; certified bound and decision at epsilon 0.10 with the domain's Bonferroni share, from the stored per-unit guesses of the seven attackers. At the full size it equals the certificate.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

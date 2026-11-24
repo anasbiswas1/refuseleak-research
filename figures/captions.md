@@ -12,7 +12,7 @@ File: `figure2_paired_worlds.png` and `figure2_paired_worlds.pdf`
 
 File: `figure3_cedar_mechanism.png` and `figure3_cedar_mechanism.pdf`
 
-**Figure 4.** Leakage against usefulness for the 24 configurations of Domain 1. Vertical axis: certified bound ε̂, the smallest ε certified with probability 0.95 against all six attackers on the certify split. Horizontal axis: share of mistyped and ambiguous requests resolved on the utility split. Shaded: certified at ε = 0.10. Every pre-filter configuration of levels L0 to L2 is certified; every post-filter configuration and every L3 positive control is rejected. The universal reply (L0) is certified but resolves about half of the requests; the ringed point is the selected configuration λ*. Points are shifted slightly sideways by wording and level so that they do not hide each other.
+**Figure 4.** Leakage against usefulness for the 24 configurations of Domain 1. Vertical axis: certified bound ε̂, the smallest ε certified with probability 0.95 against all seven attackers on the certify split. Horizontal axis: share of mistyped and ambiguous requests resolved on the utility split. Shaded: certified at ε = 0.10. Every pre-filter configuration of levels L0 to L2 is certified; every post-filter configuration and every L3 positive control is rejected. The universal reply (L0) is certified but resolves about half of the requests; the ringed point is the selected configuration λ*. Points are shifted slightly sideways by wording and level so that they do not hide each other.
 
 File: `figure4_frontier.png` and `figure4_frontier.pdf`
 
@@ -31,3 +31,7 @@ File: `figure7_coverage.png` and `figure7_coverage.pdf`
 **Figure 8.** Side channels of the clarifier with template wording (level L2), both models pooled, certify split. Left: reply length before padding; right: number of records cited. With pre-filter retrieval (top) the two worlds give the same distributions. With post-filter retrieval (bottom) a restricted record takes one of the five retrieval slots and is then removed, so in world 1 the reply never cites five records.
 
 File: `figure8_side_channel.png` and `figure8_side_channel.pdf`
+
+**Figure 9.** The certificate against the number of certify units, from random subsets of the stored per-unit guesses of all seven attackers (200 subsets per size, drawn without replacement; the largest size is the full split and gives the certificate of Table 3). Left: median certified bound, with its 10th to 90th percentile band in Domain 1. Right: share of configurations certified at ε = 0.10; post-filter configurations and the L3 positive control are never certified (drawn just above and below zero). Dotted lines: the size Equation 19 gives for 80% power against one attacker at chance (1,375 units in Domain 1 at δ/24; 1,168 in Domain 2 at δ/10). Solid: Domain 1 (24 configurations); dashed: Domain 2 (10 configurations).
+
+File: `figure9_sensitivity.png` and `figure9_sensitivity.pdf`

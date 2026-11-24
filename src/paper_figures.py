@@ -28,7 +28,8 @@ SYSTEMS = {"B0": "B0 Privileged agent", "B1": "B1 Privacy prompt", "B2": "B2 Out
            "B4": "B4 Universal reply", "B5": "B5 Post-filter RAG", "B6": "B6 Typed collapse", "O1": "O1 Permitted-view oracle",
            "O2": "O2 Full-view clarifier", "L2-RT-pre": "LoRe (selected)"}
 ATTACKERS = {"D1": "D1 Bag of words", "D2": "D2 Embedding kNN", "D3": "D3 Entailment", "D4": "D4 LLM judge",
-             "D5": "D5 Side channels", "D6": "D6 Stack"}
+             "D5": "D5 Side channels", "D6": "D6 Stack", "D7": "D7 Fine-tuned entailment"}
+TIE = "Several tied"            # more than one attacker at the largest advantage (tables with seven attackers)
 ADAPTIVE = {"A1": "A1 Attribute search", "A2": "A2 Five-query entailment", "A3": "A3 Count and list", "A4": "A4 Misspelt names"}
 LEVELS = {"L0": "L0 Universal reply", "L1": "L1 Clarifier", "L2": "L2 Clarifier and private action", "L3": "L3 Leak notice (positive control)"}
 RENDERS = {"RT": "Template", "RS": "Slot-restricted LLM", "RF": "Free LLM"}
@@ -254,9 +255,9 @@ def figure3(out: Path, reports: Path) -> dict:
 
 
 # ----------------------------------------------------------------------------- Figure 4: frontier
-def frontier_data(reports: Path) -> pd.DataFrame:
-    cert = pd.read_csv(reports / "04b_certificate.csv")
-    ut = pd.read_csv(reports / "04b_utility.csv")
+def frontier_data(reports: Path, cert_file: str = "04b_certificate.csv", util_file: str = "04b_utility.csv") -> pd.DataFrame:
+    cert = pd.read_csv(reports / cert_file)
+    ut = pd.read_csv(reports / util_file)
     e = cert.groupby(["model", "config"]).agg(eps_hat=("eps_hat", "first"), certified=("certified", "all")).reset_index()
     u = ut[ut["family"].isin(["Q4", "Q5"])].groupby(["model", "system"])["resolved"].mean().rename("success").reset_index()
     df = e.merge(u, left_on=["model", "config"], right_on=["model", "system"], how="left").drop(columns="system")
@@ -264,9 +265,9 @@ def frontier_data(reports: Path) -> pd.DataFrame:
     return df.assign(level=parts[0], render=parts[1], retrieval=parts[2])
 
 
-def figure4(out: Path, reports: Path, selected: dict, eps: float) -> dict:
+def figure4(out: Path, reports: Path, selected: dict, eps: float, cert_file: str = "04b_certificate.csv") -> dict:
     style()
-    df = frontier_data(reports)
+    df = frontier_data(reports, cert_file)
     jitter = {"RT": -0.014, "RS": 0.0, "RF": 0.014}
     lvl_shift = {"L0": 0.0, "L1": -0.005, "L2": 0.005, "L3": 0.0}
     fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 3.1), sharey=True)
@@ -307,21 +308,22 @@ def figure4(out: Path, reports: Path, selected: dict, eps: float) -> dict:
 
 
 # ----------------------------------------------------------------------------- Figure 5: heatmap
-def figure5(out: Path, reports: Path) -> dict:
+def figure5(out: Path, reports: Path, att_file: str = "04b_attackers.csv") -> dict:
     style()
-    a = pd.read_csv(reports / "04b_attackers.csv")
+    a = pd.read_csv(reports / att_file)
     order = ["B0", "B1", "B2", "B3", "B5", "O2", "B4", "B6", "O1", "L2-RT-pre"]
+    cols = [k for k in ATTACKERS if k in set(a["attacker"])]
     fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 3.8), sharey=True)
     for ax, (m, mname) in zip(axes, MODELS.items()):
-        p = a[a["model"] == m].pivot_table(index="system", columns="attacker", values="adv").reindex(order)[list(ATTACKERS)]
-        lo = a[a["model"] == m].pivot_table(index="system", columns="attacker", values="adv_lo").reindex(order)[list(ATTACKERS)]
+        p = a[a["model"] == m].pivot_table(index="system", columns="attacker", values="adv").reindex(order)[cols]
+        lo = a[a["model"] == m].pivot_table(index="system", columns="attacker", values="adv_lo").reindex(order)[cols]
         im = ax.imshow(p.to_numpy(), cmap="Reds", vmin=0, vmax=0.6, aspect="auto")
         for i in range(p.shape[0]):
             for j in range(p.shape[1]):
                 v, l = p.iat[i, j], lo.iat[i, j]
                 ax.text(j, i, f"{v:.2f}", ha="center", va="center", fontsize=6, color="white" if v > 0.42 else "black",
                         fontweight="bold" if l > 0.10 else "normal")
-        ax.set_xticks(range(6)); ax.set_xticklabels([ATTACKERS[k] for k in ATTACKERS], fontsize=6.2, rotation=35, ha="right", rotation_mode="anchor")
+        ax.set_xticks(range(len(cols))); ax.set_xticklabels([ATTACKERS[k] for k in cols], fontsize=6.2, rotation=35, ha="right", rotation_mode="anchor")
         ax.set_yticks(range(len(order))); ax.set_yticklabels([SYSTEMS[s] for s in order])
         ax.axhline(5.5, color="black", lw=0.8)
         ax.text(0.5, 1.02, mname, transform=ax.transAxes, ha="center", fontsize=7.6, fontweight="bold")
@@ -439,6 +441,56 @@ def figure8(out: Path, reports: Path) -> dict:
     return save(fig, out, "figure8_side_channel")
 
 
+# ----------------------------------------------------------------------------- Figure 9: the certificate against the number of certify units
+SENS_CLASS = {"pre": "Pre-filter, levels L0 to L2", "post": "Post-filter, levels L0 to L2", "L3": "L3 positive control"}
+SENS_COLOR = {"pre": C["blue"], "post": C["green"], "L3": C["vermillion"]}
+DOMAIN_STYLE = {"meridian": "-", "enron": "--"}
+DOMAIN_NAME = {"meridian": "Domain 1 (synthetic enterprise)", "enron": "Domain 2 (Enron e-mail)"}
+
+
+def figure9(out: Path, sens: pd.DataFrame, eps: float, n_eq19: dict) -> dict:
+    """Median certified bound with its 10th to 90th percentile band (left) and the share of configurations certified
+    at eps (right) against the number of certify units, from random subsets of the stored per-unit guesses."""
+    style()
+    fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 2.9))
+    for dom in [d for d in DOMAIN_STYLE if d in set(sens["domain"])]:
+        d = sens[sens["domain"] == dom]
+        for cls in SENS_CLASS:
+            g = d[d["class"] == cls]
+            if g.empty:
+                continue
+            q = g.groupby("n")["eps_hat"].quantile([0.1, 0.5, 0.9]).unstack()
+            share = g.groupby("n")["certified"].mean()
+            axes[0].plot(q.index, q[0.5], ls=DOMAIN_STYLE[dom], color=SENS_COLOR[cls], marker="o", ms=2.2)
+            if dom == "meridian":
+                axes[0].fill_between(q.index, q[0.1], q[0.9], color=SENS_COLOR[cls], alpha=0.14, lw=0)
+            nudge = {"pre": 0.0, "post": 0.012, "L3": -0.012}[cls]          # post-filter and L3 both sit at zero: drawn apart
+            axes[1].plot(share.index, share.values + (nudge if share.max() == 0 else 0.0), ls=DOMAIN_STYLE[dom], color=SENS_COLOR[cls], marker="o", ms=2.2)
+    for ax in axes:
+        ax.set_xscale("log")
+        ax.set_xticks([250, 500, 1000, 2000, 3000])
+        ax.set_xticklabels(["250", "500", "1,000", "2,000", "3,000"])
+        ax.minorticks_off()
+        for dom, n_d in n_eq19.items():
+            ax.axvline(n_d, color="#555555", lw=0.7, ls=":")
+        ax.set_xlabel("Certify units n")
+        ax.grid(alpha=0.25, lw=0.5)
+    axes[0].axhline(eps, color="#444444", lw=0.8, ls=(0, (4, 2)))
+    axes[0].text(260, eps + 0.008, f"\u03b5 = {eps:.2f}", fontsize=6.3, color="#444444")
+    for dom, n_d in n_eq19.items():
+        axes[0].text(n_d * 0.97, 0.495, f"{n_d:,}", rotation=90, ha="right", va="top", fontsize=5.8, color="#555555")
+    axes[0].text(max(n_eq19.values()) * 1.05, 0.495, "Equation 19,\n80% power", fontsize=6.0, color="#555555", va="top")
+    axes[0].set_ylabel("Certified bound \u03b5\u0302")
+    axes[0].set_ylim(0, 0.5)
+    axes[1].set_ylabel(f"Share certified at \u03b5 = {eps:.2f}")
+    axes[1].set_ylim(-0.03, 1.03)
+    handles = [Line2D([], [], color=SENS_COLOR[k], lw=1.6, label=v) for k, v in SENS_CLASS.items()]
+    handles += [Line2D([], [], color="#555555", ls=DOMAIN_STYLE[k], lw=1.0, label=v) for k, v in DOMAIN_NAME.items() if k in set(sens["domain"])]
+    fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False, fontsize=6.4, bbox_to_anchor=(0.5, 0.0))
+    fig.subplots_adjust(left=0.08, right=0.99, top=0.97, bottom=0.29, wspace=0.28)
+    return save(fig, out, "figure9_sensitivity")
+
+
 def check_figure_file(path: Path, width_in: float) -> dict:
     """Pixel size of a saved PNG and the resolution at the intended printed width."""
     from PIL import Image
@@ -490,15 +542,15 @@ def overlap_table(plan: Path) -> pd.DataFrame:
     return pd.DataFrame(rows[1:], columns=rows[0])
 
 
-def baseline_table(reports: Path) -> pd.DataFrame:
+def baseline_table(reports: Path, sources=(("04b_main.csv", "meridian"), ("07d_main.csv", "enron"))) -> pd.DataFrame:
     """Held-out leakage and utility of the baselines, the references and the selected configuration, both domains."""
     out = []
-    for f, dom in (("04b_main.csv", "meridian"), ("07d_main.csv", "enron")):
+    for f, dom in sources:
         d = pd.read_csv(reports / f)
         out.append(pd.DataFrame({
             "Domain": DOMAINS[dom], "Model": d["model"].map(MODELS), "System": d["system"].map(system_name),
             "Identical replies across worlds": d["identical_share"], "Largest attacker advantage": d["max_adv"],
-            "Upper bound (95%)": d["max_adv_hi"], "Strongest attacker": d["worst_attacker"].map(ATTACKERS),
+            "Upper bound (95%)": d["max_adv_hi"], "Strongest attacker": d["worst_attacker"].map({**ATTACKERS, "tie": TIE}),
             "Protected fact stated in world 1": d["disclosure_world1"],
             "Resolved: mistyped and ambiguous requests": d["resolved_legit"],
             "Resolved: authorised requests": d["resolved_auth"],
@@ -507,10 +559,11 @@ def baseline_table(reports: Path) -> pd.DataFrame:
     return pd.concat(out, ignore_index=True).round(3)
 
 
-def certification_table(reports: Path) -> pd.DataFrame:
+def certification_table(reports: Path, sources=(("04b_certificate.csv", "04b_utility.csv", "meridian"),
+                                               ("07d_certificate.csv", "07d_utility.csv", "enron"))) -> pd.DataFrame:
     """Certified bound per configuration and model, with clarification success, both domains."""
     out = []
-    for cert_f, ut_f, dom in (("04b_certificate.csv", "04b_utility.csv", "meridian"), ("07d_certificate.csv", "07d_utility.csv", "enron")):
+    for cert_f, ut_f, dom in sources:
         cert, ut = pd.read_csv(reports / cert_f), pd.read_csv(reports / ut_f)
         e = cert.groupby(["model", "config"]).agg(eps_hat=("eps_hat", "first"), certified=("certified", "all"),
                                                   worst=("adv_hi", "max")).reset_index()
@@ -561,14 +614,14 @@ def render_table(reports: Path) -> pd.DataFrame:
         "Identical replies across worlds": d["identical_across_worlds"]}).reset_index(drop=True).round(3)
 
 
-def agent_table(reports: Path) -> pd.DataFrame:
-    d = pd.read_csv(reports / "08b_agent.csv")
+def agent_table(reports: Path, file: str = "08b_agent.csv") -> pd.DataFrame:
+    d = pd.read_csv(reports / file)
     order = {k: i for i, k in enumerate(ARMS)}
     d = d.assign(_a=d["system"].map(order), _m=d["model"].map({m: i for i, m in enumerate(MODELS)})).sort_values(["_m", "_a"])
     return pd.DataFrame({
         "Model": d["model"].map(MODELS), "Error handling": d["system"].map(ARMS),
         "Identical replies across worlds": d["identical_share"], "Largest attacker advantage": d["max_adv"],
-        "Upper bound (95%)": d["max_adv_hi"], "Strongest attacker": d["worst_attacker"].map(ATTACKERS),
+        "Upper bound (95%)": d["max_adv_hi"], "Strongest attacker": d["worst_attacker"].map({**ATTACKERS, "tie": TIE}),
         "Restricted file named in world 1": d["disclosure_world1"], "Owner named in world 1": d["owner_named_world1"],
         "Task completion": d["completion"], "Mean tool calls": d["mean_tool_calls_leak"]}).reset_index(drop=True).round(3)
 
@@ -686,15 +739,18 @@ TABLE_NOTES = {
 }
 
 
-def write_tables(reports: Path, plan: Path, out: Path) -> dict:
+def write_tables(reports: Path, plan: Path, out: Path, tables: dict | None = None, notes: dict | None = None,
+                 title: str = "# Tables (drawn from the committed reports)") -> dict:
+    """Every table (or the `tables` given: name -> (caption, builder of the reports folder)) as CSV, plus tables.md."""
+    tables, notes = (TABLES if tables is None else tables), (TABLE_NOTES if notes is None else notes)
     out.mkdir(parents=True, exist_ok=True)
-    md, info = ["# Tables (drawn from the committed reports)", ""], {}
-    for name, (caption, fn) in TABLES.items():
+    md, info = [title, ""], {}
+    for name, (caption, fn) in tables.items():
         df = overlap_table(plan) if fn is None else fn(reports)
         df.to_csv(out / f"{name}.csv", index=False)
         md += [f"## {name.split('_')[0].capitalize().replace('Table', 'Table ')}", "", caption, "", md_table(df), ""]
-        if name in TABLE_NOTES:
-            md += [f"Note. {TABLE_NOTES[name]}", ""]
+        if name in notes:
+            md += [f"Note. {notes[name]}", ""]
         info[name] = {"rows": int(len(df)), "columns": list(df.columns)}
     (out / "tables.md").write_text("\n".join(md), encoding="utf-8")
     return info
@@ -806,7 +862,7 @@ CAPTIONS = {
         "offers \"none of these\". Long replies are cut with an ellipsis."),
     "figure4_frontier": (
         "Leakage against usefulness for the 24 configurations of Domain 1. Vertical axis: certified bound \u03b5\u0302, the "
-        "smallest \u03b5 certified with probability 0.95 against all six attackers on the certify split. Horizontal axis: "
+        "smallest \u03b5 certified with probability 0.95 against all seven attackers on the certify split. Horizontal axis: "
         "share of mistyped and ambiguous requests resolved on the utility split. Shaded: certified at \u03b5 = 0.10. Every "
         "pre-filter configuration of levels L0 to L2 is certified; every post-filter configuration and every L3 positive "
         "control is rejected. The universal reply (L0) is certified but resolves about half of the requests; the ringed "
@@ -831,6 +887,14 @@ CAPTIONS = {
         "length before padding; right: number of records cited. With pre-filter retrieval (top) the two worlds give the same "
         "distributions. With post-filter retrieval (bottom) a restricted record takes one of the five retrieval slots and is "
         "then removed, so in world 1 the reply never cites five records."),
+    "figure9_sensitivity": (
+        "The certificate against the number of certify units, from random subsets of the stored per-unit guesses of all "
+        "seven attackers (200 subsets per size, drawn without replacement; the largest size is the full split and gives the "
+        "certificate of Table 3). Left: median certified bound, with its 10th to 90th percentile band in Domain 1. Right: "
+        "share of configurations certified at \u03b5 = 0.10; post-filter configurations and the L3 positive control are never "
+        "certified (drawn just above and below zero). Dotted lines: the size Equation 19 gives for 80% power against "
+        "one attacker at chance (1,375 units in Domain 1 at \u03b4/24; 1,168 in Domain 2 at \u03b4/10). Solid: Domain 1 (24 configurations); dashed: "
+        "Domain 2 (10 configurations)."),
 }
 
 

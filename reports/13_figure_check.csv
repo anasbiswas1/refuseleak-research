@@ -1,0 +1,4 @@
+figure,width_in,height_in,png_pixels,dpi_at_print_width,pdf,code_keys
+figure4_frontier,7.2,3.1,4320x1860,600.0,True,none
+figure5_advantage_heatmap,7.2,3.8,4320x2280,600.0,True,none
+figure9_sensitivity,7.2,2.9,4320x1740,600.0,True,none

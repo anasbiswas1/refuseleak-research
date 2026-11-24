@@ -59,6 +59,25 @@ def test_figure7_from_synthetic_coverage(tmp_path):
     assert chk.loc[0, "code_keys"] == "none" and bool(chk.loc[0, "pdf"])
 
 
+def test_figure9_from_synthetic_sensitivity(tmp_path):
+    rows = [{"domain": d, "class": c, "n": n, "rep": r, "eps_hat": base / n ** 0.5 + 0.01 * r, "certified": c == "pre" and n >= 1500}
+            for d in ("meridian", "enron") for c, base in (("pre", 3.0), ("post", 6.0), ("L3", 9.0)) for n in (250, 500, 1000, 2000)
+            for r in range(3)]
+    r = F.figure9(tmp_path, pd.DataFrame(rows), 0.10, {"meridian": 1375, "enron": 1168})
+    assert r["png_pixels"][0] == round(F.FULL_W * F.DPI) and r["code_keys"] == []
+    chk = F.figure_check(tmp_path, [r])
+    assert chk.loc[0, "dpi_at_print_width"] >= 600 and chk.loc[0, "code_keys"] == "none" and bool(chk.loc[0, "pdf"])
+
+
+def test_figure5_takes_the_attackers_in_the_file(tmp_path):
+    systems = ["B0", "B1", "B2", "B3", "B5", "O2", "B4", "B6", "O1", "L2-RT-pre"]
+    rows = [{"model": m, "system": s, "attacker": a, "adv": 0.1, "adv_lo": 0.0} for m in F.MODELS for s in systems
+            for a in ("D1", "D2", "D3", "D4", "D5", "D6", "D7")]
+    pd.DataFrame(rows).to_csv(tmp_path / "att7.csv", index=False)
+    r = F.figure5(tmp_path, tmp_path, "att7.csv")
+    assert r["code_keys"] == [] and "D7" in F.ATTACKERS
+
+
 def test_baseline_table_uses_paper_names(tmp_path):
     cols = dict(identical_share=1.0, max_adv=0.02, max_adv_hi=0.06, worst_attacker="D6", bound_at_delta=0.07,
                 disclosure_world1=0.0, resolved_legit=0.9, resolved_auth=1.0)
