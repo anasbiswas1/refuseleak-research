@@ -85,6 +85,7 @@ def test_timed_replies_pre_filter_identical_in_both_worlds():
             for k in ("text", "n_chars", "n_tokens", "n_cites", "n_options", "status", "score_calls"):
                 assert r0[k] == r1[k], (name, u["uid"], k)
             assert r0["latency_raw"] >= r0["t_render"] >= 0
-            assert (r0["t_render"] > 0) == (name.split("-")[1] == "RF")
+            if name.split("-")[1] == "RT":                       # a template reply is never rendered
+                assert r0["t_render"] == 0.0
     jobs = SD.timing_jobs(units, ["L2-RT-pre", "L2-RT-post"])
     assert len(jobs) == 36 and len({(c, u["uid"], w) for c, u, w in jobs}) == 36

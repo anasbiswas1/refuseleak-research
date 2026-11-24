@@ -106,6 +106,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Latency floor off is measured on the L4: the decision of L2-RT-pre, L2-RT-post, L2-RF-pre and L2-RF-post with fresh one-token scores (no score cache, the server's prefix cache off) and, for free text, a fresh render; the first 200 train and 600 certify units, both worlds, shuffled together, 8 template or 16 render requests in flight. Floor on means the measured time held to at least 1 s.
 - The side-channel attacker (gradient boosting, as D5) is trained per channel set (as built, no padding, length, citations, options, status, latency), frozen, and applied to one hash-picked world per unit: the 24 configurations of notebook 04b (train to certify) and B0 to B6 of notebook 06 (train to test).
 
+## Amendments made with notebook 11 (24 November 2026)
+
+- The ablations remove one component at a time from L2-RT-pre and are replayed on the CPU from the stored scores: score (evidence only, model only), conformal set (answer the likeliest option; always ask), information-gain question (list the four likeliest records instead, both as certified and under always-ask, where the question is needed whenever there are five candidates), private action (L1-RT-pre). Units: the certify and utility splits of notebook 04b.
+- The same variants are replayed on Domain 2 (the certify and utility splits of notebook 07d, its clarifier parameters and stored scores), where the attribute question is used.
+- Render mode and temperature are compared as built (RT; RS at temperature 0; RF at 0.7) from the records of notebook 04b, with the fidelity of RS and RF to the template's reference codes and option count. No separate temperature sweep is run: the renderer reads only the permitted view.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

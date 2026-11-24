@@ -1,0 +1,7 @@
+model,render,temperature,eps_hat,certified,resolved_Q4,resolved_Q5,same_refs_as_template,same_option_count,chars_mean_unpadded,identical_across_worlds
+llama31_8b,RT,,0.06,True,0.974,0.984,1.0,1.0,263.63433333333336,1.0
+llama31_8b,RS,0.0,0.06,True,0.974,0.984,1.0,1.0,311.34766666666667,1.0
+llama31_8b,RF,0.7,0.08,True,0.974,0.984,1.0,1.0,483.87033333333335,1.0
+qwen25_7b,RT,,0.1,True,0.974,0.974,1.0,1.0,264.03766666666667,1.0
+qwen25_7b,RS,0.0,0.06,True,0.974,0.974,1.0,1.0,236.75766666666667,1.0
+qwen25_7b,RF,0.7,0.07,True,0.974,0.974,1.0,1.0,202.555,1.0
