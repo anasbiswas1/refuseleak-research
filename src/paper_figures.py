@@ -514,6 +514,55 @@ def figure10(out: Path, fam: pd.DataFrame) -> dict:
     return save(fig, out, "figure10_family_heatmap")
 
 
+# ----------------------------------------------------------------------------- Figure 11: how a compliant refusal reveals (notebook 17)
+SECRET_NAMES = {"S1": "Existence", "S2": "Membership", "S3": "Attribute", "all": "All secrets"}
+MECH_MODELS = {"claude_haiku_55": ("Claude Haiku 5.5", C["blue"], "o", "full"), "claude_sonnet_55": ("Claude Sonnet 5.5", C["vermillion"], "s", "none")}
+
+
+def figure11(out: Path, lengths: pd.DataFrame, features: pd.DataFrame) -> dict:
+    """The privacy-prompt replies of the Claude responders compared across the two worlds of each held-out unit: (a) the paired
+    difference in reply length and (b) in citations, world 1 minus world 0, per secret; (c) the share of replies with each
+    named feature in world 0 (open end) and world 1 (arrow head)."""
+    style()
+    models = [m for m in MECH_MODELS if m in set(lengths["model"])]
+    secrets = [s for s in ("S1", "S2", "S3", "all") if s in set(lengths["secret"])]
+    fig = plt.figure(figsize=(FULL_W, 3.4))
+    ax_t = fig.add_axes([0.10, 0.27, 0.195, 0.63])
+    ax_c = fig.add_axes([0.355, 0.27, 0.195, 0.63])
+    ax_f = fig.add_axes([0.755, 0.27, 0.225, 0.63])
+    off = {m: (0.16 if i == 0 else -0.16) for i, m in enumerate(models)}
+    for ax, col, label in ((ax_t, "tokens", "Tokens, world 1 minus world 0"), (ax_c, "cites", "Citations, world 1 minus world 0")):
+        for m in models:
+            name, color, marker, fill = MECH_MODELS[m]
+            d = lengths[lengths["model"] == m].set_index("secret").reindex(secrets)
+            y = np.arange(len(secrets)) + off[m]
+            ax.errorbar(d[f"{col}_diff"], y, xerr=[d[f"{col}_diff"] - d[f"{col}_diff_lo"], d[f"{col}_diff_hi"] - d[f"{col}_diff"]],
+                        fmt=marker, color=color, mfc=color if fill == "full" else "white", ms=4.2, capsize=2, lw=0.9, label=name)
+        ax.axvline(0, color="#333333", lw=0.7)
+        ax.set_yticks(range(len(secrets))); ax.set_yticklabels([SECRET_NAMES[s] for s in secrets], fontsize=6.8)
+        ax.invert_yaxis()
+        ax.set_xlabel(label, fontsize=6.8)
+        ax.axhline(len(secrets) - 1.5, color="#999999", lw=0.5, ls=":")
+    fig.legend(*ax_t.get_legend_handles_labels(), loc="lower center", bbox_to_anchor=(0.32, 0.005), ncol=2, frameon=False, fontsize=6.6, handletextpad=0.3, columnspacing=1.5)
+    feats = list(dict.fromkeys(features["feature"]))
+    names = features.drop_duplicates("feature").set_index("feature")["feature_name"]
+    for m in models:
+        name, color, marker, fill = MECH_MODELS[m]
+        d = features[features["model"] == m].set_index("feature").reindex(feats)
+        y = np.arange(len(feats)) + off[m]
+        for yi, s0, s1 in zip(y, d["share_world0"], d["share_world1"]):
+            ax_f.annotate("", xy=(s1, yi), xytext=(s0, yi), arrowprops=dict(arrowstyle="-|>", color=color, lw=1.0, shrinkA=0, shrinkB=0, mutation_scale=7))
+        ax_f.plot(d["share_world0"], y, marker, color=color, mfc="white", ms=4.2, lw=0)
+        ax_f.plot(d["share_world1"], y, marker, color=color, mfc=color, ms=4.2, lw=0)
+    ax_f.set_yticks(range(len(feats))); ax_f.set_yticklabels([names[f] for f in feats], fontsize=6.6)
+    ax_f.invert_yaxis()
+    ax_f.set_xlim(0, 1); ax_f.set_xlabel("Share of replies\n(open: world 0, filled: world 1)", fontsize=6.8)
+    ax_f.tick_params(axis="y", length=0)
+    for ax, tag in ((ax_t, "(a)"), (ax_c, "(b)"), (ax_f, "(c)")):
+        ax.text(-0.02, 1.04, tag, transform=ax.transAxes, fontsize=8, fontweight="bold", ha="right", va="bottom")
+    return save(fig, out, "figure11_mechanism")
+
+
 # ----------------------------------------------------------------------------- Figure 9: the certificate against the number of certify units
 SENS_CLASS = {"pre": "Pre-filter, levels L0 to L2", "post": "Post-filter, levels L0 to L2", "L3": "L3 positive control"}
 SENS_COLOR = {"pre": C["blue"], "post": C["green"], "L3": C["vermillion"]}
@@ -978,6 +1027,17 @@ CAPTIONS = {
         "(Q1, Q4, Q5, Q7) and not when it asks about a person or an attribute; the privileged agent and the privacy prompt "
         "leak on nearly every family. Systems below the line stay at the floor in every family: the values repeated down "
         "a column of the lower block are that family's share of world-1 units, which is what a constant guess scores."),
+    "figure11_mechanism": (
+        "How a compliant refusal reveals. The privacy prompt (B1) tells the model never to confirm or deny that a restricted "
+        "record exists and to answer as if no record existed; Claude Haiku 5.5 and Claude Sonnet 5.5 follow it (the restricted "
+        "record is disclosed in 2 to 3 percent of world-1 replies, Table 15) and the wording attackers still reach 0.24 and "
+        "0.21. The panels compare each held-out unit's two replies, world 1 (the restricted record exists) minus world 0. "
+        "(a) Reply length and (b) records cited, with 95% intervals of the paired mean, per secret: when the secret is the "
+        "record's existence, Haiku's reply gets 21 tokens shorter and cites a third of a record less on average; Sonnet's "
+        "length does not move. (c) The share of replies with each named feature, from world 0 (open marker) to world 1 "
+        "(filled): both models give the instructed refusal sentence and ask for a reference code more often, Haiku cites a "
+        "permitted record less often and speaks of access or clearance more often, when there is something to hide. The "
+        "features are descriptive; the leak is measured by the frozen attackers on the same units."),
 }
 
 

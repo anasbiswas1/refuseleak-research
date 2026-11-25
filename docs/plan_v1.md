@@ -144,6 +144,10 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - The judge attacker D4 of an API responder is Qwen2.5-7B-Instruct. Attackers D1 to D7 as in notebook 13, single tests at delta.
 - API spending is priced from the token counts in every response and capped before the run; the cap and the spend are recorded in 16_api_usage.json. The API accepts no temperature, so the API responders' replies are sampled at the API's default; thinking is turned off for Haiku 5.5 and restricted to between tool calls for Sonnet 5.5; max_tokens is 200 as for the open models.
 
+## Amendments made with notebook 17 (25 November 2026)
+
+- Mechanism of the compliant refusal leak (notebook 17): the privacy-prompt replies of the Claude responders (notebook 16) are compared across the two worlds of each held-out unit: reply length and citations (paired, per secret), five named reply features, and the word n-grams chosen on the training split. Descriptive only; the leak is measured by the frozen attackers of notebook 16. Figure 11.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**
