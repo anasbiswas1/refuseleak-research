@@ -59,7 +59,7 @@ def test_scale_table(tmp_path):
     base.to_csv(tmp_path / "13_main_meridian.csv", index=False)
     new.to_csv(tmp_path / "14_main.csv", index=False)
     t = F.scale_table(tmp_path)
-    assert list(t["System"]) == ["B0 Privileged agent", "LoRe (selected)"]
+    assert list(t["System"]) == ["B0 Privileged agent", "SameView (selected)"]
     assert t.loc[0, "Qwen2.5-14B-Instruct (4-bit): largest attacker advantage"] == 0.25
     assert not [c for c in t.columns if F.CODE_KEY.search(c)]
     assert np.isclose(t.loc[1, "Qwen2.5-7B-Instruct: resolved"], 0.9)

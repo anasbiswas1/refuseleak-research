@@ -13,17 +13,17 @@ import paper_figures as F  # noqa: E402
 
 def test_config_and_system_names():
     assert F.config_parts("L2-RT-pre") == ("L2 Clarifier and private action", "Template", "Pre-filter")
-    assert F.system_name("L2-RT-pre") == "LoRe (selected)"
+    assert F.system_name("L2-RT-pre") == "SameView (selected)"
     assert F.system_name("B5") == "B5 Post-filter RAG"
     assert F.system_name("L3-RF-post") == "L3 Leak notice (positive control), Free LLM, Post-filter"
-    assert F.config_label("L2-RT-pre").endswith("(selected: LoRe)")
+    assert F.config_label("L2-RT-pre").endswith("(selected: SameView)")
     assert F.config_label("L2-RT-post") == "L2 Clarifier and private action, Template, Post-filter"
 
 
 def test_code_key_pattern():
     for bad in ("qwen25_7b", "llama31_8b", "L2-RT-pre", "eps_hat", "identical_share", "adv_hi"):
         assert F.CODE_KEY.search(bad), bad
-    for ok in ("Qwen2.5-7B-Instruct", "LoRe (selected)", "Pre-filter retrieval", "[MH-7263]", "D6 Stack", "K2 Projector"):
+    for ok in ("Qwen2.5-7B-Instruct", "SameView (selected)", "Pre-filter retrieval", "[MH-7263]", "D6 Stack", "K2 Projector"):
         assert not F.CODE_KEY.search(ok), ok
 
 
@@ -84,7 +84,7 @@ def test_baseline_table_uses_paper_names(tmp_path):
     for f in ("04b_main.csv", "07d_main.csv"):
         pd.DataFrame([{"model": m, "system": s, **cols} for m in F.MODELS for s in ("B4", "L2-RT-pre")]).to_csv(tmp_path / f, index=False)
     t = F.baseline_table(tmp_path)
-    assert set(t["System"]) == {"B4 Universal reply", "LoRe (selected)"}
+    assert set(t["System"]) == {"B4 Universal reply", "SameView (selected)"}
     assert set(t["Model"]) == set(F.MODELS.values()) and set(t["Strongest attacker"]) == {"D6 Stack"}
     assert t["Resolved on a fresh draw: authorised"].isna().all()
     assert not any(F.CODE_KEY.search(str(c)) for c in t.columns)

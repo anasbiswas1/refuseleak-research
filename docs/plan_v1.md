@@ -131,6 +131,12 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Attackers D1 to D7 (notebook 13), single tests at delta on the picked test rows. Reported for the 14B responder: C1, C2 held out, C3, and C4 for the refitted scorer, beside the two main models with seven attackers.
 - Figure 9 is redrawn with a taller axis; its data are unchanged.
 
+## Amendments made with notebook 15 (24 November 2026)
+
+- The method is named SameView. The placeholder name used in the plan and in notebooks up to 14 is replaced in every paper-facing label (figures, tables, captions); code identifiers and configuration keys are unchanged.
+- Session certificate: the certificate of Section 4.6 is also run over the multi-turn sessions recorded by notebook 09. A session under a declared adaptive policy is a unit, its transcript the observation, and each (policy, session pool, transcript learner) a frozen attacker. The deployed configuration is certified alone (its share of delta is delta); the controls are tested the same way and reported as controls. The stored per-session probabilities reproduce the last-turn counts of notebook 09 exactly.
+- Leak by query family: on the Domain 1 held-out test, each system's strongest attacker, chosen once on the whole split, is read per query family (Figure 10).
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

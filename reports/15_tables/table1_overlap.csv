@@ -1,0 +1,10 @@
+Component,Status,Closest work,What is left for us
+Phenomenon: refusals reveal protected facts,Taken,Agent Mosaic (2610.30418): refusal and disclosure labelled separately; refusals often state the composite. Benchmark only.,"Clarification questions and tool-error strings, measured with a paired-world attacker, on open models"
+Collapse rule: same reply for hidden and absent,Taken as a rule,"Stored Is Not Supported (He and Yu, 2609.02127): maps Withheld, Unknown, Unavailable to one view with fixed templates. Classical neither-confirm-nor-deny; OWASP generic login errors.","Their evaluation is 24 hand-written cases and they state it is not an end-to-end evaluation of language models. No LLM, no clarification, no utility study"
+"Private controller, public responder",Taken,"FIDES (2505.23643), CaMeL (2503.18813), KAIJU (2604.02375), APPA, SPA, Agent libOS",FIDES gives only explicit secrecy and leaves implicit flows through control flow open: this is exactly the refuse/ask/answer channel
+Denial feedback through tools,Partly taken,"Causality Laundering (2604.04035): provenance graph blocks later exfiltration; three scenarios, no distinguisher metric",User-visible distinguishability of errors; utility
+Paired-world game,Partly taken,AgentSecBench (2605.26269): secret present vs absent; exact canary match; Qwen3 0.6B and 1.7B,"Semantic attackers, refusals and clarifications as channels, 7B/8B models"
+Conformal ask-when-unsure,Taken in robotics,"KnowNo (Ren et al., CoRL 2023, 2307.01928): conformal set over options, ask if more than one",Computing the set only over the requester's permitted view so asking is leak-free by construction
+Cumulative leakage over a session,Partly taken,OCELOT (2606.12341): min-entropy budgets for PII releases; Multi-Stage Prompt Inference (2507.15613): binary-search extraction,"Used as our adaptive attacker, not claimed"
+Statistical certificate of no leak for an LLM channel,Open,None found,Main contribution
+Helping legitimate users under the certificate,Open,None found,Main contribution

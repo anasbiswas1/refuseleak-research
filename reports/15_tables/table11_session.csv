@@ -1,0 +1,9 @@
+Model,System,Role,Sessions,"Attackers (policy, pool, learner)",Largest advantage,Upper bound (95%),Certified bound,Certified at 0.10
+Llama-3.1-8B-Instruct,SameView (selected),deployed configuration,12000,24,0.039,0.083,0.08,yes
+Qwen2.5-7B-Instruct,SameView (selected),deployed configuration,12000,24,0.039,0.083,0.08,yes
+Llama-3.1-8B-Instruct,B1 Privacy prompt,control,600,8,0.987,0.996,1.0,no
+Llama-3.1-8B-Instruct,B3 Triggered refusal,control,900,12,0.947,0.973,0.98,no
+Llama-3.1-8B-Instruct,B5 Post-filter RAG,control,1200,16,0.367,0.467,0.46,no
+Qwen2.5-7B-Instruct,B1 Privacy prompt,control,600,8,1.0,1.0,1.0,no
+Qwen2.5-7B-Instruct,B3 Triggered refusal,control,900,12,0.953,0.977,0.98,no
+Qwen2.5-7B-Instruct,B5 Post-filter RAG,control,1200,16,0.36,0.46,0.45,no

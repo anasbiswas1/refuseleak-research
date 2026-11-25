@@ -1,0 +1,33 @@
+Domain,Model,Variant,Component removed,Resolved,Wrong record given,Asked a question,Mean turns,Attribute questions asked,Access request filed when the record exists,Identical replies across worlds
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,SameView as certified,none,0.974,0.013,0.511,1.565,0,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,Score: permitted-view evidence only,candidate score,0.987,0.0,0.524,1.532,0,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,Score: model log-probability only,candidate score,0.984,0.002,0.949,2.009,12,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,No conformal set: answer the likeliest,conformal set,0.638,0.331,0.0,1.0,0,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,No conformal set: always ask,conformal set,0.987,0.0,0.989,1.99,1122,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,No attribute question: list the four likeliest,attribute question,0.974,0.013,0.511,1.565,0,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,"Always ask, no attribute question",attribute question (under always ask),0.987,0.0,0.989,1.991,0,0.668,1.0
+Domain 1 (synthetic enterprise),Qwen2.5-7B-Instruct,No private action (L1),private access request,0.974,0.013,0.511,1.565,0,0.0,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,SameView as certified,none,0.979,0.008,0.524,1.573,0,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,Score: permitted-view evidence only,candidate score,0.987,0.0,0.524,1.532,0,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,Score: model log-probability only,candidate score,0.953,0.034,0.83,1.863,12,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,No conformal set: answer the likeliest,conformal set,0.634,0.325,0.0,1.0,0,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,No conformal set: always ask,conformal set,0.987,0.0,0.989,1.99,1122,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,No attribute question: list the four likeliest,attribute question,0.979,0.008,0.524,1.573,0,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,"Always ask, no attribute question",attribute question (under always ask),0.987,0.0,0.989,1.991,0,0.668,1.0
+Domain 1 (synthetic enterprise),Llama-3.1-8B-Instruct,No private action (L1),private access request,0.979,0.008,0.524,1.573,0,0.0,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,SameView as certified,none,0.994,0.0,1.0,2.106,38,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,Score: permitted-view evidence only,candidate score,0.994,0.0,1.0,2.062,82,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,Score: model log-probability only,candidate score,0.98,0.014,0.982,2.104,42,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,No conformal set: answer the likeliest,conformal set,0.038,0.068,0.0,1.0,0,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,No conformal set: always ask,conformal set,0.994,0.0,1.0,2.096,726,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,No attribute question: list the four likeliest,attribute question,0.994,0.0,1.0,2.104,0,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,"Always ask, no attribute question",attribute question (under always ask),0.994,0.0,1.0,2.014,0,0.765,1.0
+Domain 2 (Enron e-mail),Qwen2.5-7B-Instruct,No private action (L1),private access request,0.994,0.0,1.0,2.106,38,0.0,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,SameView as certified,none,0.992,0.002,0.996,2.116,60,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,Score: permitted-view evidence only,candidate score,0.994,0.0,1.0,2.062,82,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,Score: model log-probability only,candidate score,0.992,0.002,0.992,2.082,102,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,No conformal set: answer the likeliest,conformal set,0.152,0.122,0.0,1.0,0,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,No conformal set: always ask,conformal set,0.994,0.0,1.0,2.096,726,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,No attribute question: list the four likeliest,attribute question,0.992,0.002,0.996,2.088,0,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,"Always ask, no attribute question",attribute question (under always ask),0.994,0.0,1.0,2.016,0,0.765,1.0
+Domain 2 (Enron e-mail),Llama-3.1-8B-Instruct,No private action (L1),private access request,0.992,0.002,0.996,2.116,60,0.0,1.0

@@ -1,0 +1,9 @@
+Model,Error handling,Identical replies across worlds,Largest attacker advantage,Upper bound (95%),Strongest attacker,Restricted file named in world 1,Owner named in world 1,Task completion,Mean tool calls
+Qwen2.5-7B-Instruct,Raw tool outputs,0.028,0.957,0.968,D6 Stack,0.933,0.933,0.928,1.451
+Qwen2.5-7B-Instruct,Generic error,0.42,0.308,0.349,D7 Fine-tuned entailment,0.061,0.058,0.832,2.374
+Qwen2.5-7B-Instruct,Requester-view listing,0.592,0.416,0.455,D6 Stack,0.408,0.408,0.93,1.246
+Qwen2.5-7B-Instruct,Requester-view projection (SameView),1.0,0.023,0.067,Several tied,0.0,0.0,0.93,1.276
+Llama-3.1-8B-Instruct,Raw tool outputs,0.022,0.733,0.761,D7 Fine-tuned entailment,0.49,0.466,1.0,4.275
+Llama-3.1-8B-Instruct,Generic error,0.141,0.53,0.566,D7 Fine-tuned entailment,0.208,0.176,0.982,4.784
+Llama-3.1-8B-Instruct,Requester-view listing,0.107,0.458,0.496,D7 Fine-tuned entailment,0.106,0.104,1.0,4.609
+Llama-3.1-8B-Instruct,Requester-view projection (SameView),1.0,0.029,0.073,D7 Fine-tuned entailment,0.0,0.0,1.0,4.073

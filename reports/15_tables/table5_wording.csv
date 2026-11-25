@@ -1,0 +1,7 @@
+Model,Wording,Temperature,Certified bound,Certified at 0.10,Resolved: mistyped,Resolved: ambiguous,Same record codes as the template,Same number of options,Mean reply length (characters),Identical replies across worlds
+Qwen2.5-7B-Instruct,Template,none,0.1,yes,0.974,0.974,1.0,1.0,264.038,1.0
+Qwen2.5-7B-Instruct,Slot-restricted LLM,0,0.06,yes,0.974,0.974,1.0,1.0,236.758,1.0
+Qwen2.5-7B-Instruct,Free LLM,0.7,0.07,yes,0.974,0.974,1.0,1.0,202.555,1.0
+Llama-3.1-8B-Instruct,Template,none,0.06,yes,0.974,0.984,1.0,1.0,263.634,1.0
+Llama-3.1-8B-Instruct,Slot-restricted LLM,0,0.06,yes,0.974,0.984,1.0,1.0,311.348,1.0
+Llama-3.1-8B-Instruct,Free LLM,0.7,0.08,yes,0.974,0.984,1.0,1.0,483.87,1.0
