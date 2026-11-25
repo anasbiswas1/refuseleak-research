@@ -137,6 +137,13 @@ Md Anas Biswas | 13 November 2026 | Repository: refuseleak-research
 - Session certificate: the certificate of Section 4.6 is also run over the multi-turn sessions recorded by notebook 09. A session under a declared adaptive policy is a unit, its transcript the observation, and each (policy, session pool, transcript learner) a frozen attacker. The deployed configuration is certified alone (its share of delta is delta); the controls are tested the same way and reported as controls. The stored per-session probabilities reproduce the last-turn counts of notebook 09 exactly.
 - Leak by query family: on the Domain 1 held-out test, each system's strongest attacker, chosen once on the whole split, is read per query family (Figure 10).
 
+## Amendments made with notebook 16 (25 November 2026)
+
+- Proprietary responders (notebook 16): Claude Haiku 5.5 and Claude Sonnet 5.5, reached through the Claude API, on the Domain 1 held-out test (config.API_MODELS, beside the main grid). Haiku runs the protocol of notebook 06 in full (1,000 training units, 2,000 test units, legit and auth); Sonnet runs the privileged agent and the privacy prompt beside SameView on 500 training and 1,000 test units, leak units only.
+- SameView with an API responder runs its evidence-only scorer, fitted once on the calibration tasks, because the API returns no token log-probabilities; its reply path makes no API call. The configuration L2-RT-pre is the one selected for the main models.
+- The judge attacker D4 of an API responder is Qwen2.5-7B-Instruct. Attackers D1 to D7 as in notebook 13, single tests at delta.
+- API spending is priced from the token counts in every response and capped before the run; the cap and the spend are recorded in 16_api_usage.json. The API accepts no temperature, so the API responders' replies are sampled at the API's default; thinking is turned off for Haiku 5.5 and restricted to between tool calls for Sonnet 5.5; max_tokens is 200 as for the open models.
+
 **Research Plan and Implementation Plan (v1)**
 
 **When Refusal Reveals: Certified Leak-Free Refusals and Clarifications for LLM Agents**

@@ -1,0 +1,181 @@
+{
+  "dry_run": false,
+  "budget": {
+    "dry_run": false,
+    "spend_cap_usd": 25.0,
+    "price_per_mtok": {
+      "claude_haiku_55": [
+        0.1,
+        0.5
+      ],
+      "claude_sonnet_55": [
+        2.0,
+        10.0
+      ]
+    },
+    "judge": {
+      "claude_haiku_55": "qwen25_7b",
+      "claude_sonnet_55": "qwen25_7b"
+    },
+    "selected": "L2-RT-pre",
+    "scorer": "evidence",
+    "estimate": {
+      "claude_haiku_55": {
+        "model_id": "claude-haiku-5-5",
+        "systems": [
+          "B0",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "B6",
+          "O1",
+          "O2",
+          "L2-RT-pre"
+        ],
+        "units_api_systems": {
+          "train": 1000,
+          "test": 2000,
+          "legit": 300,
+          "auth": 200
+        },
+        "calls": {
+          "B0": 6500,
+          "B1": 6500,
+          "B3": 4750,
+          "B5": 6500
+        },
+        "calls_total": 24250,
+        "input_tokens_est": 16621797,
+        "output_tokens_est": 6062500,
+        "usd_est": 4.69
+      },
+      "claude_sonnet_55": {
+        "model_id": "claude-sonnet-5-5",
+        "systems": [
+          "B0",
+          "B1",
+          "L2-RT-pre"
+        ],
+        "units_api_systems": {
+          "train": 300,
+          "test": 600
+        },
+        "calls": {
+          "B0": 1800,
+          "B1": 1800
+        },
+        "calls_total": 3600,
+        "input_tokens_est": 2927829,
+        "output_tokens_est": 900000,
+        "usd_est": 14.86
+      }
+    },
+    "usd_est_total": 19.55,
+    "prompt_tokens_mean_by_system": {
+      "B0": 767,
+      "B1": 858,
+      "B3": 670,
+      "B5": 440
+    },
+    "seconds": 49.4
+  },
+  "claude_haiku_55": {
+    "records": {
+      "train_template": {
+        "tasks_run": 2000,
+        "rows_total": 10000,
+        "seconds": 18.0
+      },
+      "test_template": {
+        "tasks_run": 4000,
+        "rows_total": 30000,
+        "seconds": 36.3
+      },
+      "legit_template": {
+        "tasks_run": 300,
+        "rows_total": 31911,
+        "seconds": 2.4
+      },
+      "auth_template": {
+        "tasks_run": 200,
+        "rows_total": 33100,
+        "seconds": 1.6
+      },
+      "train": {
+        "tasks_run": 2000,
+        "rows_total": 43100,
+        "seconds": 692.2
+      },
+      "test": {
+        "tasks_run": 4000,
+        "rows_total": 63100,
+        "seconds": 1367.3
+      },
+      "legit": {
+        "tasks_run": 300,
+        "rows_total": 64600,
+        "seconds": 124.5
+      },
+      "auth": {
+        "tasks_run": 200,
+        "rows_total": 65600,
+        "seconds": 55.1
+      }
+    },
+    "compacted_bytes": {
+      "B0.jsonl.gz": 1189450,
+      "B1.jsonl.gz": 790571,
+      "B2.jsonl.gz": 1122469,
+      "B3.jsonl.gz": 1002181,
+      "B4.jsonl.gz": 594926,
+      "B5.jsonl.gz": 1174284,
+      "B6.jsonl.gz": 593067,
+      "L2-RT-pre.jsonl.gz": 798545,
+      "O1.jsonl.gz": 313303,
+      "O2.jsonl.gz": 662986
+    },
+    "seconds_generation": 2299.9
+  },
+  "claude_sonnet_55": {
+    "records": {
+      "train_template": {
+        "tasks_run": 2000,
+        "rows_total": 2000,
+        "seconds": 6.7
+      },
+      "test_template": {
+        "tasks_run": 4000,
+        "rows_total": 6000,
+        "seconds": 13.3
+      },
+      "legit_template": {
+        "tasks_run": 300,
+        "rows_total": 6458,
+        "seconds": 1.0
+      },
+      "auth_template": {
+        "tasks_run": 200,
+        "rows_total": 6741,
+        "seconds": 0.6
+      },
+      "train": {
+        "tasks_run": 600,
+        "rows_total": 7941,
+        "seconds": 206.8
+      },
+      "test": {
+        "tasks_run": 1200,
+        "rows_total": 10341,
+        "seconds": 408.7
+      }
+    },
+    "compacted_bytes": {
+      "B0.jsonl.gz": 355081,
+      "B1.jsonl.gz": 257629,
+      "L2-RT-pre.jsonl.gz": 798465
+    },
+    "seconds_generation": 2937.4
+  }
+}

@@ -29,7 +29,7 @@ SYSTEMS = {"B0": "B0 Privileged agent", "B1": "B1 Privacy prompt", "B2": "B2 Out
            "O2": "O2 Full-view clarifier", "L2-RT-pre": "SameView (selected)"}
 ATTACKERS = {"D1": "D1 Bag of words", "D2": "D2 Embedding kNN", "D3": "D3 Entailment", "D4": "D4 LLM judge",
              "D5": "D5 Side channels", "D6": "D6 Stack", "D7": "D7 Fine-tuned entailment"}
-SCALE_MODELS = {"qwen25_14b": "Qwen2.5-14B-Instruct (4-bit)"}
+SCALE_MODELS = {"qwen25_14b": "Qwen2.5-14B-Instruct (4-bit)", "claude_haiku_55": "Claude Haiku 5.5", "claude_sonnet_55": "Claude Sonnet 5.5"}
 FAMILIES = {"Q1": "Q1 direct", "Q1a": "Q1a direct, attribute", "Q2": "Q2 topic", "Q2a": "Q2a topic, attribute", "Q3": "Q3 person",
             "Q3b": "Q3b person, type-aware", "Q4": "Q4 near-name", "Q5": "Q5 ambiguous", "Q6": "Q6 aggregate", "Q7": "Q7 access"}    # notebook 14: the scale check on the Domain 1 held-out test
 TIE = "Several tied"            # more than one attacker at the largest advantage (tables with seven attackers)
@@ -457,21 +457,23 @@ def session_table(reports: Path, file: str = "15_session_certificate.csv") -> pd
     return pd.DataFrame(rows)
 
 
-def scale_table(reports: Path, main_file: str = "14_main.csv", base_file: str = "13_main_meridian.csv") -> pd.DataFrame:
+def scale_table(reports: Path, main_file="14_main.csv", base_file: str = "13_main_meridian.csv") -> pd.DataFrame:
     """Domain 1 held-out test with seven attackers: largest attacker advantage and share of mistyped and ambiguous
-    requests resolved, per system, for the two main models and the larger responder of notebook 14."""
-    d = pd.concat([pd.read_csv(reports / base_file), pd.read_csv(reports / main_file)], ignore_index=True)
-    names = {**MODELS, **SCALE_MODELS}
+    requests resolved, per system, for the two main models and the other responders (main_file: one file or a list).
+    A responder that did not run a system gets n/a."""
+    files = [main_file] if isinstance(main_file, str) else list(main_file)
+    d = pd.concat([pd.read_csv(reports / base_file)] + [pd.read_csv(reports / f) for f in files], ignore_index=True)
+    names = {m: n for m, n in {**MODELS, **SCALE_MODELS}.items() if m in set(d["model"])}
     order = ["B0", "B1", "B2", "B3", "B5", "O2", "B4", "B6", "O1", "L2-RT-pre"]
     rows = []
     for s in [x for x in order if x in set(d["system"])]:
         r = {"System": SYSTEMS.get(s, s)}
         for m, name in names.items():
             x = d[(d["model"] == m) & (d["system"] == s)]
-            r[f"{name}: largest attacker advantage"] = float(x["max_adv"].iloc[0]) if len(x) else float("nan")
+            r[f"{name}: largest attacker advantage"] = round(float(x["max_adv"].iloc[0]), 3) if len(x) else "n/a"
         for m, name in names.items():
             x = d[(d["model"] == m) & (d["system"] == s)]
-            r[f"{name}: resolved"] = float(x["resolved_legit"].iloc[0]) if len(x) else float("nan")
+            r[f"{name}: resolved"] = (round(float(x["resolved_legit"].iloc[0]), 3) if len(x) and pd.notna(x["resolved_legit"].iloc[0]) else "n/a")
         rows.append(r)
     return pd.DataFrame(rows)
 

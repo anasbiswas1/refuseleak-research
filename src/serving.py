@@ -165,10 +165,104 @@ class VLLMChat:
                 time.sleep(5 * (k + 1))
 
 
-def make_llm(tag: str, port: int = 8000):
+class CostMeter:
+    """Thread-safe count of API tokens and their price; raises BudgetExceeded once the cap is passed, so that a
+    notebook never spends more than the amount set before it started."""
+
+    class BudgetExceeded(RuntimeError):
+        pass
+
+    def __init__(self, cap_usd: float, previous: dict | None = None, log_every: int = 500):
+        """`previous`: the report of an earlier session of the same notebook, so that the cap covers the total."""
+        import threading
+        self.cap_usd, self.lock, self.log_every = float(cap_usd), threading.Lock(), log_every
+        self.by_model: dict[str, dict] = {k: {kk: (float(vv) if kk == "usd" else (dict(vv) if isinstance(vv, dict) else int(vv))) for kk, vv in v.items()}
+                                          for k, v in (previous or {}).get("by_model", {}).items()}
+        self.t0 = time.time()
+        self.calls_at_start = sum(d["calls"] for d in self.by_model.values())
+
+    def check(self):
+        """Called before a request: once the cap is passed, every waiting request fails without being sent."""
+        total = self.total_usd()
+        if total > self.cap_usd:
+            raise CostMeter.BudgetExceeded(f"API spend {total:.2f} USD passed the cap of {self.cap_usd:.2f} USD; records so far are saved")
+
+    def add(self, tag: str, input_tokens: int, output_tokens: int, stop_reason: str | None = None, thinking_tokens: int = 0):
+        pin, pout = config.API_PRICE_PER_MTOK[tag]
+        with self.lock:
+            d = self.by_model.setdefault(tag, {"calls": 0, "input_tokens": 0, "output_tokens": 0, "usd": 0.0})
+            d["calls"] += 1
+            d["input_tokens"] += int(input_tokens)
+            d["output_tokens"] += int(output_tokens)
+            d["usd"] += (input_tokens * pin + output_tokens * pout) / 1e6
+            d["thinking_tokens"] = d.get("thinking_tokens", 0) + int(thinking_tokens or 0)
+            sr = d.setdefault("stop_reasons", {})
+            sr[str(stop_reason)] = sr.get(str(stop_reason), 0) + 1
+            calls, usd, total = d["calls"], d["usd"], self.total_usd()
+        if self.log_every and calls % self.log_every == 0:
+            rate = (sum(x["calls"] for x in self.by_model.values()) - self.calls_at_start) / max(1e-9, (time.time() - self.t0) / 60)
+            print(f"    {tag}: {calls} calls, {usd:.2f} USD ({total:.2f} in all), {rate:.0f} calls per minute", flush=True)
+        self.check()
+
+    def total_usd(self) -> float:
+        return float(sum(d["usd"] for d in self.by_model.values()))
+
+    def report(self) -> dict:
+        return {"cap_usd": self.cap_usd, "total_usd": round(self.total_usd(), 4),
+                "by_model": {k: {**v, "usd": round(v["usd"], 4)} for k, v in self.by_model.items()}}
+
+
+class AnthropicChat:
+    """The responder interface of VLLMChat on the Claude Messages API: one greedy completion per call, the system
+    prompt as the system field, the query and the earlier turns as messages. Token counts come from the response."""
+
+    def __init__(self, tag: str, meter: CostMeter, client=None):
+        import anthropic
+        self.tag, self.meter = tag, meter
+        self.model_id = config.API_MODELS[tag]
+        self.client = client or anthropic.Anthropic(max_retries=8, timeout=120)
+        self.thinking = dict(config.API_THINKING.get(tag) or {}) or None
+        self.thinking_rejected: str | None = None       # set if the API refused the thinking setting; the call is then made without it
+
+    def _create(self, **kw):
+        import anthropic
+        if self.thinking and not self.thinking_rejected:
+            try:
+                return self.client.messages.create(thinking=self.thinking, **kw)
+            except anthropic.BadRequestError as e:
+                if "thinking" not in str(e).lower():
+                    raise
+                self.thinking_rejected = str(e)[:200]
+                print(f"    {self.tag}: the API refused thinking={self.thinking}; continuing without the field ({self.thinking_rejected})", flush=True)
+        return self.client.messages.create(**kw)
+
+    def chat(self, system_prompt: str, query: str, history: list[dict]):
+        """One completion at the API's default sampling: the Claude API accepts no temperature, so the replies of these
+        responders are sampled, as they would be in deployment."""
+        self.meter.check()
+        messages = [{"role": "user", "content": query}]
+        for h in history:
+            messages.append({"role": h["role"], "content": h["text"]})
+        t0 = time.time()
+        r = self._create(model=self.model_id, system=system_prompt, messages=messages, max_tokens=config.API_MAX_TOKENS)
+        lat = time.time() - t0
+        text = "".join(getattr(b, "text", "") for b in r.content if getattr(b, "type", "text") == "text").strip()
+        details = getattr(r.usage, "output_tokens_details", None)
+        thinking_tokens = int(getattr(details, "thinking_tokens", 0) or 0) if details is not None else 0
+        self.meter.add(self.tag, r.usage.input_tokens, r.usage.output_tokens, getattr(r, "stop_reason", None), thinking_tokens)
+        return text, int(r.usage.output_tokens), lat
+
+    def choice_logprobs(self, system_prompt: str, user_prompt: str, letters: str) -> dict:
+        raise NotImplementedError("the Claude API returns no token log-probabilities; SameView uses the evidence-only scorer with it")
+
+
+def make_llm(tag: str, port: int = 8000, meter: CostMeter | None = None):
     if DRY_RUN:
         from scripted import ScriptedLLM
         return ScriptedLLM(tag)
+    if tag in config.API_MODELS:
+        assert meter is not None, "an API responder needs a CostMeter with a spending cap"
+        return AnthropicChat(tag, meter)
     import openai
     client = openai.OpenAI(base_url=f"http://127.0.0.1:{port}/v1", api_key="EMPTY", timeout=300, max_retries=0)
     return VLLMChat(client, tag)

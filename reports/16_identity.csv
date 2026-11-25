@@ -1,0 +1,14 @@
+model,system,identical_share,units
+claude_haiku_55,B0,0.0,2000
+claude_haiku_55,B1,0.0125,2000
+claude_haiku_55,B2,0.0,2000
+claude_haiku_55,B3,0.186,2000
+claude_haiku_55,B4,1.0,2000
+claude_haiku_55,B5,0.0025,2000
+claude_haiku_55,B6,0.995,2000
+claude_haiku_55,L2-RT-pre,1.0,2000
+claude_haiku_55,O1,1.0,2000
+claude_haiku_55,O2,0.782,2000
+claude_sonnet_55,B0,0.0,600
+claude_sonnet_55,B1,0.006666666666666667,600
+claude_sonnet_55,L2-RT-pre,1.0,2000

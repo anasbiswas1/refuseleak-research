@@ -64,6 +64,17 @@ MODELS = {
 SCALE_MODELS = {                  # notebook 14: a larger responder on the Domain 1 held-out test (not part of the main grid)
     "qwen25_14b": "Qwen/Qwen2.5-14B-Instruct-AWQ",
 }
+API_MODELS = {                    # notebook 16: proprietary responders reached through the Claude API (no log-probabilities, so
+    "claude_haiku_55": "claude-haiku-5-5",      # SameView runs its evidence-only scorer with them)
+    "claude_sonnet_55": "claude-sonnet-5-5",
+}
+API_PRICE_PER_MTOK = {"claude_haiku_55": (0.10, 0.50), "claude_sonnet_55": (2.00, 10.00)}   # USD per million input, output tokens
+API_THINKING = {                  # Claude 5 models think by default and thinking tokens count toward max_tokens and are billed;
+    "claude_haiku_55": {"type": "disabled"},        # Haiku 5.5 accepts "disabled" at its default effort,
+    "claude_sonnet_55": {"type": "between_tools"},  # Sonnet 5.5 rejects "disabled" and thinks only between tool calls with this
+}
+API_MAX_TOKENS = 400              # the Claude models write longer replies in a denser tokenizer: at 200 most Sonnet replies were cut mid-sentence
+API_WORKERS = 12                  # concurrent API requests
 EMBEDDER = "sentence-transformers/all-MiniLM-L6-v2"             # attacker D2
 NLI_MODEL = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"       # attacker D3 and the disclosure judge
 ATTACKERS = ["D1", "D2", "D3", "D5"]

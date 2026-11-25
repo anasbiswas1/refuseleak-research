@@ -1,0 +1,33 @@
+{
+  "dry_run": false,
+  "stopped": null,
+  "thinking_refused": {
+    "claude_haiku_55": null,
+    "claude_sonnet_55": null
+  },
+  "cap_usd": 25.0,
+  "total_usd": 15.6473,
+  "by_model": {
+    "claude_haiku_55": {
+      "calls": 24203,
+      "input_tokens": 18063302,
+      "output_tokens": 3438121,
+      "usd": 3.5254,
+      "thinking_tokens": 0,
+      "stop_reasons": {
+        "end_turn": 24202,
+        "max_tokens": 1
+      }
+    },
+    "claude_sonnet_55": {
+      "calls": 3603,
+      "input_tokens": 3227939,
+      "output_tokens": 566608,
+      "usd": 12.122,
+      "thinking_tokens": 0,
+      "stop_reasons": {
+        "end_turn": 3603
+      }
+    }
+  }
+}
